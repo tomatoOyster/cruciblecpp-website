@@ -2,6 +2,14 @@
 
 All notable changes to the CrucibleCpp website.
 
+## v1.2.1 — 2026-11-18
+
+### Fixed
+
+- Translating the two Chinese comments inside the PowerShell code blocks
+  for every locale
+- Keeping command lines and the surrounding HTML structure unchanged
+
 ## v1.2.0 — 2026-11-18
 
 ### Changed

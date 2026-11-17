@@ -52,11 +52,11 @@
       </div>
       <div class="terminal reveal">
         <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell - cruciblecpp</span></div>
-        <pre><span class="c"># 用目标 GCC 的 profile 和头文件预处理</span>
+        <pre><span class="c"># 대상 GCC의 profile과 헤더 파일로 전처리</span>
 <span class="b">PS&gt;</span> .\cruciblecpp-preprocessor.exe <span class="g">--gcc-version=15</span> `
        -P src\main.cpp -o build\main.i
 
-<span class="c"># 输出可直接交给 GCC 编译</span>
+<span class="c"># 출력을 그대로 GCC에 넘겨 컴파일할 수 있습니다</span>
 <span class="b">PS&gt;</span> g++ -std=c++20 build\main.i -o build\main.exe
 <span class="b">PS&gt;</span> .\build\main.exe
 
