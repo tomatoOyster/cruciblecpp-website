@@ -1,45 +1,189 @@
 <!doctype html>
-<html lang="ja" translate="no">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="google" content="notranslate"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CrucibleCpp — Windows 向け独立 C++ プリプロセッサ</title>
-  <meta name="description" content="CrucibleCpp は Windows x64 向けの独立 C++ プリプロセッサです。GCC 13.3 / 14.3 / 15.2 をサポートします。">
-  <meta name="theme-color" content="#dffbf6"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrucibleCpp Preprocessor — Windows 向けの独立した C++ プリプロセッサ</title>
+  <meta name="description" content="CrucibleCpp は Windows x64 向けの独立した C++ プリプロセッサで、g++ -E の代わりに使用でき、GCC 13.3 / 14.3 / 15.2 と C++11/14/17/20 に対応します。">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
 </head>
 <body>
-<header class="site-header"><div class="nav"><a class="brand" href="/ja/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><nav class="nav-links"><a href="#features">機能</a><a href="#docs">ドキュメント</a><a href="#download">ダウンロード</a><a href="#changelog">変更履歴</a><a href="#license">ライセンス</a><a href="#about">概要</a></nav><div class="nav-actions"><div class="lang-picker">
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="index.html">ホーム</a>
+      <a href="features.html">機能</a>
+      <a href="docs.html">ドキュメント</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="changelog.html">変更履歴</a>
+      <a href="license.html">ライセンス</a>
+      <a href="about.html">概要</a>
+    </nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
       <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">日本語</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg><span class="lang-chev">⌄</span></button>
-      <ul class="lang-options" role="listbox" aria-label="选择语言"><li><a role="option" href="/" data-locale="/">简体中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/" class="current" aria-selected="true">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">その他の言語 <span aria-hidden="true">↗</span></a></li></ul>
+      <ul class="lang-options" role="listbox" aria-label="言語を選択"><li><a role="option" href="/" data-locale="/">簡体字中国語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/" class="current" aria-selected="true">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">その他の言語 <span aria-hidden="true">↗</span></a></li></ul>
     </div>
-      <a class="btn btn-sm btn-primary" href="#download">V3.0.1 をダウンロード</a><button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">メニュー</button></div></div></header>
+      <a class="btn btn-sm btn-primary" href="download.html">V3.0.1 をダウンロード</a>
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">メニュー</button>
+    </div>
+  </div>
+</header>
+
 <main>
-  <section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">WINDOWS X64 · GCC 13 / 14 / 15</span><h1>プリプロセスを<br>決定論的に。</h1><p class="lead">CrucibleCpp は独立した C++ プリプロセッサです。翻訳フェーズ 1–4 を実行し、対象 GCC がそのままコンパイルできる <code>.i</code> を出力します。</p><div class="hero-actions"><a class="btn btn-primary" href="#download">V3.0.1 をダウンロード ↓</a><a class="btn" href="#docs">ドキュメント →</a></div><div class="hero-meta"><span><i class="dot"></i> CC BY-NC 4.0</span><span><i class="dot"></i> インストール不要</span><span><i class="dot"></i> 単一 exe</span></div></div><div class="terminal"><div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell — cruciblecpp</span></div><pre><span class="c"># 対象 GCC のプロファイルとヘッダー</span>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Windows x64 · GCC 13 / 14 / 15</span>
+        <h1>プリプロセスを<br>決定論へ返す</h1>
+        <p class="lead">CrucibleCpp は独立した C++ プリプロセッサです。ソースファイルを読み取り、翻訳フェーズ 1–4 を実行して、GCC がそのままコンパイルを続けられる <code>.i</code> ファイルを出力します。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="download.html">V3.0.1 をダウンロード <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="docs.html">ドキュメントを読む <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="dot"></i> CC BY-NC 4.0</span>
+          <span><i class="dot"></i> インストール不要</span>
+          <span><i class="dot"></i> 単一ファイルの実行形式</span>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell — cruciblecpp</span></div>
+        <pre><span class="c"># 用目标 GCC 的 profile 和头文件预处理</span>
 <span class="b">PS&gt;</span> .\cruciblecpp-preprocessor.exe <span class="g">--gcc-version=15</span> `
        -P src\main.cpp -o build\main.i
 
-<span class="c"># 同じ GCC でコンパイル</span>
+<span class="c"># 输出可直接交给 GCC 编译</span>
 <span class="b">PS&gt;</span> g++ -std=c++20 build\main.i -o build\main.exe
 <span class="b">PS&gt;</span> .\build\main.exe
 
-<span class="o">✓</span> プリプロセス完了
-<span class="o">✓</span> 65/65 テスト · GCC 15.2 / 14.3 / 13.3</pre></div></div></section>
-  <div class="wrap"><div class="stats"><div class="stat"><strong>3</strong><span>GCC バージョン</span></div><div class="stat"><strong>4</strong><span>C++ プロファイル</span></div><div class="stat"><strong>65/65</strong><span>各 GCC の CTest</span></div><div class="stat"><strong>0</strong><span>実行時依存</span></div></div></div>
-  <section class="section" id="features"><div class="wrap"><span class="eyebrow">WHY CRUCIBLECPP</span><h2 class="mt-8">検証できるプリプロセス層。</h2><p class="lead mt-16" style="max-width:720px">すべての正例は同じ経路を通ります：CrucibleCpp が <code>.i</code> を生成し、対応 GCC が exe にコンパイルし、実際に実行します。</p><div class="grid g3 mt-32"><article class="card"><div class="card-icon">01</div><h3>対象バージョンを明示</h3><p><code>--gcc-version</code> または <code>--gcc</code> で選択。プロファイル、組み込みマクロ、include パスは同じ GCC から取得します。</p></article><article class="card"><div class="card-icon">02</div><h3>GCC 形式の診断</h3><p>ソース行、caret、include trace、warning ID、<code>-Werror</code>、pragma diagnostic スタック。</p></article><article class="card"><div class="card-icon">03</div><h3>実プロジェクト検証</h3><p>nlohmann/json、fmt、spdlog を GCC 13/14/15 でプリプロセス、コンパイル、実行。</p></article><article class="card"><div class="card-icon">04</div><h3>完全な UCN</h3><p><code>\uXXXX</code> / <code>\UXXXXXXXX</code> を識別子、<code>#</code>、<code>##</code> で処理し、検証と正規化を行います。</p></article><article class="card"><div class="card-icon">05</div><h3>#embed</h3><p>バイナリ埋め込み、<code>limit</code>、<code>gnu::offset</code>、<code>prefix</code>、<code>suffix</code>、<code>if_empty</code>、<code>__has_embed</code>。</p></article><article class="card"><div class="card-icon">06</div><h3>バージョン分離 PCH</h3><p>GCC 13/14/15 で PCH ポリシーとキャッシュを利用可能。manifest にコンパイラのパス、バージョン、ハッシュを記録。</p></article></div></div></section>
-  <section class="section" style="padding-top:0"><div class="wrap grid g2" style="align-items:start"><div><span class="eyebrow">COMPATIBILITY</span><h2 class="mt-8">明確なマトリクスから。</h2><p class="lead mt-16">現在の対象は Windows x64 + MinGW-w64 UCRT64。GCC バージョンごとにプロファイルとヘッダーを使い分けます。</p><div class="table-wrap mt-24"><table><thead><tr><th>対象</th><th>状態</th></tr></thead><tbody><tr><td><code>GCC 15.2</code></td><td><span class="badge good">完全</span></td></tr><tr><td><code>GCC 14.3</code></td><td><span class="badge good">完全</span></td></tr><tr><td><code>GCC 13.3</code></td><td><span class="badge good">完全</span></td></tr><tr><td>Windows x64 / UCRT64</td><td><span class="badge good">対応</span></td></tr><tr><td>Linux / MSVC / Clang</td><td><span class="badge">未対応</span></td></tr></tbody></table></div></div><div class="card"><span class="eyebrow">TEST CHAIN</span><h3 class="mt-8">「動きそう」では終わらせない。</h3><ul class="feature-list"><li>GCC15 / 14 / 13 各 65/65 CTest</li><li>differential corpus 13/13</li><li>realworld corpus 3/3</li><li>各正例が exe を生成して実行</li><li>3 バージョンで PCH ポリシーとキャッシュが通過</li></ul></div></div></section>
-  <section class="section" id="docs"><div class="wrap"><span class="eyebrow">DOCUMENTATION</span><h2 class="mt-8">最初のコマンドから。</h2><div class="grid g2 mt-24"><div class="card"><h3>クイックスタート</h3><div class="codeblock">cruciblecpp-preprocessor.exe -P `
-  -std=c++20 src\main.cpp -o build\main.i
+<span class="o">✓</span> preprocess complete
+<span class="o">✓</span> 65/65 tests · GCC 15.2 / 14.3 / 13.3</pre>
+      </div>
+    </div>
+  </section>
 
-g++ -std=c++20 build\main.i -o build\main.exe</div><p class="muted small mt-8">コンパイラを明示する場合：</p><div class="codeblock">cruciblecpp-preprocessor.exe `
-  --gcc "D:\path\to\g++.exe" `
-  -P src\main.cpp -o build\main.i</div></div><div class="card"><h3>GCC の選択</h3><ul class="feature-list"><li><code>--gcc-version=13|14|15</code></li><li><code>--gcc &lt;g++.exe&gt;</code></li><li>PATH を自動検出、既定は最新の対応版</li><li><code>-std=c++11|14|17|20</code></li></ul><div class="note mt-16">自動検出は PATH のみ。別の場所は <code>--gcc</code> で指定します。</div></div></div></div></section>
-  <section class="section" id="download" style="padding-top:0"><div class="wrap"><span class="eyebrow">DOWNLOAD</span><h2 class="mt-8">V3.0.1</h2><div class="download-hero mt-24"><div class="card download-box"><span class="release-tag">● latest</span><h2 class="mt-16" style="font-size:34px">CrucibleCpp V3.0.1</h2><p class="muted mt-8">Windows x64 · MinGW-w64 UCRT64 · 単一 exe</p><a class="btn btn-primary" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor-v3.0.1-win64.zip" rel="noopener">完全版アーカイブ ↓</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor.exe" rel="noopener">exe のみ</a><a class="btn btn-ghost" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/tag/v3.0.1" rel="noopener">GitHub Release</a></div><div class="card download-box"><h3>SHA-256</h3><div class="mt-16 small faint">cruciblecpp-preprocessor.exe</div><div class="hash">8a0928adefbfb01c9bd69965d6cd4e96fede61d904e47c98f365d8cdeec96b32</div><div class="mt-16 small faint">cruciblecpp-preprocessor-v3.0.1-win64.zip</div><div class="hash">369494155360d2d66b227974aa997d6e9df93443ab27b60e62d0a9bacca28454</div><div class="note mt-24">V3.0.0 以降は CC BY-NC 4.0、V2.9.0 以前は MIT。</div></div></div></div></section>
-  <section class="section" id="changelog" style="padding-top:0"><div class="wrap"><span class="eyebrow">CHANGELOG</span><h2 class="mt-8">バージョン履歴。</h2><div class="grid g3 mt-24"><div class="card"><h3>V3.0.1</h3><p class="muted mt-8">digraph と <code>&lt;::</code> の出力、realworld 検証、nlohmann/json の include 配置を修正。</p></div><div class="card"><h3>V3.0.0</h3><p class="muted mt-8">ライセンス境界。GCC13/14/15 の完全な PCH 対応とバージョン分離キャッシュ。</p></div><div class="card"><h3>V2.9.0</h3><p class="muted mt-8">GCC 13.3 / 14.3 プロファイル、__has テーブル、対象選択、PATH 自動検出。</p></div></div></div></section>
-  <section class="section" id="license" style="padding-top:0"><div class="wrap"><span class="eyebrow">LICENSE</span><h2 class="mt-8">バージョンごとに異なる条件。</h2><div class="grid g2 mt-24"><div class="card"><h3>V3.0.0 以降</h3><p class="muted mt-8">CC BY-NC 4.0。表示付きの非商業的な共有・改変が可能。商業利用には別途許可が必要です。</p><a href="/LICENSE">全文を読む →</a></div><div class="card"><h3>V2.9.0 以前</h3><p class="muted mt-8">MIT License。旧バージョンは MIT のままです。</p><a href="/LICENSE-MIT">MIT 全文 →</a></div></div></div></section>
-  <section class="section" id="about" style="padding-top:0"><div class="wrap"><div class="card" style="padding:34px"><span class="eyebrow">ABOUT</span><h2 class="mt-8">もう一つのマクロ展開器ではなく、検証可能な層。</h2><p class="lead mt-16">CrucibleCpp は翻訳フェーズ 1–4 を観察・テスト可能にします。コンパイラではありません：コード生成、最適化、リンク、GCC バイナリ PCH の解析は行いません。</p><div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/issues" rel="noopener">Issue</a></div></div></div></section>
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><strong>3</strong><span>GCC メジャーバージョン</span></div>
+      <div class="stat"><strong>4</strong><span>C++ 標準プロファイル</span></div>
+      <div class="stat"><strong>65/65</strong><span>3 スイートの CTest</span></div>
+      <div class="stat"><strong>0</strong><span>実行時依存</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Why CrucibleCpp</span>
+      <h2 class="mt-8">もう一つのマクロ展開器ではなく、<br>検証可能なプリプロセス層です。</h2>
+      <p class="lead mt-16" style="max-width:720px">すべての正例は同じ経路を通ります：CrucibleCpp が生成した <code>.i</code> を、対応する GCC が exe にコンパイルし、実際に実行します。動作は GCC 15.2、14.3、13.3 を基準としています。</p>
+      <div class="grid g3 mt-32">
+        <article class="card reveal">
+          <div class="card-icon">01</div>
+          <h3>対象バージョンを明示</h3>
+          <p>対象コンパイラを選択するには <code>--gcc-version</code> または <code>--gcc</code> を指定します。プロファイル、組み込みマクロ、include パスは同じターゲットから取得し、混在させません。</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">02</div>
+          <h3>GCC 診断の整合性</h3>
+          <p>ソースの caret、include trace、warning ID、<code>-Werror</code>、pragma diagnostic スタック、およびシステムヘッダーの警告抑制。</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">03</div>
+          <h3>実プロジェクトで検証</h3>
+          <p>nlohmann/json、fmt、spdlog を 3 つの GCC バージョンでプリプロセス、コンパイル、実行し、実際のヘッダーとマクロの組み合わせを網羅します。</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">04</div>
+          <h3>完全な UCN</h3>
+          <p><code>\uXXXX</code> と <code>\UXXXXXXXX</code> は識別子、<code>#</code>、<code>##</code> に参加し、正当性チェックと出力の正規化は GCC と整合します。</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">05</div>
+          <h3>#embed</h3>
+          <p>バイナリ埋め込み、<code>limit</code>、<code>gnu::offset</code>、<code>prefix</code>、<code>suffix</code>、<code>if_empty</code>、および <code>__has_embed</code>。</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">06</div>
+          <h3>PCH のバージョン分離</h3>
+          <p>GCC 13 / 14 / 15 で PCH ポリシーとキャッシュを利用できます。manifest にはコンパイラのパス、バージョン、実行ファイルのハッシュが記録され、バージョンをまたいだ誤ヒットを防ぎます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal">
+          <span class="eyebrow">Compatibility</span>
+          <h2 class="mt-8">明確なマトリクスから始める</h2>
+          <p class="lead mt-16">現在の本番ターゲットは Windows x64 + MinGW-w64 UCRT64 です。GCC のバージョンごとに独自のプロファイルとヘッダーを使用し、出力は対応する GCC で実際にコンパイルして検証します。</p>
+          <div class="table-wrap mt-24">
+            <table>
+              <thead><tr><th>対象</th><th>状態</th><th>説明</th></tr></thead>
+              <tbody>
+                <tr><td><code>GCC 15.2</code></td><td><span class="badge good">完全</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 14.3</code></td><td><span class="badge good">完全</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 13.3</code></td><td><span class="badge good">完全</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td>Windows x64 / UCRT64</td><td><span class="badge good">対応</span></td><td>現在の本番ターゲット</td></tr>
+                <tr><td>Linux / MSVC / Clang</td><td><span class="badge">未対応</span></td><td>アーキテクチャは拡張ポイントを維持</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="eyebrow">Test chain</span>
+          <h3 class="mt-8">「動きそう」では検証にならない</h3>
+          <ul class="feature-list">
+            <li>GCC15 / 14 / 13 の 3 スイート CTest、各 65/65</li>
+            <li>differential corpus 13/13：終了コード、診断、token ストリーム</li>
+            <li>realworld corpus 3/3：nlohmann/json、fmt、spdlog</li>
+            <li>各正例は exe を生成したうえで実際に実行</li>
+            <li>PCH ポリシーとキャッシュが 3 バージョンすべてで検証に合格</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite は継続的に回帰テストを実行</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; padding:30px 34px">
+        <div>
+          <span class="eyebrow">Get started</span>
+          <h2 style="font-size:30px" class="mt-8">ダウンロード、解凍、置き換え <code style="font-size:.72em">g++ -E</code></h2>
+          <p class="muted mt-8">現在の安定版 V3.0.1 · Windows x64 · 単一ファイル exe。</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="download.html">V3.0.1 をダウンロード</a>
+          <a class="btn" href="docs.html">クイックスタート</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="/ja/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Windows x64 向け独立 C++ プリプロセッサ。</p></div><div><h4>製品</h4><a href="#features">機能</a><a href="#download">ダウンロード</a><a href="#changelog">変更履歴</a></div><div><h4>リソース</h4><a href="#docs">ドキュメント</a><a href="#license">ライセンス</a><a href="#about">概要</a></div><div><h4>外部</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1+ CC BY-NC 4.0 · V2.9.0 以前 MIT</span></div></div></footer>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+        <p>Windows x64 向けの独立した C++ プリプロセッサ。プリプロセス結果を説明可能、検証可能、再現可能にします。</p>
+      </div>
+      <div><h4>製品</h4><a href="features.html">機能</a><a href="download.html">ダウンロード</a><a href="changelog.html">変更履歴</a></div>
+      <div><h4>リソース</h4><a href="docs.html">ドキュメント</a><a href="license.html">ライセンス</a><a href="about.html">概要</a></div>
+      <div><h4>外部</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 以降：CC BY-NC 4.0 · V2.9.0 以前：MIT</span></div>
+  </div>
+</footer>
 <script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
 <script src="/assets/lang.js?v=4"></script>
 </body>
 </html>

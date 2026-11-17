@@ -1,2 +1,135 @@
 <!doctype html>
-<html lang="vi" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#features"><title>CrucibleCpp — vi / features</title></head><body><p><a href="index.html#features">Open translated section →</a></p><script>location.replace('index.html#features');</script></body></html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tính năng — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="Tính năng của CrucibleCpp: profile GCC 13/14/15, chẩn đoán, macro, UCN, #embed, PCH, kiểm chứng đối chiếu.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Điều hướng chính"><a href="index.html">Trang chủ</a><a href="features.html">Tính năng</a><a href="docs.html">Tài liệu</a><a href="download.html">Tải về</a><a href="changelog.html">Nhật ký thay đổi</a><a href="license.html">Giấy phép</a><a href="about.html">Giới thiệu</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Tiếng Việt</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#da251d"/><path d="M10 2.2l.9 2.8h2.9l-2.3 1.7.9 2.8L10 7.8 7.5 9.5l.9-2.8-2.3-1.7h2.9z" fill="#ff0"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Chọn ngôn ngữ"><li><a role="option" href="/" data-locale="/">Tiếng Trung giản thể<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Thêm ngôn ngữ <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Tải về V3.0.1</a><button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">Menu</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Capabilities</span>
+      <h1>Biến mỗi tầng thành<br>Hành vi có thể kiểm chứng</h1>
+      <p class="lead">Từ việc chọn phiên bản đích, macro định nghĩa sẵn, chẩn đoán, cho tới PCH và dự án thực tế, CrucibleCpp không làm việc dựa trên “chắc là được” mà dựa trên một chuỗi kiểm thử có thể lặp lại.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2">
+        <article class="card reveal">
+          <div class="card-icon">A</div>
+          <h3>Phiên bản đích và profile</h3>
+          <p>Một bộ tiền xử lý, ba GCC đích. Chọn phiên bản nào thì dùng macro định nghĩa sẵn,<code>__has_*</code> dữ liệu và đường dẫn tìm kiếm include.</p>
+          <ul class="feature-list">
+            <li><code>--gcc-version=13|14|15</code></li>
+            <li><code>--gcc D:\path\to\g++.exe</code></li>
+            <li>Tự động dò PATH, mặc định chọn phiên bản được hỗ trợ cao nhất</li>
+            <li>GCC 13.3 / 14.3 / 15.2 profile</li>
+            <li>C++11 / C++14 / C++17 / C++20</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">B</div>
+          <h3>Hệ thống chẩn đoán</h3>
+          <p>Định dạng chẩn đoán dành cho hệ thống build thực tế. Bao gồm dòng mã nguồn, caret, include trace và warning option, không chỉ một chuỗi lỗi.</p>
+          <ul class="feature-list">
+            <li>severity / option / caret kiểu GCC</li>
+            <li><code>-Werror</code>, <code>-Wno-...</code>, <code>-Werror=...</code></li>
+            <li><code>#pragma GCC diagnostic push/pop</code></li>
+            <li><code>#pragma GCC system_header</code></li>
+            <li><code>-Wsystem-headers</code> và ức chế header hệ thống</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">C</div>
+          <h3>Macro và ngữ nghĩa tiền xử lý</h3>
+          <p>Macro đối tượng, macro hàm, tham số rỗng, macro biến thiên, stringify, token pasting, cùng với phần mở rộng xóa dấu phẩy của GCC.</p>
+          <ul class="feature-list">
+            <li><code>#</code> và <code>##</code></li>
+            <li><code>__VA_OPT__</code>(C++20)</li>
+            <li><code>, ## __VA_ARGS__</code></li>
+            <li><code>defined</code> / <code>__has_include</code></li>
+            <li>macro trace và JSON phân tích đồ thị include</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">D</div>
+          <h3>UCN và #embed</h3>
+          <p>Universal character name tham gia vào identifier và việc nối token;<code>#embed</code> Nhúng tài nguyên nhị phân theo ngữ nghĩa GCC.</p>
+          <ul class="feature-list">
+            <li><code>\uXXXX</code> / <code>\UXXXXXXXX</code></li>
+            <li>UCN hình thành do nối dòng bằng dấu gạch chéo ngược</li>
+            <li><code>#</code> / <code>##</code> vẫn giữ nguyên cách viết UCN</li>
+            <li><code>#embed</code> + <code>limit</code></li>
+            <li><code>prefix</code> / <code>suffix</code> / <code>if_empty</code></li>
+            <li><code>gnu::offset</code> và <code>__has_embed</code></li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">E</div>
+          <h3>PCH và bộ đệm</h3>
+          <p>GCC 13/14/15 đều dùng được chiến lược và bộ đệm PCH. Bộ đệm không phân tích trực tiếp PCH của GCC mà xác thực, đăng ký, vô hiệu hóa và theo dõi các tệp bên ngoài định dạng <code>.gch</code>. </p>
+          <ul class="feature-list">
+            <li><code>--pch=ignore|warn|error|report</code></li>
+            <li>Bố cục PCH của CMake với include bắt buộc</li>
+            <li>cách ly đường dẫn, phiên bản và hash của compiler</li>
+            <li>Ghi nguyên tử, khóa thư mục, dọn dẹp theo dung lượng và tuổi</li>
+            <li>JSON thống kê tỉ lệ trúng / stale / corrupt</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">F</div>
+          <h3>Kiểm thử có thể tái lập</h3>
+          <p>Ba bộ GCC, hai kho ngữ liệu đối chiếu và dự án thực tế cùng kiểm chứng đầu ra, không chỉ kiểm tra “tiền xử lý thành công”.</p>
+          <ul class="feature-list">
+            <li>GCC15 / 14 / 13: 65/65 CTest mỗi bộ</li>
+            <li>differential corpus 13/13</li>
+            <li>realworld corpus 3/3</li>
+            <li>CrucibleCpp <code>.i</code> → GCC đích → exe → run</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite được hồi quy</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section-tight">
+        <div class="card reveal" style="padding:30px 34px">
+          <span class="eyebrow">Positioning</span>
+          <h2 class="mt-8" style="font-size:30px">Nó thay thế bước tiền xử lý, không phải trình biên dịch</h2>
+          <p class="lead mt-16" style="max-width:820px">CrucibleCpp không sinh mã, không tối ưu hóa và không phân tích PCH nhị phân của GCC. Nó chỉ có nhiệm vụ biến tệp nguồn thành <code>.i</code>xác định, đồng thời giao chẩn đoán, phụ thuộc và thông tin có thể phân tích cho hệ thống build.</p>
+          <div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="docs.html">Xem tài liệu đầy đủ</a><a class="btn" href="download.html">Tải về V3.0.1</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Bộ tiền xử lý C++ độc lập cho Windows x64.</p></div><div><h4>Sản phẩm</h4><a href="features.html">Tính năng</a><a href="download.html">Tải về</a><a href="changelog.html">Nhật ký thay đổi</a></div><div><h4>Tài nguyên</h4><a href="docs.html">Tài liệu</a><a href="license.html">Giấy phép</a><a href="about.html">Giới thiệu</a></div><div><h4>Liên kết ngoài</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>Từ V3.0.1 trở đi: CC BY-NC 4.0 · Từ V2.9.0 trở về trước: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

@@ -1,2 +1,85 @@
 <!doctype html>
-<html lang="it" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#about"><title>CrucibleCpp — it / about</title></head><body><p><a href="index.html#about">Open translated section →</a></p><script>location.replace('index.html#about');</script></body></html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informazioni — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="Informazioni su CrucibleCpp: perché un preprocessore autonomo, i principi di progettazione e lo stato del progetto.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Navigazione principale"><a href="index.html">Home</a><a href="features.html">Funzionalità</a><a href="docs.html">Documentazione</a><a href="download.html">Download</a><a href="changelog.html">Changelog</a><a href="license.html">Licenza</a><a href="about.html">Informazioni</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Italiano</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="6.67" height="14" fill="#009246"/><rect x="6.67" width="6.66" height="14" fill="#fff"/><rect x="13.33" width="6.67" height="14" fill="#ce2b37"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Seleziona lingua"><li><a role="option" href="/" data-locale="/">Cinese semplificato<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Altre lingue <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Scarica V3.0.1</a><button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">Menu</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">About the project</span>
+      <h1>Trasformare il “preprocessamento”<br>in uno strato verificabile</h1>
+      <p class="lead">CrucibleCpp è nato da una domanda molto concreta: quando un sistema di build ha bisogno di un risultato di preprocessamento autonomo, si può evitare di ricorrere a una chiamata di processo a <code>g++ -E</code> ottenendo comunque un output affidabile, spiegabile e verificabile tramite test di regressione?</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2">
+        <div class="prose">
+          <h2 style="margin-top:0">Perché un preprocessore autonomo</h2>
+          <p>Il preprocessamento sembra solo “espansione di macro”, ma nei progetti reali diventa il punto di incontro tra diagnostica, dipendenze, PCH, set di caratteri, stato delle macro e cache di build. Solo separandolo in uno strato autonomo è possibile osservarlo, testarlo e ottimizzarlo singolarmente.</p>
+          <p>L'obiettivo di CrucibleCpp non è riscrivere il compilatore, ma trasformare le fasi di traduzione 1–4 in un componente dai confini netti e dal comportamento confrontabile.</p>
+
+          <h2>Principi di progettazione</h2>
+          <ul>
+            <li><strong>Il comportamento è allineato a GCC.</strong> Non “sembra ragionevole”, ma un confronto con il GCC reale.</li>
+            <li><strong>Ogni caso positivo deve essere compilato ed eseguito.</strong> Un preprocessamento riuscito non significa che l'output sia utilizzabile.</li>
+            <li><strong>Le versioni non si mescolano.</strong> Il profilo, gli header e i comandi di compilazione del GCC di destinazione devono essere coerenti.</li>
+            <li><strong>Le limitazioni non vengono nascoste.</strong> Le funzionalità non supportate sono indicate esplicitamente; “dovrebbe funzionare” non sostituisce una verifica.</li>
+            <li><strong>Prima Windows x64.</strong> Rendere affidabile un obiettivo, poi parlare di multipiattaforma.</li>
+          </ul>
+        </div>
+
+        <div class="card reveal" style="padding:30px">
+          <span class="eyebrow">Status</span>
+          <h3 class="mt-8">Stato attuale</h3>
+          <ul class="feature-list">
+            <li>Versione: V3.0.1</li>
+            <li>Piattaforma: Windows x64 / UCRT64</li>
+            <li>GCC di destinazione: 13.3 / 14.3 / 15.2</li>
+            <li>Standard: C++11 / 14 / 17 / 20</li>
+            <li>Test: tre suite a 65/65</li>
+            <li>Licenza: CC BY-NC 4.0</li>
+          </ul>
+          <div class="note mt-24">Il codice sorgente del sito ufficiale non è attualmente pubblico. Il codice del prodotto e le informazioni di rilascio di CrucibleCpp restano quelli del repository GitHub.</div>
+          <a class="btn btn-sm mt-16" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">Apri il repository GitHub</a>
+        </div>
+      </div>
+
+      <div class="card reveal mt-32" style="padding:34px">
+        <div class="grid g3">
+          <div><div class="eyebrow">Author</div><h3 class="mt-8">TomatoOyster</h3><p class="muted small mt-8">Sviluppatore indipendente. Si occupa di toolchain C++, sistemi di build e infrastrutture ingegneristiche verificabili.</p></div>
+          <div><div class="eyebrow">Project</div><h3 class="mt-8">CrucibleCpp</h3><p class="muted small mt-8">Preprocessore C++ autonomo per Windows x64, pensato per sostituire <code>g++ -E</code> nel processo di build.</p></div>
+          <div><div class="eyebrow">Contact</div><h3 class="mt-8">GitHub</h3><p class="muted small mt-8">Domande, suggerimenti e informazioni di rilascio sono gestiti tramite GitHub Issues / Releases.</p><a class="small" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/issues" rel="noopener">Invia una Issue →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Preprocessore C++ autonomo per Windows x64.</p></div><div><h4>Prodotto</h4><a href="features.html">Funzionalità</a><a href="download.html">Download</a><a href="changelog.html">Changelog</a></div><div><h4>Risorse</h4><a href="docs.html">Documentazione</a><a href="license.html">Licenza</a><a href="about.html">Informazioni</a></div><div><h4>Link esterni</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 e successive: CC BY-NC 4.0 · V2.9.0 e precedenti: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

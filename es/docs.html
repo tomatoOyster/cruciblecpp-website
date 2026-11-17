@@ -1,2 +1,147 @@
 <!doctype html>
-<html lang="es" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#docs"><title>CrucibleCpp — es / docs</title></head><body><p><a href="index.html#docs">Open translated section →</a></p><script>location.replace('index.html#docs');</script></body></html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentación — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="Documentación de inicio rápido, línea de comandos, selección de la versión de GCC, PCH, diagnósticos y compatibilidad de CrucibleCpp.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="features.html">Funciones</a><a href="docs.html">Documentación</a><a href="download.html">Descargar</a><a href="changelog.html">Registro de cambios</a><a href="license.html">Licencia</a><a href="about.html">Acerca de</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Español</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Seleccionar idioma"><li><a role="option" href="/" data-locale="/">Chino simplificado<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/" class="current" aria-selected="true">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Más idiomas <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Descargar V3.0.1</a><button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">Menú</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Documentation</span>
+      <h1>Empiece por el primer comando</h1>
+      <p class="lead">Esta página abarca la instalación, la selección del GCC de destino, las líneas de comandos habituales, PCH, los diagnósticos y la solución de problemas. La implementación completa y la matriz de pruebas son las que figuran en el repositorio de GitHub.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns:230px minmax(0,1fr);gap:44px;align-items:start">
+        <aside class="card reveal" style="position:sticky;top:96px;padding:18px">
+          <h4 style="color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase">En esta página</h4>
+          <div style="display:flex;flex-direction:column;gap:3px;margin-top:10px">
+            <a href="#install" class="small">Instalación</a>
+            <a href="#quickstart" class="small">Inicio rápido</a>
+            <a href="#gcc" class="small">Seleccionar GCC</a>
+            <a href="#cli" class="small">Línea de comandos</a>
+            <a href="#pch" class="small">PCH</a>
+            <a href="#diagnostics" class="small">Diagnósticos</a>
+            <a href="#troubleshooting" class="small">Solución de problemas</a>
+          </div>
+        </aside>
+
+        <div class="prose">
+          <h2 id="install">Instalación</h2>
+          <p>Descargue el paquete comprimido de Windows x64 y descomprímalo en cualquier directorio. CrucibleCpp es un programa de archivo único enlazado estáticamente, por lo que no hay que instalar ningún runtime.</p>
+          <div class="codeblock">cruciblecpp-preprocessor.exe --version
+# cruciblecpp-preprocessor 3.0.1</div>
+          <div class="note">Objetivo de producción actual: Windows x64 + MinGW-w64 UCRT64. No se garantiza la compatibilidad con otras plataformas, ABI y versiones de GCC.</div>
+
+          <h2 id="quickstart">Inicio rápido</h2>
+          <p>Primero compruebe que PATH contiene el  <code>g++.exe</code>. Después sustituya directamente su  <code>g++ -E</code>: </p>
+          <div class="codeblock"># Preprocesar
+.\cruciblecpp-preprocessor.exe -P -std=c++20 src\main.cpp -o build\main.i
+
+# Compilar con el mismo GCC
+g++ -std=c++20 build\main.i -o build\main.exe</div>
+          <p>Si no ha añadido el GCC de destino a PATH, use  <code>--gcc</code>  para especificarlo explícitamente:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --gcc "D:\GCC1413\gcc14\bin\g++.exe" `
+  -P -std=c++20 src\main.cpp -o build\main.i</div>
+
+          <h2 id="gcc">Seleccionar GCC</h2>
+          <p>CrucibleCpp usa las macros predefinidas del GCC de destino, la información de <code>__has_*</code>  y las rutas de búsqueda de include. No use un perfil de GCC 15 para preprocesar encabezados de GCC 14.</p>
+          <div class="table-wrap"><table><thead><tr><th>Método</th><th>Comportamiento</th></tr></thead><tbody>
+            <tr><td><code>--gcc-version=13|14|15</code></td><td>Busca en PATH el compilador admitido de versión más alta que coincida con la versión mayor</td></tr>
+            <tr><td><code>--gcc &lt;g++.exe&gt;</code></td><td>Usa directamente el compilador indicado y lee su versión y sus rutas de include</td></tr>
+            <tr><td>Sin especificar</td><td>Explora PATH y elige de forma predeterminada la versión admitida más alta (15 → 14 → 13)</td></tr>
+          </tbody></table></div>
+          <div class="note">La detección automática solo explora PATH. Si está instalado en otro directorio, añádalo a PATH, o use  <code>--gcc</code>, y no dependa de una letra de unidad fija.</div>
+          <p>Perfiles estándar admitidos:</p>
+          <div class="codeblock">-std=c++11   C++11 profile
+-std=c++14   C++14 profile
+-std=c++17   C++17 profile
+-std=c++20   C++20 profile</div>
+
+          <h2 id="cli">Líneas de comandos habituales</h2>
+          <div class="table-wrap"><table><thead><tr><th>Parámetros</th><th>Función</th></tr></thead><tbody>
+            <tr><td><code>-P</code></td><td>No genera line markers</td></tr>
+            <tr><td><code>-o &lt;file&gt;</code></td><td>Archivo de salida</td></tr>
+            <tr><td><code>-I &lt;dir&gt;</code></td><td>Añade un directorio de include</td></tr>
+            <tr><td><code>-isystem &lt;dir&gt;</code></td><td>Directorios de encabezados del sistema</td></tr>
+            <tr><td><code>-D / -U</code></td><td>Definir / anular macros</td></tr>
+            <tr><td><code>-include &lt;file&gt;</code></td><td>Inclusión forzada</td></tr>
+            <tr><td><code>-MD -MF -MT</code></td><td>Generar archivos de dependencias de Make/CMake</td></tr>
+            <tr><td><code>-finput-charset</code> / <code>-fexec-charset</code></td><td>Juego de caracteres de entrada / ejecución</td></tr>
+            <tr><td><code>--embed-dir &lt;dir&gt;</code></td><td><code>#embed</code>  directorios de búsqueda</td></tr>
+            <tr><td><code>--analysis-json &lt;file&gt;</code></td><td>Genera el grafo de include, la traza de macros y los registros de PCH</td></tr>
+          </tbody></table></div>
+
+          <h2 id="pch">PCH</h2>
+          <p>El  <code>g++ -E</code>  de GCC no utiliza  <code>.gch</code>; el PCH solo se usa durante la compilación real. De forma predeterminada, CrucibleCpp lee el código fuente de los encabezados y, opcionalmente, puede validar, registrar y almacenar en caché los PCH generados externamente.</p>
+          <div class="codeblock"># Avisar cuando se encuentre un .gch
+--pch=warn
+
+# Error inmediato al encontrar un .gch
+--pch=error
+
+# Registrar en el JSON de análisis los PCH ignorados
+--pch=report</div>
+          <p>Activar la caché de PCH:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --pch-cache .cache\pch `
+  --pch-cache-stats .cache\pch\stats.json `
+  -P src\main.cpp -o build\main.i</div>
+          <p>El manifest de la caché registra la ruta del compilador, la versión, el hash del compilador y el hash de las opciones. Los PCH de GCC 13/14/15 no se confunden entre sí.</p>
+
+          <h2 id="diagnostics">Diagnósticos</h2>
+          <p>De forma predeterminada, genera líneas de código fuente y caret al estilo de GCC. Puede desactivarlo o ajustarlo:</p>
+          <div class="codeblock">-fdiagnostics-color=auto|always|never
+-fno-diagnostics-show-caret
+-fno-diagnostics-show-option
+-Werror
+-Wno-error=name
+--max-errors 20</div>
+          <p>Admite  <code>#pragma GCC diagnostic push/pop/ignored/warning/error</code>  y  <code>#pragma GCC system_header</code>. Los encabezados incluidos mediante  <code>-isystem</code>  suprimen las advertencias habituales de forma predeterminada, y <code>-Wsystem-headers</code>  puede volver a mostrarlas.</p>
+
+          <h2 id="troubleshooting">Solución de problemas</h2>
+          <h3>No se encuentran los encabezados de la biblioteca estándar</h3>
+          <p>El compilador de destino no está en PATH. Use  <code>--gcc</code>  para especificarlo, o añada el directorio  <code>bin</code>  a PATH. También puede usar  <code>-isystem</code>  para pasarlo explícitamente.</p>
+          <h3>Se ha seleccionado una versión de GCC incorrecta</h3>
+          <p>Use  <code>--gcc-version=13|14|15</code>  para fijar la versión mayor, o use  <code>--gcc</code>  para apuntar al  <code>g++.exe</code>. No mezcle un target profile con encabezados de otra versión.</p>
+          <h3>La caché de PCH informa de «corrupt»</h3>
+          <p>El PCH no coincide con el compilador ni con las opciones actuales, o el archivo está dañado. Elimine la entrada de caché correspondiente y vuelva a generarlo; también puede desactivar la caché de PCH y dejar que lea el código fuente de los encabezados.</p>
+          <h3>La salida no se puede compilar con GCC</h3>
+          <p>Primero asegúrese de que el preprocesado y la compilación usan la misma versión de GCC y  <code>-std</code>. Después compile por separado el “.i” generado por CrucibleCpp para comprobar si el problema procede de la fase de preprocesado.</p>
+
+          <div class="note warn" style="margin-top:34px">CrucibleCpp es un preprocesador, no un compilador. No se ocupa de la generación de código, la optimización, el enlazado ni del análisis del formato binario interno de los PCH de GCC.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Un preprocesador de C++ independiente para Windows x64.</p></div><div><h4>Producto</h4><a href="features.html">Funciones</a><a href="download.html">Descargar</a><a href="changelog.html">Registro de cambios</a></div><div><h4>Recursos</h4><a href="docs.html">Documentación</a><a href="license.html">Licencia</a><a href="about.html">Acerca de</a></div><div><h4>Externo</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 y posteriores: CC BY-NC 4.0 · V2.9.0 y anteriores: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

@@ -1,19 +1,189 @@
-<!doctype html><html lang="he" dir="rtl" translate="no"><head><meta charset="utf-8"><meta name="google" content="notranslate"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CrucibleCpp — עברית</title><meta name="description" content="CrucibleCpp — עברית"><meta name="theme-color" content="#dffbf6"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=6"></head><body>
-<header class="site-header"><div class="nav"><a class="brand" href="/he/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><nav class="nav-links"><a href="#features">יכולות</a><a href="#docs">תיעוד</a><a href="#download">הורדה</a><a href="#changelog">שינויים</a><a href="#license">רישיון</a><a href="#about">אודות</a><a href="/languages.html">כל השפות</a></nav><div class="nav-actions"><a class="btn btn-sm btn-primary" href="#download">הורד V3.0.1</a></div></div></header>
-<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">WINDOWS X64 · GCC 13 / 14 / 15</span><h1>הפוך את העיבוד המקדים לדטרמיניסטי</h1><p class="lead">CrucibleCpp הוא קדם-מעבד C++ עצמאי. הוא מבצע את שלבים 1–4 ומפיק <code>.i</code> ש-GCC היעד יכול לקמפל ישירות.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">הורד V3.0.1 ↓</a><a class="btn" href="#features">יכולות →</a></div><div class="hero-meta"><span><i class="dot"></i> CC BY-NC 4.0</span><span><i class="dot"></i> תלויות</span></div></div><div class="terminal"><div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell — cruciblecpp</span></div><pre><span class="c"># target GCC profile + headers</span>
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrucibleCpp Preprocessor — קדם־מעבד C++ עצמאי ל-Windows</title>
+  <meta name="description" content="CrucibleCpp הוא קדם־מעבד C++ עצמאי ל-Windows x64, מחליף את g++ -E, ותומך ב-GCC 13.3 / 14.3 / 15.2 וב-C++11/14/17/20.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="ניווט ראשי">
+      <a href="index.html">דף הבית</a>
+      <a href="features.html">תכונות</a>
+      <a href="docs.html">תיעוד</a>
+      <a href="download.html">הורדה</a>
+      <a href="changelog.html">יומן שינויים</a>
+      <a href="license.html">רישיון</a>
+      <a href="about.html">אודות</a>
+    </nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">עברית</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><rect y="1.5" width="20" height="1.3" fill="#0038b8"/><rect y="11.2" width="20" height="1.3" fill="#0038b8"/><path d="M10 4.2l1.7 3H8.3zM10 9.8l-1.7-3h3.4z" fill="#0038b8"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="בחירת שפה"><li><a role="option" href="/" data-locale="/">סינית מפושטת<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">שפות נוספות <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">הורדת V3.0.1</a>
+      <button class="menu-toggle" aria-label="פתיחת התפריט" aria-expanded="false">תפריט</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Windows x64 · GCC 13 / 14 / 15</span>
+        <h1>להחזיר את העיבוד המקדים<br>אל הדטרמיניזם</h1>
+        <p class="lead">CrucibleCpp הוא קדם־מעבד C++ עצמאי. הוא קורא קובצי מקור, משלים את שלבי התרגום 1–4, ופולט קובצי <code>.i</code> שאפשר למסור ישירות ל-GCC להמשך הידור.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="download.html">הורדת V3.0.1 <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="docs.html">קראו את התיעוד <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="dot"></i> CC BY-NC 4.0</span>
+          <span><i class="dot"></i> ללא התקנה</span>
+          <span><i class="dot"></i> תוכנית הרצה בקובץ בודד</span>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell - cruciblecpp</span></div>
+        <pre><span class="c"># 用目标 GCC 的 profile 和头文件预处理</span>
 <span class="b">PS&gt;</span> .\cruciblecpp-preprocessor.exe <span class="g">--gcc-version=15</span> `
        -P src\main.cpp -o build\main.i
 
+<span class="c"># 输出可直接交给 GCC 编译</span>
 <span class="b">PS&gt;</span> g++ -std=c++20 build\main.i -o build\main.exe
-<span class="o">✓</span> 65/65 tests</pre></div></div></section>
-<div class="wrap"><div class="stats"><div class="stat"><strong>3</strong><span>גרסאות GCC</span></div><div class="stat"><strong>4</strong><span>פרופילי C++</span></div><div class="stat"><strong>65/65</strong><span>CTest לכל GCC</span></div><div class="stat"><strong>0</strong><span>תלויות</span></div></div></div>
-<section class="section" id="features"><div class="wrap"><span class="eyebrow">WHY CRUCIBLECPP</span><h2 class="mt-8">תאימות</h2><div class="grid g3 mt-32"><article class="card"><h3>גרסת GCC מפורשת</h3><p>בחר עם <code>--gcc-version</code> או <code>--gcc</code>.</p></article><article class="card"><h3>אבחון בסגנון GCC</h3><p>Caret, include trace, warning ID ו-<code>-Werror</code>.</p></article><article class="card"><h3>פרויקטים אמיתיים</h3><p>nlohmann/json, fmt ו-spdlog עם GCC 13/14/15.</p></article></div><div class="table-wrap mt-24"><table><thead><tr><th>יעד</th><th>מצב</th></tr></thead><tbody><tr><td><code>GCC 15.2</code></td><td><span class="badge good">מלא</span></td></tr><tr><td><code>GCC 14.3</code></td><td><span class="badge good">מלא</span></td></tr><tr><td><code>GCC 13.3</code></td><td><span class="badge good">מלא</span></td></tr><tr><td>Windows x64 / UCRT64</td><td><span class="badge good">נתמך</span></td></tr><tr><td>Linux / MSVC / Clang</td><td><span class="badge">לא נתמך</span></td></tr></tbody></table></div></div></section>
-<section class="section" id="docs"><div class="wrap"><span class="eyebrow">תיעוד</span><h2 class="mt-8">התחלה מהירה</h2><p class="lead mt-16">הצב את GCC היעד ב-PATH והחלף את <code>g++ -E</code>.</p><div class="codeblock mt-16">cruciblecpp-preprocessor.exe -P `
-  -std=c++20 src\main.cpp -o build\main.i
+<span class="b">PS&gt;</span> .\build\main.exe
 
-g++ -std=c++20 build\main.i -o build\main.exe</div></div></section>
-<section class="section" id="download" style="padding-top:0"><div class="wrap"><span class="eyebrow">הורדה</span><h2 class="mt-8">V3.0.1</h2><div class="download-hero mt-24"><div class="card download-box"><h2 style="font-size:30px">CrucibleCpp V3.0.1</h2><p class="muted mt-8">Windows x64 · MinGW-w64 UCRT64</p><a class="btn btn-primary" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor-v3.0.1-win64.zip" rel="noopener">ארכיון מלא ↓</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor.exe" rel="noopener">exe בלבד</a><a class="btn btn-ghost" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/tag/v3.0.1" rel="noopener">GitHub Release</a></div><div class="card download-box"><h3>SHA-256</h3><div class="hash">8a0928adefbfb01c9bd69965d6cd4e96fede61d904e47c98f365d8cdeec96b32</div><div class="note mt-24">V3.0.0 ואילך: CC BY-NC 4.0.</div></div></div></div></section>
-<section class="section" id="changelog" style="padding-top:0"><div class="wrap"><span class="eyebrow">היסטוריית גרסאות</span><h2 class="mt-8">היסטוריית גרסאות</h2><div class="grid g3 mt-24"><div class="card"><h3>V3.0.1</h3><p class="muted mt-8">תיקוני digraph, אימות realworld ו-nlohmann/json.</p></div><div class="card"><h3>V3.0.0</h3><p class="muted mt-8">גבול רישיון ו-PCH מלא ל-GCC13/14/15.</p></div><div class="card"><h3>V2.9.0</h3><p class="muted mt-8">פרופילי GCC 13.3 / 14.3 ובחירת יעד.</p></div></div></div></section>
-<section class="section" id="license" style="padding-top:0"><div class="wrap"><span class="eyebrow">רישיון</span><h2 class="mt-8">רישיון</h2><div class="grid g2 mt-24"><div class="card"><h3>V3.0.0+</h3><p class="muted mt-8">V3.0.0 ואילך: CC BY-NC 4.0.</p><a href="/LICENSE">LICENSE →</a></div><div class="card"><h3>≤ V2.9.0</h3><p class="muted mt-8">V2.9.0 וקודם: MIT.</p><a href="/LICENSE-MIT">MIT →</a></div></div></div></section>
-<section class="section" id="about" style="padding-top:0"><div class="wrap"><div class="card" style="padding:34px"><span class="eyebrow">אודות</span><h2 class="mt-8">אודות</h2><p class="muted mt-8">שכבה ניתנת לאימות, לא עוד מרחיב מאקרו. CrucibleCpp הופך את שלבים 1–4 לניתנים לצפייה ולבדיקה.</p><div class="mt-24"><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a></div></div></div></section>
-</main><footer class="footer"><div class="wrap"><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp</span><span>V3.0.1 · CC BY-NC 4.0</span></div></div></footer></body></html>
+<span class="o">✓</span> preprocess complete
+<span class="o">✓</span> 65/65 tests · GCC 15.2 / 14.3 / 13.3</pre>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><strong>3</strong><span>גרסאות GCC ראשיות</span></div>
+      <div class="stat"><strong>4</strong><span>פרופילי תקן C++</span></div>
+      <div class="stat"><strong>65/65</strong><span>שלוש מערכות CTest</span></div>
+      <div class="stat"><strong>0</strong><span>תלויות זמן ריצה</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Why CrucibleCpp</span>
+      <h2 class="mt-8">לא עוד מרחיב מאקרו,<br>אלא שכבת עיבוד מקדים ניתנת לאימות</h2>
+      <p class="lead mt-16" style="max-width:720px">כל דוגמה חיובית עוברת באותה שרשרת: CrucibleCpp מייצר <code>.i</code>, ה-GCC המתאים מקמפל ל-exe ואז מריצים בפועל. ההתנהגות מבוססת על GCC 15.2, 14.3, 13.3.</p>
+      <div class="grid g3 mt-32">
+        <article class="card reveal">
+          <div class="card-icon">01</div>
+          <h3>גרסת יעד מוגדרת</h3>
+          <p>באמצעות <code>--gcc-version</code> או <code>--gcc</code> בוחרים קומפיילר יעד. הפרופיל, המאקרואים המובנים ונתיבי ה-include מגיעים מאותו יעד ואינם מעורבבים.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">02</div>
+          <h3>התאמה לאבחוני GCC</h3>
+          <p>caret בקוד המקור, include trace, warning ID, <code>-Werror</code>, מחסנית pragma diagnostic, וכן דיכוי אזהרות של כותרות מערכת.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">03</div>
+          <h3>אימות בפרויקטים אמיתיים</h3>
+          <p>nlohmann/json, fmt ו-spdlog עוברים עיבוד מקדים, הידור והרצה בשלוש גרסאות GCC, ומכסים קובצי כותרת אמיתיים ושילובי מאקרואים.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">04</div>
+          <h3>UCN מלא</h3>
+          <p><code>\uXXXX</code> וגם <code>\UXXXXXXXX</code> משתתפים במזהים, <code>#</code>, <code>##</code>; בדיקות תקינות ונרמול פלט מיושרים עם GCC.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">05</div>
+          <h3>#embed</h3>
+          <p>הטמעת בינארי, <code>limit</code>, <code>gnu::offset</code>, <code>prefix</code>, <code>suffix</code>, <code>if_empty</code>, וכן <code>__has_embed</code>. </p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">06</div>
+          <h3>בידוד גרסאות PCH</h3>
+          <p>מדיניות PCH והמטמון זמינים ב-GCC 13 / 14 / 15. ה-manifest מתעד את נתיב הקומפיילר, הגרסה וגיבוב קובץ ההרצה, כדי למנוע פגיעות שגויות בין גרסאות.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal">
+          <span class="eyebrow">Compatibility</span>
+          <h2 class="mt-8">מתחילים ממטריצה ברורה</h2>
+          <p class="lead mt-16">יעד הייצור הנוכחי נעול על Windows x64 + MinGW-w64 UCRT64. גרסאות GCC שונות משתמשות בפרופיל ובקובצי הכותרת שלהן, והפלט מאומת בהידור בפועל על ידי ה-GCC המתאים.</p>
+          <div class="table-wrap mt-24">
+            <table>
+              <thead><tr><th>יעד</th><th>סטטוס</th><th>הסבר</th></tr></thead>
+              <tbody>
+                <tr><td><code>GCC 15.2</code></td><td><span class="badge good">מלא</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 14.3</code></td><td><span class="badge good">מלא</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 13.3</code></td><td><span class="badge good">מלא</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td>Windows x64 / UCRT64</td><td><span class="badge good">נתמך</span></td><td>יעד הייצור הנוכחי</td></tr>
+                <tr><td>Linux / MSVC / Clang</td><td><span class="badge">לא נתמך</span></td><td>הארכיטקטורה שומרת נקודות הרחבה</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="eyebrow">Test chain</span>
+          <h3 class="mt-8">אימות אינו "נראה שזה עובד"</h3>
+          <ul class="feature-list">
+            <li>GCC15 / 14 / 13 — שלוש מערכות CTest, כל אחת 65/65</li>
+            <li>differential corpus 13/13: קודי יציאה, אבחונים וזרימת טוקנים</li>
+            <li>realworld corpus 3/3: nlohmann/json, fmt, spdlog</li>
+            <li>כל דוגמה חיובית מורצת בפועל לאחר יצירת ה-exe</li>
+            <li>מדיניות PCH והמטמון עוברים בכל שלוש הגרסאות</li>
+            <li>GCC <code>g++.dg/cpp</code> רגרסיה מתמשכת של testsuite</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; padding:30px 34px">
+        <div>
+          <span class="eyebrow">Get started</span>
+          <h2 style="font-size:30px" class="mt-8">הורדה, חילוץ והחלפה <code style="font-size:.72em">g++ -E</code></h2>
+          <p class="muted mt-8">הגרסה היציבה הנוכחית V3.0.1 · Windows x64 · exe בקובץ בודד.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="download.html">הורדת V3.0.1</a>
+          <a class="btn" href="docs.html">התחלה מהירה</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+        <p>קדם־מעבד C++ עצמאי ל-Windows x64. הופך את תוצאות העיבוד המקדים למוסברות, ניתנות לאימות ולשחזור.</p>
+      </div>
+      <div><h4>מוצר</h4><a href="features.html">תכונות</a><a href="download.html">הורדה</a><a href="changelog.html">יומן שינויים</a></div>
+      <div><h4>משאבים</h4><a href="docs.html">תיעוד</a><a href="license.html">רישיון</a><a href="about.html">אודות</a></div>
+      <div><h4>קישורים חיצוניים</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 ואילך: CC BY-NC 4.0 · V2.9.0 ומטה: MIT</span></div>
+  </div>
+</footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

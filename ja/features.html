@@ -1,2 +1,135 @@
 <!doctype html>
-<html lang="ja" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#features"><title>CrucibleCpp — ja / features</title></head><body><p><a href="index.html#features">Open translated section →</a></p><script>location.replace('index.html#features');</script></body></html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>機能 — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="CrucibleCpp の機能：GCC 13/14/15 プロファイル、診断、マクロ、UCN、#embed、PCH、差分検証。">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="メインナビゲーション"><a href="index.html">ホーム</a><a href="features.html">機能</a><a href="docs.html">ドキュメント</a><a href="download.html">ダウンロード</a><a href="changelog.html">変更履歴</a><a href="license.html">ライセンス</a><a href="about.html">概要</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">日本語</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="言語を選択"><li><a role="option" href="/" data-locale="/">簡体字中国語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/" class="current" aria-selected="true">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">その他の言語 <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">V3.0.1 をダウンロード</a><button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">メニュー</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Capabilities</span>
+      <h1>あらゆる層を<br>検証可能な動作に</h1>
+      <p class="lead">対象バージョンの選択、定義済みマクロ、診断から PCH、実プロジェクトまで、CrucibleCpp は「おそらく動く」に頼らず、再現可能なテスト経路で動作します。</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2">
+        <article class="card reveal">
+          <div class="card-icon">A</div>
+          <h3>対象バージョンとプロファイル</h3>
+          <p>1 つのプリプロセッサで 3 つの対象 GCC。選んだバージョンの定義済みマクロ、<code>__has_*</code> データと include 検索パスを使用します。</p>
+          <ul class="feature-list">
+            <li><code>--gcc-version=13|14|15</code></li>
+            <li><code>--gcc D:\path\to\g++.exe</code></li>
+            <li>PATH を自動検出し、デフォルトで最も新しい対応バージョンを選択</li>
+            <li>GCC 13.3 / 14.3 / 15.2 profile</li>
+            <li>C++11 / C++14 / C++17 / C++20</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">B</div>
+          <h3>診断システム</h3>
+          <p>実際のビルドシステムに向けた診断フォーマット。ソース行、caret、include trace、warning option を含み、単なるエラー文字列ではありません。</p>
+          <ul class="feature-list">
+            <li>GCC 形式の severity / option / caret</li>
+            <li><code>-Werror</code>、<code>-Wno-...</code>、<code>-Werror=...</code></li>
+            <li><code>#pragma GCC diagnostic push/pop</code></li>
+            <li><code>#pragma GCC system_header</code></li>
+            <li><code>-Wsystem-headers</code> とシステムヘッダーの抑制</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">C</div>
+          <h3>マクロとプリプロセスのセマンティクス</h3>
+          <p>オブジェクトマクロ、関数マクロ、空引数、可変引数マクロ、文字列化、token pasting、さらに GCC のカンマ除去拡張。</p>
+          <ul class="feature-list">
+            <li><code>#</code> と <code>##</code></li>
+            <li><code>__VA_OPT__</code>（C++20）</li>
+            <li><code>, ## __VA_ARGS__</code></li>
+            <li><code>defined</code> / <code>__has_include</code></li>
+            <li>macro trace と include グラフ分析 JSON</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">D</div>
+          <h3>UCN と #embed</h3>
+          <p>Universal character name は識別子と連結に参加し、<code>#embed</code> は GCC のセマンティクスに従ってバイナリリソースを埋め込みます。</p>
+          <ul class="feature-list">
+            <li><code>\uXXXX</code> / <code>\UXXXXXXXX</code></li>
+            <li>バックスラッシュ改行で形成される UCN</li>
+            <li><code>#</code> / <code>##</code> で UCN の表記を維持</li>
+            <li><code>#embed</code> + <code>limit</code></li>
+            <li><code>prefix</code> / <code>suffix</code> / <code>if_empty</code></li>
+            <li><code>gnu::offset</code> と <code>__has_embed</code></li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">E</div>
+          <h3>PCH とキャッシュ</h3>
+          <p>GCC 13/14/15 のいずれでも PCH ポリシーとキャッシュを利用できます。キャッシュは GCC PCH を直接解析しません。代わりに、検証、登録、無効化、追跡の対象は外部で生成された <code>.gch</code>。</p>
+          <ul class="feature-list">
+            <li><code>--pch=ignore|warn|error|report</code></li>
+            <li>include を強制する CMake PCH レイアウト</li>
+            <li>compiler のパス、バージョン、ハッシュによる分離</li>
+            <li>アトミック書き込み、ディレクトリロック、容量と経過時間に基づくクリーンアップ</li>
+            <li>ヒット率 / stale / corrupt の統計 JSON</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">F</div>
+          <h3>再現可能なテスト</h3>
+          <p>3 つの GCC、2 つの差分コーパス、実プロジェクトが協調して出力を検証し、「プリプロセス成功」だけをテストすることはありません。</p>
+          <ul class="feature-list">
+            <li>GCC15 / 14 / 13 それぞれ 65/65 の CTest</li>
+            <li>differential corpus 13/13</li>
+            <li>realworld corpus 3/3</li>
+            <li>CrucibleCpp <code>.i</code> → 対象 GCC → exe → 実行</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite による回帰</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section-tight">
+        <div class="card reveal" style="padding:30px 34px">
+          <span class="eyebrow">Positioning</span>
+          <h2 class="mt-8" style="font-size:30px">置き換えるのはプリプロセス工程であり、コンパイラではありません</h2>
+          <p class="lead mt-16" style="max-width:820px">CrucibleCpp はコード生成、最適化、GCC バイナリ PCH の解析を行いません。役割はソースファイルを確定した <code>.i</code> に変換し、診断、依存関係、分析可能な情報をビルドシステムに渡すことだけです。</p>
+          <div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="docs.html">完全なドキュメントを見る</a><a class="btn" href="download.html">V3.0.1 をダウンロード</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Windows x64 向けの独立した C++ プリプロセッサ。</p></div><div><h4>製品</h4><a href="features.html">機能</a><a href="download.html">ダウンロード</a><a href="changelog.html">変更履歴</a></div><div><h4>リソース</h4><a href="docs.html">ドキュメント</a><a href="license.html">ライセンス</a><a href="about.html">概要</a></div><div><h4>外部</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 以降：CC BY-NC 4.0 · V2.9.0 以前：MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

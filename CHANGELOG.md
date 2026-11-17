@@ -2,6 +2,18 @@
 
 All notable changes to the CrucibleCpp website.
 
+## v1.2.0 — 2026-11-18
+
+### Changed
+
+- Rebuilt every non-Chinese locale directly from the Chinese 7-page source
+- Every locale now has the same HTML structure, section ids, link count,
+  code blocks and text-node count as the Chinese source
+- Replaced section aliases with real translated pages
+- Added RTL direction for Arabic, Persian, Hebrew and Urdu
+- Verified 32 locales × 8 pages (index, features, docs, download, changelog,
+  license, about, 404) with a parity checker
+
 ## v1.1.0 — 2026-11-18
 
 ### Added

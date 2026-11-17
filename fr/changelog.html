@@ -1,2 +1,109 @@
 <!doctype html>
-<html lang="fr" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#changelog"><title>CrucibleCpp — fr / changelog</title></head><body><p><a href="index.html#changelog">Open translated section →</a></p><script>location.replace('index.html#changelog');</script></body></html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journal des modifications — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="Historique des versions de CrucibleCpp : V3.0.1, V3.0.0, V2.9.0, V2.7.0.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="features.html">Fonctionnalités</a><a href="docs.html">Documentation</a><a href="download.html">Télécharger</a><a href="changelog.html">Journal des modifications</a><a href="license.html">Licence</a><a href="about.html">À propos</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Français</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="6.67" height="14" fill="#0055a4"/><rect x="6.67" width="6.66" height="14" fill="#fff"/><rect x="13.33" width="6.67" height="14" fill="#ef4135"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Choisir la langue"><li><a role="option" href="/" data-locale="/">Chinois simplifié<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Plus de langues <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Télécharger V3.0.1</a><button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Changelog</span>
+      <h1>Historique des versions</h1>
+      <p class="lead">Seuls les jalons de version qui marquent une frontière sont conservés. Le détail complet des versions correctives intermédiaires est consultable dans l'historique des commits et les tags sur GitHub.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="date">2026-11-17 · latest</div>
+          <h3>V3.0.1 <span class="badge good">Stable</span></h3>
+          <ul>
+            <li>Corrige la gestion des digraphes dans les projets réels : conserve la façon dont GCC <code>-E</code> écrit <code>&lt;:</code> et gère correctement <code>&lt;::</code> en matière d'espacement de sortie.</li>
+            <li>Le corpus de projets réels exige désormais que le prétraitement et la compilation réussissent vraiment ; « les deux côtés ont échoué » n'est plus pris à tort pour une réussite.</li>
+            <li>Corrige l'agencement des includes de nlohmann/json en <code>nlohmann/json.hpp</code>. </li>
+            <li>Clonage depuis zéro, build, trois suites de tests GCC et validation sur de vrais projets : tout passe.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="date">2026-11-17</div>
+          <h3>V3.0.0 <span class="badge">Changement de licence</span></h3>
+          <ul>
+            <li>À partir de V3.0.0, passage à CC BY-NC 4.0 ; V2.9.0 et versions antérieures restent sous MIT.</li>
+            <li>Prise en charge complète du PCH pour GCC13/14/15 : suppression de la restriction de version, correction de la validation du magic PCH de GCC13/14.</li>
+            <li>Le manifeste du cache PCH enregistre le chemin du compilateur, sa version, le hash de l'exécutable et le hash des options.</li>
+            <li>Les trois suites CTest atteignent 65/65.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="date">2026-11-17</div>
+          <h3>V2.9.0 <span class="badge">GCC13/14</span></h3>
+          <ul>
+            <li>Ajout des profils C++11/14/17/20 pour GCC 13.3 / 14.3.</li>
+            <li>Ajout d'un jeu complet de données <code>__has_*</code> pour GCC13/14.</li>
+            <li>Ajout de <code>--gcc-version=13|14|15</code>, <code>--gcc &lt;path&gt;</code> et détection automatique du PATH.</li>
+            <li>Sélection des cibles pour les trois suites CTest et matrice smoke à trois compilateurs.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="date">2026-11-14</div>
+          <h3>V2.7.0 <span class="badge">Jalon fonctionnel</span></h3>
+          <ul>
+            <li>Implémentation de la directive <code>#embed</code> de GCC 15.2 : intégration binaire, <code>limit</code>, <code>gnu::offset</code>, <code>prefix</code>, <code>suffix</code>, <code>if_empty</code>. </li>
+            <li>Implémentation de <code>__has_embed</code>, qui renvoie 0/1/2.</li>
+            <li>Prise en charge complète des identifiants UCN : composition, contrôle de validité, sortie normalisée, orthographe de <code>#</code>/<code>##</code> préservée.</li>
+            <li>C++11 / C++14 / C++17 / C++20 profile. </li>
+            <li>Système de tests différentiels raccordé à la testsuite <code>g++.dg/cpp</code> de GCC.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="date">2026-11-12</div>
+          <h3>V2.6.1 <span class="badge">Amélioration des diagnostics</span></h3>
+          <ul>
+            <li>Lignes de source façon GCC, caret et trace des includes.</li>
+            <li><code>#error</code>/<code>#warning</code> préfixes, avertissements de redéfinition de macro, include manquant traité comme fatal.</li>
+            <li><code>-fdiagnostics-color</code>, ainsi que les options caret/option.</li>
+            <li><code>#pragma GCC diagnostic</code> pile d'états.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="card reveal mt-32" style="padding:26px 30px">
+        <h3>Versions antérieures</h3>
+        <p class="muted mt-8">Les Releases telles que v2.5.0, v2.2.0, v2.0.0 et v1.0.2 sont conservées. Les versions correctives intermédiaires ont été retirées de la page Releases, mais les tags Git restent intégralement conservés dans le dépôt.</p>
+        <a class="btn btn-sm mt-16" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/tags" rel="noopener">Voir tous les tags</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Préprocesseur C++ autonome pour Windows x64.</p></div><div><h4>Produit</h4><a href="features.html">Fonctionnalités</a><a href="download.html">Télécharger</a><a href="changelog.html">Journal des modifications</a></div><div><h4>Ressources</h4><a href="docs.html">Documentation</a><a href="license.html">Licence</a><a href="about.html">À propos</a></div><div><h4>Liens externes</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 et versions ultérieures : CC BY-NC 4.0 · V2.9.0 et versions antérieures : MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

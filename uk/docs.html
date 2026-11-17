@@ -1,1 +1,147 @@
-<!doctype html><html lang="uk" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#docs"><title>CrucibleCpp — uk</title></head><body><p><a href="index.html#docs">Open translated section →</a></p><script>location.replace('index.html#docs');</script></body></html>
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Документація — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="Документація CrucibleCpp: швидкий старт, командний рядок, вибір версії GCC, PCH, діагностика й сумісність.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Головна навігація"><a href="index.html">Головна</a><a href="features.html">Можливості</a><a href="docs.html">Документація</a><a href="download.html">Завантажити</a><a href="changelog.html">Історія змін</a><a href="license.html">Ліцензія</a><a href="about.html">Про проєкт</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Українська</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="7" fill="#0057b7"/><rect y="7" width="20" height="7" fill="#ffd700"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Вибрати мову"><li><a role="option" href="/" data-locale="/">Китайська (спрощена)<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Більше мов <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Завантажити V3.0.1</a><button class="menu-toggle" aria-label="Відкрити меню" aria-expanded="false">Меню</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Documentation</span>
+      <h1>Почніть із першої команди</h1>
+      <p class="lead">Ця сторінка охоплює встановлення, вибір цільового GCC, основні команди, PCH, діагностику та усунення неполадок. Повна реалізація й матриця тестів наведені в репозиторії GitHub.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns:230px minmax(0,1fr);gap:44px;align-items:start">
+        <aside class="card reveal" style="position:sticky;top:96px;padding:18px">
+          <h4 style="color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase">На цій сторінці</h4>
+          <div style="display:flex;flex-direction:column;gap:3px;margin-top:10px">
+            <a href="#install" class="small">Встановлення</a>
+            <a href="#quickstart" class="small">Швидкий старт</a>
+            <a href="#gcc" class="small">Вибір GCC</a>
+            <a href="#cli" class="small">Командний рядок</a>
+            <a href="#pch" class="small">PCH</a>
+            <a href="#diagnostics" class="small">Діагностика</a>
+            <a href="#troubleshooting" class="small">Усунення неполадок</a>
+          </div>
+        </aside>
+
+        <div class="prose">
+          <h2 id="install">Встановлення</h2>
+          <p>Завантажте архів для Windows x64 і розпакуйте його в будь-який каталог. CrucibleCpp — статично скомпонована однофайлова програма, середовище виконання встановлювати не потрібно.</p>
+          <div class="codeblock">cruciblecpp-preprocessor.exe --version
+# cruciblecpp-preprocessor 3.0.1</div>
+          <div class="note">Поточна ціль продакшну: Windows x64 + MinGW-w64 UCRT64. Підтримка інших платформ, ABI та версій GCC не гарантується.</div>
+
+          <h2 id="quickstart">Швидкий старт</h2>
+          <p>Спочатку переконайтеся, що в PATH є цільовий <code>g++.exe</code>. Потім просто замініть старий <code>g++ -E</code>: </p>
+          <div class="codeblock"># Препроцесування
+.\cruciblecpp-preprocessor.exe -P -std=c++20 src\main.cpp -o build\main.i
+
+# Компіляція тим самим GCC
+g++ -std=c++20 build\main.i -o build\main.exe</div>
+          <p>Якщо цільовий GCC не додано до PATH, використайте <code>--gcc</code> для явного зазначення:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --gcc "D:\GCC1413\gcc14\bin\g++.exe" `
+  -P -std=c++20 src\main.cpp -o build\main.i</div>
+
+          <h2 id="gcc">Вибір GCC</h2>
+          <p>CrucibleCpp використовує попередньо визначені макроси цільового GCC, <code>__has_*</code> дані та шляхи пошуку include. Не використовуйте профіль GCC15 для препроцесування заголовків GCC14.</p>
+          <div class="table-wrap"><table><thead><tr><th>Спосіб</th><th>Поведінка</th></tr></thead><tbody>
+            <tr><td><code>--gcc-version=13|14|15</code></td><td>Знайти в PATH найвищий підтримуваний компілятор відповідної мажорної версії</td></tr>
+            <tr><td><code>--gcc &lt;g++.exe&gt;</code></td><td>Використовувати вказаний компілятор, зчитуючи його версію та шляхи include</td></tr>
+            <tr><td>Не вказано</td><td>Сканувати PATH і за замовчуванням вибирати найвищу підтримувану версію (15 → 14 → 13)</td></tr>
+          </tbody></table></div>
+          <div class="note">Автовизначення сканує лише PATH. Якщо компілятор встановлено в іншому каталозі, додайте його до PATH або використайте <code>--gcc</code>, не покладайтеся на фіксовану букву диска.</div>
+          <p>Підтримувані стандартні профілі:</p>
+          <div class="codeblock">-std=c++11   C++11 profile
+-std=c++14   C++14 profile
+-std=c++17   C++17 profile
+-std=c++20   C++20 profile</div>
+
+          <h2 id="cli">Основні команди</h2>
+          <div class="table-wrap"><table><thead><tr><th>Параметр</th><th>Призначення</th></tr></thead><tbody>
+            <tr><td><code>-P</code></td><td>Не виводити line markers</td></tr>
+            <tr><td><code>-o &lt;file&gt;</code></td><td>Вихідний файл</td></tr>
+            <tr><td><code>-I &lt;dir&gt;</code></td><td>Додати каталог include</td></tr>
+            <tr><td><code>-isystem &lt;dir&gt;</code></td><td>Каталог системних заголовків</td></tr>
+            <tr><td><code>-D / -U</code></td><td>Визначити / скасувати макрос</td></tr>
+            <tr><td><code>-include &lt;file&gt;</code></td><td>Примусове включення</td></tr>
+            <tr><td><code>-MD -MF -MT</code></td><td>Створювати файли залежностей Make/CMake</td></tr>
+            <tr><td><code>-finput-charset</code> / <code>-fexec-charset</code></td><td>Вхідний / виконуваний набір символів</td></tr>
+            <tr><td><code>--embed-dir &lt;dir&gt;</code></td><td><code>#embed</code> каталоги пошуку</td></tr>
+            <tr><td><code>--analysis-json &lt;file&gt;</code></td><td>Виводити граф include, macro trace і записи PCH</td></tr>
+          </tbody></table></div>
+
+          <h2 id="pch">PCH</h2>
+          <p>GCC-компілятор <code>g++ -E</code> не використовує <code>.gch</code>; PCH використовується лише під час справжньої компіляції. CrucibleCpp за замовчуванням читає вихідні тексти заголовків і за бажанням перевіряє, реєструє та кешує зовнішньо створені PCH.</p>
+          <div class="codeblock"># Попереджати, якщо знайдено .gch
+--pch=warn
+
+# Одразу видавати помилку, якщо знайдено .gch
+--pch=error
+
+# Записувати проігноровані PCH в analysis JSON
+--pch=report</div>
+          <p>Увімкнення кешу PCH:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --pch-cache .cache\pch `
+  --pch-cache-stats .cache\pch\stats.json `
+  -P src\main.cpp -o build\main.i</div>
+          <p>Маніфест кешу записує шлях до компілятора, версію, хеш компілятора й хеш опцій. PCH від GCC13/14/15 не плутаються між собою.</p>
+
+          <h2 id="diagnostics">Діагностика</h2>
+          <p>За замовчуванням виводяться рядки вихідного коду в стилі GCC і caret. Це можна вимкнути або налаштувати:</p>
+          <div class="codeblock">-fdiagnostics-color=auto|always|never
+-fno-diagnostics-show-caret
+-fno-diagnostics-show-option
+-Werror
+-Wno-error=name
+--max-errors 20</div>
+          <p>Підтримує <code>#pragma GCC diagnostic push/pop/ignored/warning/error</code> і <code>#pragma GCC system_header</code>. Заголовки з <code>-isystem</code> за замовчуванням придушують звичайні попередження, а <code>-Wsystem-headers</code> дозволяє знову їх показати.</p>
+
+          <h2 id="troubleshooting">Усунення неполадок</h2>
+          <h3>Не знайдено заголовків стандартної бібліотеки</h3>
+          <p>Цільовий компілятор відсутній у PATH. Укажіть його за допомогою <code>--gcc</code> або додайте <code>bin</code> до PATH. Також можна використати <code>-isystem</code> для явної передачі.</p>
+          <h3>Вибрано неправильну версію GCC</h3>
+          <p>Використовуйте <code>--gcc-version=13|14|15</code> для фіксації мажорної версії або <code>--gcc</code> для вказівки конкретного <code>g++.exe</code>. Не змішуйте цільовий профіль із заголовками іншої версії.</p>
+          <h3>Кеш PCH повідомляє про corrupt</h3>
+          <p>PCH не відповідає поточному компілятору/опціям або файл пошкоджено. Видаліть відповідний запис кешу й створіть PCH заново; також можна повністю вимкнути кеш PCH, щоб він читав вихідні тексти заголовків.</p>
+          <h3>Вивід не компілюється GCC</h3>
+          <p>Спочатку переконайтеся, що препроцесування й компіляція використовують ту саму версію GCC і <code>-std</code>. Потім окремо скомпілюйте .i, створений CrucibleCpp, щоб перевірити, чи проблема походить з етапу препроцесування.</p>
+
+          <div class="note warn" style="margin-top:34px">CrucibleCpp — препроцесор, а не компілятор. Він не відповідає за генерацію коду, оптимізацію, компонування та розбір внутрішнього формату двійкових PCH GCC.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Самостійний препроцесор C++ для Windows x64.</p></div><div><h4>Продукт</h4><a href="features.html">Можливості</a><a href="download.html">Завантажити</a><a href="changelog.html">Історія змін</a></div><div><h4>Ресурси</h4><a href="docs.html">Документація</a><a href="license.html">Ліцензія</a><a href="about.html">Про проєкт</a></div><div><h4>Зовнішні</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 і новіші: CC BY-NC 4.0 · V2.9.0 і старіші: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

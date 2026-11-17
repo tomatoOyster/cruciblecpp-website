@@ -1,1 +1,147 @@
-<!doctype html><html lang="ro" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#docs"><title>CrucibleCpp — ro</title></head><body><p><a href="index.html#docs">Open translated section →</a></p><script>location.replace('index.html#docs');</script></body></html>
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentație — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="Documentație CrucibleCpp pentru inițiere rapidă, linia de comandă, alegerea versiunii GCC, PCH, diagnostice și compatibilitate.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Navigare principală"><a href="index.html">Acasă</a><a href="features.html">Funcții</a><a href="docs.html">Documentație</a><a href="download.html">Descărcare</a><a href="changelog.html">Istoric modificări</a><a href="license.html">Licență</a><a href="about.html">Despre</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Română</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="6.67" height="14" fill="#002b7f"/><rect x="6.67" width="6.66" height="14" fill="#fcd116"/><rect x="13.33" width="6.67" height="14" fill="#ce1126"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Selectați limba"><li><a role="option" href="/" data-locale="/">Chineză simplificată<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Mai multe limbi <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Descărcați V3.0.1</a><button class="menu-toggle" aria-label="Deschideți meniul" aria-expanded="false">Meniu</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Documentation</span>
+      <h1>Începeți cu prima comandă</h1>
+      <p class="lead">Această pagină acoperă instalarea, alegerea GCC țintă, comenzile uzuale, PCH, diagnosticele și depanarea. Implementarea completă și matricea de testare sunt cele din depozitul GitHub.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns:230px minmax(0,1fr);gap:44px;align-items:start">
+        <aside class="card reveal" style="position:sticky;top:96px;padding:18px">
+          <h4 style="color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase">Cuprinsul paginii</h4>
+          <div style="display:flex;flex-direction:column;gap:3px;margin-top:10px">
+            <a href="#install" class="small">Instalare</a>
+            <a href="#quickstart" class="small">Start rapid</a>
+            <a href="#gcc" class="small">Alegerea GCC</a>
+            <a href="#cli" class="small">Linia de comandă</a>
+            <a href="#pch" class="small">PCH</a>
+            <a href="#diagnostics" class="small">Diagnostice</a>
+            <a href="#troubleshooting" class="small">Depanare</a>
+          </div>
+        </aside>
+
+        <div class="prose">
+          <h2 id="install">Instalare</h2>
+          <p>Descărcați arhiva pentru Windows x64 și dezarhivați-o în orice director. CrucibleCpp este un program unic, cu link-editare statică, care nu necesită instalarea unui runtime.</p>
+          <div class="codeblock">cruciblecpp-preprocessor.exe --version
+# cruciblecpp-preprocessor 3.0.1</div>
+          <div class="note">Ținta actuală de producție: Windows x64 + MinGW-w64 UCRT64. Alte platforme, ABI-uri și versiuni GCC nu sunt acceptate oficial.</div>
+
+          <h2 id="quickstart">Start rapid</h2>
+          <p>Verificați mai întâi că în PATH se găsește <code>g++.exe</code>. Apoi înlocuiți direct comanda <code>g++ -E</code>: </p>
+          <div class="codeblock"># Preprocesare
+.\cruciblecpp-preprocessor.exe -P -std=c++20 src\main.cpp -o build\main.i
+
+# Compilare cu același GCC
+g++ -std=c++20 build\main.i -o build\main.exe</div>
+          <p>Dacă GCC țintă nu este în PATH, folosiți <code>--gcc</code> pentru a-l specifica explicit:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --gcc "D:\GCC1413\gcc14\bin\g++.exe" `
+  -P -std=c++20 src\main.cpp -o build\main.i</div>
+
+          <h2 id="gcc">Alegerea GCC</h2>
+          <p>CrucibleCpp folosește macrocomenzile predefinite ale GCC țintă, datele <code>__has_*</code> și căile de căutare include. Nu folosiți profilul GCC15 pentru a preprocesa antetele GCC14.</p>
+          <div class="table-wrap"><table><thead><tr><th>Metodă</th><th>Comportament</th></tr></thead><tbody>
+            <tr><td><code>--gcc-version=13|14|15</code></td><td>Caută în PATH cea mai recentă versiune acceptată din aceeași serie majoră</td></tr>
+            <tr><td><code>--gcc &lt;g++.exe&gt;</code></td><td>Folosește direct compilatorul indicat și îi citește versiunea și căile de include</td></tr>
+            <tr><td>Nespecificat</td><td>Scanează PATH și alege implicit cea mai recentă versiune acceptată (15 → 14 → 13)</td></tr>
+          </tbody></table></div>
+          <div class="note">Detectarea automată scanează doar PATH. Dacă ați instalat compilatorul în alt director, adăugați-l în PATH sau folosiți <code>--gcc</code>, fără să vă bazați pe o literă de disc fixă.</div>
+          <p>Profile standard acceptate:</p>
+          <div class="codeblock">-std=c++11   C++11 profile
+-std=c++14   C++14 profile
+-std=c++17   C++17 profile
+-std=c++20   C++20 profile</div>
+
+          <h2 id="cli">Comenzi uzuale</h2>
+          <div class="table-wrap"><table><thead><tr><th>Parametru</th><th>Efect</th></tr></thead><tbody>
+            <tr><td><code>-P</code></td><td>Nu afișează line markers</td></tr>
+            <tr><td><code>-o &lt;file&gt;</code></td><td>Fișier de ieșire</td></tr>
+            <tr><td><code>-I &lt;dir&gt;</code></td><td>Adaugă un director de include</td></tr>
+            <tr><td><code>-isystem &lt;dir&gt;</code></td><td>Director de antete de sistem</td></tr>
+            <tr><td><code>-D / -U</code></td><td>Definește / anulează macrocomenzi</td></tr>
+            <tr><td><code>-include &lt;file&gt;</code></td><td>Includere forțată</td></tr>
+            <tr><td><code>-MD -MF -MT</code></td><td>Generează fișiere de dependențe Make/CMake</td></tr>
+            <tr><td><code>-finput-charset</code> / <code>-fexec-charset</code></td><td>Set de caractere de intrare / execuție</td></tr>
+            <tr><td><code>--embed-dir &lt;dir&gt;</code></td><td><code>#embed</code> Director de căutare</td></tr>
+            <tr><td><code>--analysis-json &lt;file&gt;</code></td><td>Afișează graful include, macro trace și înregistrările PCH</td></tr>
+          </tbody></table></div>
+
+          <h2 id="pch">PCH</h2>
+          <p>Comanda <code>g++ -E</code> din GCC nu folosește <code>.gch</code>; PCH este folosit doar la compilarea propriu-zisă. CrucibleCpp citește implicit sursa antetelor și, opțional, validează, înregistrează și păstrează în cache PCH-urile generate extern.</p>
+          <div class="codeblock"># Afișează un avertisment când se găsește un .gch
+--pch=warn
+
+# Semnalează eroare când se găsește un .gch
+--pch=error
+
+# Înregistrează în analysis JSON PCH-urile ignorate
+--pch=report</div>
+          <p>Activarea cache-ului PCH:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --pch-cache .cache\pch `
+  --pch-cache-stats .cache\pch\stats.json `
+  -P src\main.cpp -o build\main.i</div>
+          <p>Manifestul cache-ului înregistrează calea compilatorului, versiunea, hash-ul compilatorului și hash-ul opțiunilor. PCH-urile pentru GCC13/14/15 nu se potrivesc greșit între ele.</p>
+
+          <h2 id="diagnostics">Diagnostice</h2>
+          <p>Afișează implicit linia sursă și caretul în stil GCC. Le puteți dezactiva sau ajusta:</p>
+          <div class="codeblock">-fdiagnostics-color=auto|always|never
+-fno-diagnostics-show-caret
+-fno-diagnostics-show-option
+-Werror
+-Wno-error=name
+--max-errors 20</div>
+          <p>Acceptă <code>#pragma GCC diagnostic push/pop/ignored/warning/error</code> și <code>#pragma GCC system_header</code>. Antetele incluse cu <code>-isystem</code> suprimă implicit avertismentele obișnuite,<code>-Wsystem-headers</code> le poate afișa din nou.</p>
+
+          <h2 id="troubleshooting">Depanare</h2>
+          <h3>Antetele bibliotecii standard nu au fost găsite</h3>
+          <p>Compilatorul țintă nu este în PATH. Folosiți <code>--gcc</code> pentru a-l specifica sau adăugați directorul <code>bin</code> în PATH. De asemenea, puteți folosi <code>-isystem</code> pentru a-l indica explicit.</p>
+          <h3>Versiune GCC greșită</h3>
+          <p>Folosiți <code>--gcc-version=13|14|15</code> pentru a fixa versiunea majoră, sau folosiți <code>--gcc</code> pentru a indica un <code>g++.exe</code>. Nu amestecați profilul țintă cu antetele altei versiuni.</p>
+          <h3>Cache-ul PCH raportează corrupt</h3>
+          <p>PCH-ul nu corespunde compilatorului/opțiunilor curente sau fișierul este deteriorat. Ștergeți intrarea din cache și regenerați-l; alternativ, dezactivați complet cache-ul PCH și lăsați-l să citească sursa antetelor.</p>
+          <h3>Rezultatul nu poate fi compilat de GCC</h3>
+          <p>Verificați mai întâi că preprocesarea și compilarea folosesc aceeași versiune GCC și <code>-std</code>. Apoi compilați separat „.i generat de CrucibleCpp” pentru a verifica dacă problema provine din etapa de preprocesare.</p>
+
+          <div class="note warn" style="margin-top:34px">CrucibleCpp este un preprocesor, nu un compilator. Nu se ocupă de generarea de cod, de optimizare, de link-editare sau de analiza formatului intern al PCH-urilor binare GCC.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Preprocesor C++ autonom pentru Windows x64.</p></div><div><h4>Produs</h4><a href="features.html">Funcții</a><a href="download.html">Descărcare</a><a href="changelog.html">Istoric modificări</a></div><div><h4>Resurse</h4><a href="docs.html">Documentație</a><a href="license.html">Licență</a><a href="about.html">Despre</a></div><div><h4>Extern</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 și ulterior: CC BY-NC 4.0 · V2.9.0 și anterior: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

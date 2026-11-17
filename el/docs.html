@@ -1,1 +1,147 @@
-<!doctype html><html lang="el" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#docs"><title>CrucibleCpp — el</title></head><body><p><a href="index.html#docs">Open translated section →</a></p><script>location.replace('index.html#docs');</script></body></html>
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Τεκμηρίωση — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="Γρήγορη εκκίνηση, γραμμή εντολών, επιλογή έκδοσης GCC, PCH, διαγνωστικά και τεκμηρίωση συμβατότητας του CrucibleCpp.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Κύρια πλοήγηση"><a href="index.html">Αρχική</a><a href="features.html">Δυνατότητες</a><a href="docs.html">Τεκμηρίωση</a><a href="download.html">Λήψη</a><a href="changelog.html">Αρχείο αλλαγών</a><a href="license.html">Άδεια</a><a href="about.html">Σχετικά</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Ελληνικά</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#0d5eaf"/><rect width="7.2" height="7.2" fill="#0d5eaf"/><path d="M0 1.2h7.2M0 3.6h7.2M0 6h7.2M1.2 0v7.2M3.6 0v7.2M6 0v7.2" stroke="#fff" stroke-width=".7"/><path d="M0 7.9h20M0 10.2h20M0 12.5h20" stroke="#fff" stroke-width="1.4"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Επιλογή γλώσσας"><li><a role="option" href="/" data-locale="/">Απλοποιημένα κινεζικά<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Περισσότερες γλώσσες <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Λήψη V3.0.1</a><button class="menu-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false">Μενού</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Documentation</span>
+      <h1>Ξεκινήστε από την πρώτη εντολή</h1>
+      <p class="lead">Αυτή η σελίδα καλύπτει την εγκατάσταση, την επιλογή GCC-στόχου, τις συχνές γραμμές εντολών, τα PCH, τα διαγνωστικά και την αντιμετώπιση προβλημάτων. Η πλήρης υλοποίηση και ο πίνακας δοκιμών βρίσκονται στο αποθετήριο GitHub.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns:230px minmax(0,1fr);gap:44px;align-items:start">
+        <aside class="card reveal" style="position:sticky;top:96px;padding:18px">
+          <h4 style="color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase">Σε αυτή τη σελίδα</h4>
+          <div style="display:flex;flex-direction:column;gap:3px;margin-top:10px">
+            <a href="#install" class="small">Εγκατάσταση</a>
+            <a href="#quickstart" class="small">Γρήγορη εκκίνηση</a>
+            <a href="#gcc" class="small">Επιλογή GCC</a>
+            <a href="#cli" class="small">Γραμμή εντολών</a>
+            <a href="#pch" class="small">PCH</a>
+            <a href="#diagnostics" class="small">Διαγνωστικά</a>
+            <a href="#troubleshooting" class="small">Αντιμετώπιση προβλημάτων</a>
+          </div>
+        </aside>
+
+        <div class="prose">
+          <h2 id="install">Εγκατάσταση</h2>
+          <p>Κατεβάστε το αρχείο ZIP για Windows x64 και αποσυμπιέστε το σε οποιονδήποτε κατάλογο. Το CrucibleCpp είναι ένα στατικά συνδεδεμένο πρόγραμμα μεμονωμένου αρχείου και δεν απαιτεί εγκατάσταση runtime.</p>
+          <div class="codeblock">cruciblecpp-preprocessor.exe --version
+# cruciblecpp-preprocessor 3.0.1</div>
+          <div class="note">Τρέχων στόχος παραγωγής: Windows x64 + MinGW-w64 UCRT64. Άλλες πλατφόρμες, ABI και εκδόσεις GCC δεν υποστηρίζονται εγγυημένα.</div>
+
+          <h2 id="quickstart">Γρήγορη εκκίνηση</h2>
+          <p>Βεβαιωθείτε πρώτα ότι το PATH περιέχει το <code>g++.exe</code>. Στη συνέχεια, αντικαταστήστε απευθείας το <code>g++ -E</code>: </p>
+          <div class="codeblock"># Προεπεξεργασία
+.\cruciblecpp-preprocessor.exe -P -std=c++20 src\main.cpp -o build\main.i
+
+# Μεταγλώττιση με το ίδιο GCC
+g++ -std=c++20 build\main.i -o build\main.exe</div>
+          <p>Αν δεν έχετε προσθέσει τον GCC-στόχο στο PATH, χρησιμοποιήστε <code>--gcc</code> για να το καθορίσετε ρητά:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --gcc "D:\GCC1413\gcc14\bin\g++.exe" `
+  -P -std=c++20 src\main.cpp -o build\main.i</div>
+
+          <h2 id="gcc">Επιλογή GCC</h2>
+          <p>Το CrucibleCpp χρησιμοποιεί τις προκαθορισμένες μακροεντολές του GCC-στόχου, τα <code>__has_*</code> δεδομένα και τις διαδρομές αναζήτησης include. Μην χρησιμοποιείτε το profile του GCC15 για να προεπεξεργαστείτε headers του GCC14.</p>
+          <div class="table-wrap"><table><thead><tr><th>Τρόπος</th><th>Συμπεριφορά</th></tr></thead><tbody>
+            <tr><td><code>--gcc-version=13|14|15</code></td><td>Αναζήτηση στο PATH της υψηλότερης υποστηριζόμενης έκδοσης που ταιριάζει με την κύρια έκδοση</td></tr>
+            <tr><td><code>--gcc &lt;g++.exe&gt;</code></td><td>Χρήση απευθείας του καθορισμένου μεταγλωττιστή και ανάγνωση της έκδοσης και των διαδρομών include</td></tr>
+            <tr><td>Χωρίς προσδιορισμό</td><td>Σάρωση του PATH, προεπιλογή της υψηλότερης υποστηριζόμενης έκδοσης (15 → 14 → 13)</td></tr>
+          </tbody></table></div>
+          <div class="note">Η αυτόματη ανίχνευση σαρώνει μόνο το PATH. Αν ο μεταγλωττιστής είναι εγκατεστημένος σε άλλον κατάλογο, προσθέστε τον στο PATH ή χρησιμοποιήστε <code>--gcc</code>, χωρίς να βασίζεστε σε σταθερό γράμμα δίσκου.</div>
+          <p>Υποστηριζόμενα standard profiles:</p>
+          <div class="codeblock">-std=c++11   C++11 profile
+-std=c++14   C++14 profile
+-std=c++17   C++17 profile
+-std=c++20   C++20 profile</div>
+
+          <h2 id="cli">Συχνές γραμμές εντολών</h2>
+          <div class="table-wrap"><table><thead><tr><th>Παράμετρος</th><th>Λειτουργία</th></tr></thead><tbody>
+            <tr><td><code>-P</code></td><td>Δεν παράγει line markers</td></tr>
+            <tr><td><code>-o &lt;file&gt;</code></td><td>Αρχείο εξόδου</td></tr>
+            <tr><td><code>-I &lt;dir&gt;</code></td><td>Προσθήκη καταλόγου include</td></tr>
+            <tr><td><code>-isystem &lt;dir&gt;</code></td><td>Κατάλογος headers συστήματος</td></tr>
+            <tr><td><code>-D / -U</code></td><td>Ορισμός / ακύρωση μακροεντολών</td></tr>
+            <tr><td><code>-include &lt;file&gt;</code></td><td>Αναγκαστική συμπερίληψη</td></tr>
+            <tr><td><code>-MD -MF -MT</code></td><td>Δημιουργία αρχείων εξαρτήσεων Make/CMake</td></tr>
+            <tr><td><code>-finput-charset</code> / <code>-fexec-charset</code></td><td>Σύνολα χαρακτήρων εισόδου / εκτέλεσης</td></tr>
+            <tr><td><code>--embed-dir &lt;dir&gt;</code></td><td><code>#embed</code> κατάλογος αναζήτησης</td></tr>
+            <tr><td><code>--analysis-json &lt;file&gt;</code></td><td>Έξοδος σε γράφο include, macro trace και εγγραφές PCH</td></tr>
+          </tbody></table></div>
+
+          <h2 id="pch">PCH</h2>
+          <p>Το <code>g++ -E</code> του GCC δεν χρησιμοποιεί <code>.gch</code>· τα PCH χρησιμοποιούνται μόνο κατά την πραγματική μεταγλώττιση. Το CrucibleCpp διαβάζει από προεπιλογή τον πηγαίο κώδικα των headers και προαιρετικά επικυρώνει, καταγράφει και αποθηκεύει σε cache εξωτερικά παραγόμενα PCH.</p>
+          <div class="codeblock"># Εμφάνιση warning όταν εντοπίζεται .gch
+--pch=warn
+
+# Άμεσο σφάλμα όταν εντοπίζεται .gch
+--pch=error
+
+# Καταγραφή των αγνοημένων PCH στο analysis JSON
+--pch=report</div>
+          <p>Ενεργοποίηση cache PCH:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --pch-cache .cache\pch `
+  --pch-cache-stats .cache\pch\stats.json `
+  -P src\main.cpp -o build\main.i</div>
+          <p>Το manifest της cache καταγράφει τη διαδρομή του μεταγλωττιστή, την έκδοση, το hash του μεταγλωττιστή και το hash των επιλογών. Τα PCH των GCC13/14/15 δεν συγκρούονται μεταξύ τους.</p>
+
+          <h2 id="diagnostics">Διαγνωστικά</h2>
+          <p>Από προεπιλογή παράγονται γραμμές πηγαίου κώδικα και caret σε στυλ GCC. Μπορούν να απενεργοποιηθούν ή να ρυθμιστούν:</p>
+          <div class="codeblock">-fdiagnostics-color=auto|always|never
+-fno-diagnostics-show-caret
+-fno-diagnostics-show-option
+-Werror
+-Wno-error=name
+--max-errors 20</div>
+          <p>Υποστηρίζει <code>#pragma GCC diagnostic push/pop/ignored/warning/error</code> και <code>#pragma GCC system_header</code>. Τα headers που προέρχονται από <code>-isystem</code> καταστέλλουν εξ ορισμού τις συνήθεις προειδοποιήσεις, <code>-Wsystem-headers</code> τις εμφανίζει ξανά.</p>
+
+          <h2 id="troubleshooting">Αντιμετώπιση προβλημάτων</h2>
+          <h3>Δεν βρίσκονται headers της standard library</h3>
+          <p>Ο μεταγλωττιστής-στόχος δεν βρίσκεται στο PATH. Χρησιμοποιήστε <code>--gcc</code> για να τον καθορίσετε, ή προσθέστε τον κατάλογο <code>bin</code> στο PATH. Μπορείτε επίσης να χρησιμοποιήσετε <code>-isystem</code> για να το περάσετε ρητά.</p>
+          <h3>Επιλέχθηκε λάθος έκδοση GCC</h3>
+          <p>Χρησιμοποιήστε <code>--gcc-version=13|14|15</code> για να καθορίσετε την κύρια έκδοση, ή <code>--gcc</code> για να δείξετε ένα συγκεκριμένο <code>g++.exe</code>. Μην αναμειγνύετε το target profile με headers άλλης έκδοσης.</p>
+          <h3>Η cache PCH αναφέρει corrupt</h3>
+          <p>Το PCH δεν ταιριάζει με τον τρέχοντα μεταγλωττιστή/τις επιλογές ή το αρχείο είναι κατεστραμμένο. Διαγράψτε την αντίστοιχη καταχώριση cache και δημιουργήστε το ξανά· μπορείτε επίσης να απενεργοποιήσετε την cache PCH ώστε να διαβάζει τον πηγαίο κώδικα των headers.</p>
+          <h3>Η έξοδος δεν μεταγλωττίζεται από το GCC</h3>
+          <p>Βεβαιωθείτε πρώτα ότι η προεπεξεργασία και η μεταγλώττιση χρησιμοποιούν την ίδια έκδοση GCC και την ίδια επιλογή <code>-std</code>. Στη συνέχεια, μεταγλωττίστε χωριστά το «.i που παράγει το CrucibleCpp» για να επιβεβαιώσετε αν το πρόβλημα προέρχεται από το στάδιο προεπεξεργασίας.</p>
+
+          <div class="note warn" style="margin-top:34px">Το CrucibleCpp είναι προεπεξεργαστής, όχι μεταγλωττιστής. Δεν ασχολείται με παραγωγή κώδικα, βελτιστοποίηση, σύνδεση και ανάλυση της εσωτερικής μορφής των δυαδικών PCH του GCC.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Αυτόνομος προεπεξεργαστής C++ για Windows x64.</p></div><div><h4>Προϊόν</h4><a href="features.html">Δυνατότητες</a><a href="download.html">Λήψη</a><a href="changelog.html">Αρχείο αλλαγών</a></div><div><h4>Πόροι</h4><a href="docs.html">Τεκμηρίωση</a><a href="license.html">Άδεια</a><a href="about.html">Σχετικά</a></div><div><h4>Εξωτερικά</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 και μετά: CC BY-NC 4.0 · V2.9.0 και πριν: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

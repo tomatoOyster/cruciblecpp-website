@@ -1,2 +1,147 @@
 <!doctype html>
-<html lang="ja" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#docs"><title>CrucibleCpp — ja / docs</title></head><body><p><a href="index.html#docs">Open translated section →</a></p><script>location.replace('index.html#docs');</script></body></html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ドキュメント — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="CrucibleCpp のクイックスタート、コマンドライン、GCC バージョン選択、PCH、診断、互換性に関するドキュメント。">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="メインナビゲーション"><a href="index.html">ホーム</a><a href="features.html">機能</a><a href="docs.html">ドキュメント</a><a href="download.html">ダウンロード</a><a href="changelog.html">変更履歴</a><a href="license.html">ライセンス</a><a href="about.html">概要</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">日本語</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="言語を選択"><li><a role="option" href="/" data-locale="/">簡体字中国語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/" class="current" aria-selected="true">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">その他の言語 <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">V3.0.1 をダウンロード</a><button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">メニュー</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Documentation</span>
+      <h1>最初のコマンドから始める</h1>
+      <p class="lead">このページでは、インストール、対象 GCC の選択、よく使うコマンドライン、PCH、診断、トラブルシューティングを扱います。完全な実装とテストマトリクスは GitHub リポジトリを参照してください。</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns:230px minmax(0,1fr);gap:44px;align-items:start">
+        <aside class="card reveal" style="position:sticky;top:96px;padding:18px">
+          <h4 style="color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase">このページの目次</h4>
+          <div style="display:flex;flex-direction:column;gap:3px;margin-top:10px">
+            <a href="#install" class="small">インストール</a>
+            <a href="#quickstart" class="small">クイックスタート</a>
+            <a href="#gcc" class="small">GCC の選択</a>
+            <a href="#cli" class="small">コマンドライン</a>
+            <a href="#pch" class="small">PCH</a>
+            <a href="#diagnostics" class="small">診断</a>
+            <a href="#troubleshooting" class="small">トラブルシューティング</a>
+          </div>
+        </aside>
+
+        <div class="prose">
+          <h2 id="install">インストール</h2>
+          <p>Windows x64 用のアーカイブをダウンロードし、任意のディレクトリに解凍するだけです。CrucibleCpp は静的リンクされた単一ファイルのプログラムで、ランタイムのインストールは不要です。</p>
+          <div class="codeblock">cruciblecpp-preprocessor.exe --version
+# cruciblecpp-preprocessor 3.0.1</div>
+          <div class="note">現在の本番ターゲット：Windows x64 + MinGW-w64 UCRT64。その他のプラットフォーム、ABI、GCC バージョンはサポートを保証していません。</div>
+
+          <h2 id="quickstart">クイックスタート</h2>
+          <p>まず PATH 上に目的の <code>g++.exe</code> があることを確認し、その後、元の <code>g++ -E</code>：</p>
+          <div class="codeblock"># プリプロセス
+.\cruciblecpp-preprocessor.exe -P -std=c++20 src\main.cpp -o build\main.i
+
+# 同じ GCC でコンパイル
+g++ -std=c++20 build\main.i -o build\main.exe</div>
+          <p>対象 GCC を PATH に追加していない場合は <code>--gcc</code> で明示的に指定します：</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --gcc "D:\GCC1413\gcc14\bin\g++.exe" `
+  -P -std=c++20 src\main.cpp -o build\main.i</div>
+
+          <h2 id="gcc">GCC の選択</h2>
+          <p>CrucibleCpp は対象 GCC の定義済みマクロ、<code>__has_*</code> データ、include 検索パスを使用します。GCC15 のプロファイルで GCC14 のヘッダーをプリプロセスしないでください。</p>
+          <div class="table-wrap"><table><thead><tr><th>方法</th><th>動作</th></tr></thead><tbody>
+            <tr><td><code>--gcc-version=13|14|15</code></td><td>PATH 内でメジャーバージョンが一致する最も新しい対応コンパイラを探す</td></tr>
+            <tr><td><code>--gcc &lt;g++.exe&gt;</code></td><td>指定したコンパイラを直接使用し、そのバージョンと include パスを読み取る</td></tr>
+            <tr><td>指定なし</td><td>PATH をスキャンし、デフォルトで最も新しい対応バージョンを選択（15 → 14 → 13）</td></tr>
+          </tbody></table></div>
+          <div class="note">自動検出は PATH のみをスキャンします。別のディレクトリにインストールした場合は、PATH に追加するか、または <code>--gcc</code> を使用し、固定のドライブ文字に依存しないでください。</div>
+          <p>対応する標準プロファイル：</p>
+          <div class="codeblock">-std=c++11   C++11 profile
+-std=c++14   C++14 profile
+-std=c++17   C++17 profile
+-std=c++20   C++20 profile</div>
+
+          <h2 id="cli">よく使うコマンドライン</h2>
+          <div class="table-wrap"><table><thead><tr><th>オプション</th><th>動作</th></tr></thead><tbody>
+            <tr><td><code>-P</code></td><td>line markers を出力しない</td></tr>
+            <tr><td><code>-o &lt;file&gt;</code></td><td>出力ファイル</td></tr>
+            <tr><td><code>-I &lt;dir&gt;</code></td><td>include ディレクトリを追加</td></tr>
+            <tr><td><code>-isystem &lt;dir&gt;</code></td><td>システムヘッダーディレクトリ</td></tr>
+            <tr><td><code>-D / -U</code></td><td>マクロの定義 / 解除</td></tr>
+            <tr><td><code>-include &lt;file&gt;</code></td><td>強制インクルード</td></tr>
+            <tr><td><code>-MD -MF -MT</code></td><td>Make/CMake 依存ファイルを生成</td></tr>
+            <tr><td><code>-finput-charset</code> / <code>-fexec-charset</code></td><td>入力 / 実行文字セット</td></tr>
+            <tr><td><code>--embed-dir &lt;dir&gt;</code></td><td><code>#embed</code> 検索ディレクトリ</td></tr>
+            <tr><td><code>--analysis-json &lt;file&gt;</code></td><td>include グラフ、macro trace、PCH レコードを出力</td></tr>
+          </tbody></table></div>
+
+          <h2 id="pch">PCH</h2>
+          <p>GCC の <code>g++ -E</code> は使いません。除外対象は <code>.gch</code>。PCH は実際のコンパイル時にのみ使用されます。CrucibleCpp はデフォルトでヘッダーのソースを読み取り、必要に応じて外部で生成された PCH を検証、登録、キャッシュします。</p>
+          <div class="codeblock"># .gch を検出したら warning を出力
+--pch=warn
+
+# .gch を検出したらエラーにする
+--pch=error
+
+# 無視された PCH を analysis JSON に記録
+--pch=report</div>
+          <p>PCH キャッシュを有効にする：</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --pch-cache .cache\pch `
+  --pch-cache-stats .cache\pch\stats.json `
+  -P src\main.cpp -o build\main.i</div>
+          <p>キャッシュの manifest にはコンパイラのパス、バージョン、コンパイラのハッシュ、オプションのハッシュが記録されます。GCC13/14/15 の PCH が互いに誤ヒットすることはありません。</p>
+
+          <h2 id="diagnostics">診断</h2>
+          <p>デフォルトでは GCC 形式のソース行と caret を出力します。無効化または調整できます：</p>
+          <div class="codeblock">-fdiagnostics-color=auto|always|never
+-fno-diagnostics-show-caret
+-fno-diagnostics-show-option
+-Werror
+-Wno-error=name
+--max-errors 20</div>
+          <p>次のプラグマに対応しています： <code>#pragma GCC diagnostic push/pop/ignored/warning/error</code> と <code>#pragma GCC system_header</code>。既定では <code>-isystem</code> 由来のヘッダーは通常の警告を抑制し、<code>-Wsystem-headers</code> で再表示できます。</p>
+
+          <h2 id="troubleshooting">トラブルシューティング</h2>
+          <h3>標準ライブラリのヘッダーが見つからない</h3>
+          <p>対象コンパイラが PATH にない場合は <code>--gcc</code> で指定するか、その <code>bin</code> ディレクトリを PATH に追加してください。または <code>-isystem</code> で明示的に渡すこともできます。</p>
+          <h3>誤った GCC バージョンを選択した</h3>
+          <p>次のいずれかを使います： <code>--gcc-version=13|14|15</code> でメジャーバージョンを固定するか、 <code>--gcc</code> で具体的な <code>g++.exe</code> を指定します。target profile と別バージョンのヘッダーを混在させないでください。</p>
+          <h3>PCH キャッシュが corrupt エラーを報告</h3>
+          <p>PCH が現在のコンパイラ/オプションと一致しないか、ファイルが破損しています。該当するキャッシュエントリを削除して再生成してください。PCH キャッシュを無効にして、ヘッダーのソースを読ませることもできます。</p>
+          <h3>出力を GCC でコンパイルできない</h3>
+          <p>まず、プリプロセスとコンパイルで同じ GCC バージョンと <code>-std</code> を使用していることを確認します。続いて「CrucibleCpp が生成した .i」を単独でコンパイルし、問題がプリプロセス段階に由来するか確認します。</p>
+
+          <div class="note warn" style="margin-top:34px">CrucibleCpp はプリプロセッサであり、コンパイラではありません。コード生成、最適化、リンク、GCC バイナリ PCH の内部フォーマット解析は担当しません。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Windows x64 向けの独立した C++ プリプロセッサ。</p></div><div><h4>製品</h4><a href="features.html">機能</a><a href="download.html">ダウンロード</a><a href="changelog.html">変更履歴</a></div><div><h4>リソース</h4><a href="docs.html">ドキュメント</a><a href="license.html">ライセンス</a><a href="about.html">概要</a></div><div><h4>外部</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 以降：CC BY-NC 4.0 · V2.9.0 以前：MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@ Official desktop website for [CrucibleCpp Preprocessor](https://github.com/tomat
 
 CrucibleCpp is a standalone C++ preprocessor for Windows x64. It reads C++ source, performs translation phases 1–4, and emits `.i` output that a target GCC can compile directly.
 
-This repository contains the complete **desktop** site: hand-written HTML, CSS and JavaScript, inline SVG flags, 33 language pages, and a sanitized Nginx example. There is no build step and no runtime dependency.
+This repository contains the complete **desktop** site: hand-written HTML, CSS and JavaScript, inline SVG flags, 33 language editions with exact structural parity against the Chinese source, and a sanitized Nginx example. There is no build step and no runtime dependency.
 
 ## Links
 

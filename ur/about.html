@@ -1,1 +1,85 @@
-<!doctype html><html lang="ur" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#about"><title>CrucibleCpp — اردو</title></head><body><p><a href="index.html#about">Open translated section →</a></p><script>location.replace('index.html#about');</script></body></html>
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تعارف — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="CrucibleCpp کا تعارف: علیحدہ پری پروسیسر کیوں، ڈیزائن کے اصول اور پروجیکٹ کی حالت۔">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="مرکزی نیویگیشن"><a href="index.html">ہوم</a><a href="features.html">خصوصیات</a><a href="docs.html">دستاویزات</a><a href="download.html">ڈاؤن لوڈ</a><a href="changelog.html">چینج لاگ</a><a href="license.html">لائسنس</a><a href="about.html">تعارف</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">اردو</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#01411c"/><rect width="5" height="14" fill="#fff"/><circle cx="12" cy="7" r="3" fill="#fff"/><circle cx="13" cy="7" r="2.5" fill="#01411c"/><path d="M15 4l.6 1.6L17 6l-1.4.4L15 8l-.6-1.6L13 6l1.4-.4z" fill="#fff"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="زبان منتخب کریں"><li><a role="option" href="/" data-locale="/">آسان چینی<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">مزید زبانیں <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">V3.0.1 ڈاؤن لوڈ کریں</a><button class="menu-toggle" aria-label="مینو کھولیں" aria-expanded="false">مینو</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">About the project</span>
+      <h1>“پری پروسیسنگ” کو<br>قابلِ تصدیق تہہ میں بدلیں</h1>
+      <p class="lead">CrucibleCpp کا آغاز ایک بہت مخصوص سوال سے ہوا: جب بلڈ سسٹم کو علیحدہ پری پروسیسنگ کا نتیجہ درکار ہو، تو کیا <code>g++ -E</code> کی پروسیس کال پر انحصار کیے بغیر، پھر بھی قابلِ اعتماد، قابلِ وضاحت اور قابلِ دوبارہ جانچ آؤٹ پٹ حاصل کیا جا سکتا ہے؟</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2">
+        <div class="prose">
+          <h2 style="margin-top:0">علیحدہ پری پروسیسر کیوں؟</h2>
+          <p>پری پروسیسنگ بظاہر صرف “میکرو پھیلانا” لگتی ہے، لیکن حقیقی منصوبوں میں یہ تشخیص، انحصار، PCH، کریکٹر سیٹ، میکرو کی حالت اور بلڈ کیشے کا چوراہا بن جاتی ہے۔ اسے الگ تہہ میں بانٹنے سے ہی اسے الگ سے دیکھا، جانچا اور بہتر بنایا جا سکتا ہے۔</p>
+          <p>CrucibleCpp کا ہدف کمپائلر کو نئے سرے سے لکھنا نہیں، بلکہ ترجمے کے مراحل 1–4 کو ایسا جزو بنانا ہے جس کی حدود واضح ہوں اور جس کے طرزِ عمل کا موازنہ کیا جا سکے۔</p>
+
+          <h2>ڈیزائن کے اصول</h2>
+          <ul>
+            <li><strong>طرزِ عمل کی بنیاد GCC ہے۔</strong> معیار یہ نہیں کہ “دیکھنے میں معقول” لگے، بلکہ یہ کہ حقیقی GCC سے موازنہ ہو۔</li>
+            <li><strong>ہر مثبت کیس کمپائل کر کے چلایا جاتا ہے۔</strong> پری پروسیسنگ کی کامیابی آؤٹ پٹ کے قابلِ استعمال ہونے کا مطلب نہیں۔</li>
+            <li><strong>ورژن آپس میں مکس نہیں کیے جاتے۔</strong> ہدف GCC کا profile، ہیڈر فائلیں اور کمپائل کمانڈ یکساں ہونے چاہئیں۔</li>
+            <li><strong>حدود کو چھپایا نہیں جاتا۔</strong> غیر معاون صلاحیتیں واضح طور پر لکھی جاتی ہیں؛ “شاید ممکن ہو” کو تصدیق کا متبادل نہیں بنایا جاتا۔</li>
+            <li><strong>پہلے Windows x64۔</strong> پہلے ایک ہدف کو قابلِ اعتماد بنائیں، پھر کراس پلیٹ فارم کی بات کریں۔</li>
+          </ul>
+        </div>
+
+        <div class="card reveal" style="padding:30px">
+          <span class="eyebrow">Status</span>
+          <h3 class="mt-8">موجودہ حالت</h3>
+          <ul class="feature-list">
+            <li>ورژن: V3.0.1</li>
+            <li>پلیٹ فارم: Windows x64 / UCRT64</li>
+            <li>ہدف GCC: 13.3 / 14.3 / 15.2</li>
+            <li>معیار: C++11 / 14 / 17 / 20</li>
+            <li>ٹیسٹ: تین سوٹس 65/65</li>
+            <li>لائسنس: CC BY-NC 4.0</li>
+          </ul>
+          <div class="note mt-24">ویب سائٹ کا اپنا سورس کوڈ فی الحال عوامی نہیں ہے۔ CrucibleCpp کا پروڈکٹ کوڈ اور ریلیز کی معلومات اب بھی GitHub ریپوزٹری کے مطابق ہیں۔</div>
+          <a class="btn btn-sm mt-16" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub ریپوزٹری کھولیں</a>
+        </div>
+      </div>
+
+      <div class="card reveal mt-32" style="padding:34px">
+        <div class="grid g3">
+          <div><div class="eyebrow">Author</div><h3 class="mt-8">TomatoOyster</h3><p class="muted small mt-8">آزاد ڈویلپر۔ C++ ٹول چین، بلڈ سسٹمز اور قابلِ تصدیق انجینئرنگ بنیادی ڈھانچے پر توجہ۔</p></div>
+          <div><div class="eyebrow">Project</div><h3 class="mt-8">CrucibleCpp</h3><p class="muted small mt-8">Windows x64 کے لیے علیحدہ C++ پری پروسیسر، جس کا ہدف بلڈ کے عمل میں <code>g++ -E</code> کے مرحلے کی جگہ لینا ہے۔</p></div>
+          <div><div class="eyebrow">Contact</div><h3 class="mt-8">GitHub</h3><p class="muted small mt-8">مسائل، تجاویز اور ریلیز کی معلومات GitHub Issues / Releases کے ذریعے ٹریک ہوتی ہیں۔</p><a class="small" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/issues" rel="noopener">Issue جمع کرائیں →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Windows x64 کے لیے علیحدہ C++ پری پروسیسر۔</p></div><div><h4>پروڈکٹ</h4><a href="features.html">خصوصیات</a><a href="download.html">ڈاؤن لوڈ</a><a href="changelog.html">چینج لاگ</a></div><div><h4>وسائل</h4><a href="docs.html">دستاویزات</a><a href="license.html">لائسنس</a><a href="about.html">تعارف</a></div><div><h4>بیرونی</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 اور اس کے بعد: CC BY-NC 4.0 · V2.9.0 اور اس سے پہلے: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

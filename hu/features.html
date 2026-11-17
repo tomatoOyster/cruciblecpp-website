@@ -1,1 +1,135 @@
-<!doctype html><html lang="hu" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#features"><title>CrucibleCpp — Magyar</title></head><body><p><a href="index.html#features">Open translated section →</a></p><script>location.replace('index.html#features');</script></body></html>
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funkciók — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="A CrucibleCpp funkciói: GCC 13/14/15 profilok, diagnosztika, makrók, UCN, #embed, PCH, differenciális ellenőrzés.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html">Kezdőlap</a><a href="features.html">Funkciók</a><a href="docs.html">Dokumentáció</a><a href="download.html">Letöltés</a><a href="changelog.html">Változásnapló</a><a href="license.html">Licenc</a><a href="about.html">Névjegy</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Magyar</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#ce2939"/><rect y="4.67" width="20" height="4.66" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#477050"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Nyelv kiválasztása"><li><a role="option" href="/" data-locale="/">Egyszerűsített kínai<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">További nyelvek <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">V3.0.1 letöltése</a><button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">Menü</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Capabilities</span>
+      <h1>Minden réteget<br>ellenőrizhető viselkedés jellemez.</h1>
+      <p class="lead">A célverzió kiválasztásától az előre definiált makrókon és a diagnosztikán át a PCH-ig és a valós projektekig a CrucibleCpp nem az „elvileg működnie kell” elvre épül, hanem egy megismételhető tesztláncra.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2">
+        <article class="card reveal">
+          <div class="card-icon">A</div>
+          <h3>Célverzió és profil</h3>
+          <p>Egy előfeldolgozó, három cél-GCC. Amelyik verziót választja, annak a verziójának előre definiált makróit, <code>__has_*</code> adatait és include-keresési útvonalait használja.</p>
+          <ul class="feature-list">
+            <li><code>--gcc-version=13|14|15</code></li>
+            <li><code>--gcc D:\path\to\g++.exe</code></li>
+            <li>Automatikus PATH-felderítés, alapértelmezésben a legmagasabb támogatott verzió kiválasztásával</li>
+            <li>GCC 13.3 / 14.3 / 15.2 profile</li>
+            <li>C++11 / C++14 / C++17 / C++20</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">B</div>
+          <h3>Diagnosztikai rendszer</h3>
+          <p>Valós buildrendszerekhez tervezett diagnosztikai formátum. Tartalmazza a forrássort, a caretet, az include trace-t és a warning optiont – nem csupán egy hibaüzenetet.</p>
+          <ul class="feature-list">
+            <li>GCC-stílusú severity / option / caret</li>
+            <li><code>-Werror</code>, <code>-Wno-...</code>, <code>-Werror=...</code></li>
+            <li><code>#pragma GCC diagnostic push/pop</code></li>
+            <li><code>#pragma GCC system_header</code></li>
+            <li><code>-Wsystem-headers</code> és a rendszerfejlécek figyelmeztetéseinek elnyomása</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">C</div>
+          <h3>Makrók és előfeldolgozási szemantika</h3>
+          <p>Objektumszerű makrók, függvényszerű makrók, üres argumentumok, variadikus makrók, stringizálás, token-összefűzés, valamint a GCC vesszőtörlési kiterjesztése.</p>
+          <ul class="feature-list">
+            <li><code>#</code> és <code>##</code></li>
+            <li><code>__VA_OPT__</code>(C++20)</li>
+            <li><code>, ## __VA_ARGS__</code></li>
+            <li><code>defined</code> / <code>__has_include</code></li>
+            <li>macro trace és include-gráf elemzési JSON</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">D</div>
+          <h3>UCN és #embed</h3>
+          <p>A universal character name részt vesz az azonosítókban és az összefűzésben;<code>#embed</code> a GCC szemantikája szerint ágyaz be bináris erőforrásokat.</p>
+          <ul class="feature-list">
+            <li><code>\uXXXX</code> / <code>\UXXXXXXXX</code></li>
+            <li>Fordított perjel és soremelés által képzett UCN-ek</li>
+            <li><code>#</code> / <code>##</code> megőrzi az UCN írásmódját</li>
+            <li><code>#embed</code> + <code>limit</code></li>
+            <li><code>prefix</code> / <code>suffix</code> / <code>if_empty</code></li>
+            <li><code>gnu::offset</code> és <code>__has_embed</code></li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">E</div>
+          <h3>PCH és gyorsítótár</h3>
+          <p>A GCC 13/14/15 mindegyike használhatja a PCH-stratégiát és a gyorsítótárat. A gyorsítótár nem közvetlenül elemzi a GCC PCH-t, hanem ellenőrzi, nyilvántartja, érvényteleníti és nyomon követi a külső <code>.gch</code>. </p>
+          <ul class="feature-list">
+            <li><code>--pch=ignore|warn|error|report</code></li>
+            <li>Kényszerített include-okat használó CMake PCH-elrendezés</li>
+            <li>fordítóútvonal, verzió és hash izolációja</li>
+            <li>Atomi írás, könyvtárzárak, kapacitás- és életkor alapú tisztítás</li>
+            <li>találati arány / stale / corrupt statisztikai JSON</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">F</div>
+          <h3>Reprodukálható tesztek</h3>
+          <p>Három GCC-eszközkészlet, két differenciális korpusz és valós projektek együtt ellenőrzik a kimenetet, nem csupán azt, hogy „az előfeldolgozás sikeres”.</p>
+          <ul class="feature-list">
+            <li>GCC15 / 14 / 13: egyenként 65/65 CTest</li>
+            <li>differential corpus 13/13</li>
+            <li>realworld corpus 3/3</li>
+            <li>CrucibleCpp <code>.i</code> → cél-GCC → exe → futtatás</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite-regresszió</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section-tight">
+        <div class="card reveal" style="padding:30px 34px">
+          <span class="eyebrow">Positioning</span>
+          <h2 class="mt-8" style="font-size:30px">Az előfeldolgozási lépést váltja ki, nem a fordítót.</h2>
+          <p class="lead mt-16" style="max-width:820px">A CrucibleCpp nem végez kódgenerálást, nem optimalizál, és nem elemzi a GCC bináris PCH-fájljait. Kizárólag az a feladata, hogy a forrásfájlokat determinisztikus <code>.i</code> fájllá alakítsa, a diagnosztikát, a függőségeket és az elemezhető információkat pedig átadja a buildrendszernek.</p>
+          <div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="docs.html">Teljes dokumentáció megtekintése</a><a class="btn" href="download.html">V3.0.1 letöltése</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Önálló C++ előfeldolgozó Windows x64-hez.</p></div><div><h4>Termék</h4><a href="features.html">Funkciók</a><a href="download.html">Letöltés</a><a href="changelog.html">Változásnapló</a></div><div><h4>Erőforrások</h4><a href="docs.html">Dokumentáció</a><a href="license.html">Licenc</a><a href="about.html">Névjegy</a></div><div><h4>Külső</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 és újabb: CC BY-NC 4.0 · V2.9.0 és korábbi: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

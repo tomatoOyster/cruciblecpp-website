@@ -1,19 +1,189 @@
-<!doctype html><html lang="el" translate="no"><head><meta charset="utf-8"><meta name="google" content="notranslate"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CrucibleCpp — Ελληνικά</title><meta name="description" content="CrucibleCpp — Ελληνικά"><meta name="theme-color" content="#dffbf6"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=6"></head><body>
-<header class="site-header"><div class="nav"><a class="brand" href="/el/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><nav class="nav-links"><a href="#features">Λειτουργίες</a><a href="#docs">Τεκμηρίωση</a><a href="#download">Λήψη</a><a href="#changelog">Αλλαγές</a><a href="#license">Άδεια</a><a href="#about">Σχετικά</a><a href="/languages.html">Όλες οι γλώσσες</a></nav><div class="nav-actions"><a class="btn btn-sm btn-primary" href="#download">Λήψη V3.0.1</a></div></div></header>
-<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">WINDOWS X64 · GCC 13 / 14 / 15</span><h1>Κάντε την προεπεξεργασία ντετερμινιστική</h1><p class="lead">Το CrucibleCpp είναι αυτόνομος προεπεξεργαστής C++. Εκτελεί τις φάσεις 1–4 και παράγει <code>.i</code> που ο GCC προορισμού μεταγλωττίζει απευθείας.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">Λήψη V3.0.1 ↓</a><a class="btn" href="#features">Λειτουργίες →</a></div><div class="hero-meta"><span><i class="dot"></i> CC BY-NC 4.0</span><span><i class="dot"></i> εξαρτήσεις</span></div></div><div class="terminal"><div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell — cruciblecpp</span></div><pre><span class="c"># target GCC profile + headers</span>
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrucibleCpp Preprocessor — Αυτόνομος προεπεξεργαστής C++ για Windows</title>
+  <meta name="description" content="Το CrucibleCpp είναι ένας αυτόνομος προεπεξεργαστής C++ για Windows x64 που αντικαθιστά το g++ -E και υποστηρίζει GCC 13.3 / 14.3 / 15.2 και C++11/14/17/20.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Κύρια πλοήγηση">
+      <a href="index.html">Αρχική</a>
+      <a href="features.html">Δυνατότητες</a>
+      <a href="docs.html">Τεκμηρίωση</a>
+      <a href="download.html">Λήψη</a>
+      <a href="changelog.html">Αρχείο αλλαγών</a>
+      <a href="license.html">Άδεια</a>
+      <a href="about.html">Σχετικά</a>
+    </nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Ελληνικά</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#0d5eaf"/><rect width="7.2" height="7.2" fill="#0d5eaf"/><path d="M0 1.2h7.2M0 3.6h7.2M0 6h7.2M1.2 0v7.2M3.6 0v7.2M6 0v7.2" stroke="#fff" stroke-width=".7"/><path d="M0 7.9h20M0 10.2h20M0 12.5h20" stroke="#fff" stroke-width="1.4"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Επιλογή γλώσσας"><li><a role="option" href="/" data-locale="/">Απλοποιημένα κινεζικά<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Περισσότερες γλώσσες <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Λήψη V3.0.1</a>
+      <button class="menu-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false">Μενού</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Windows x64 · GCC 13 / 14 / 15</span>
+        <h1>Δώστε ξανά στην προεπεξεργασία<br>τον ντετερμινισμό της</h1>
+        <p class="lead">Το CrucibleCpp είναι ένας αυτόνομος προεπεξεργαστής C++. Διαβάζει τα αρχεία πηγαίου κώδικα, ολοκληρώνει τις φάσεις μετάφρασης 1–4 και παράγει ένα αρχείο <code>.i</code> που μπορεί να δοθεί απευθείας στο GCC για να συνεχίσει τη μεταγλώττιση.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="download.html">Λήψη V3.0.1 <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="docs.html">Διαβάστε την τεκμηρίωση <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="dot"></i> CC BY-NC 4.0</span>
+          <span><i class="dot"></i> Χωρίς εγκατάσταση</span>
+          <span><i class="dot"></i> Εκτελέσιμο μεμονωμένου αρχείου</span>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell - cruciblecpp</span></div>
+        <pre><span class="c"># 用目标 GCC 的 profile 和头文件预处理</span>
 <span class="b">PS&gt;</span> .\cruciblecpp-preprocessor.exe <span class="g">--gcc-version=15</span> `
        -P src\main.cpp -o build\main.i
 
+<span class="c"># 输出可直接交给 GCC 编译</span>
 <span class="b">PS&gt;</span> g++ -std=c++20 build\main.i -o build\main.exe
-<span class="o">✓</span> 65/65 tests</pre></div></div></section>
-<div class="wrap"><div class="stats"><div class="stat"><strong>3</strong><span>εκδόσεις GCC</span></div><div class="stat"><strong>4</strong><span>προφίλ C++</span></div><div class="stat"><strong>65/65</strong><span>CTest ανά GCC</span></div><div class="stat"><strong>0</strong><span>εξαρτήσεις</span></div></div></div>
-<section class="section" id="features"><div class="wrap"><span class="eyebrow">WHY CRUCIBLECPP</span><h2 class="mt-8">Συμβατότητα</h2><div class="grid g3 mt-32"><article class="card"><h3>Ρητή έκδοση GCC</h3><p>Επιλέξτε με <code>--gcc-version</code> ή <code>--gcc</code>.</p></article><article class="card"><h3>Διαγνωστικά GCC</h3><p>Caret, include trace, warning ID και <code>-Werror</code>.</p></article><article class="card"><h3>Πραγματικά έργα</h3><p>nlohmann/json, fmt και spdlog με GCC 13/14/15.</p></article></div><div class="table-wrap mt-24"><table><thead><tr><th>Στόχος</th><th>Κατάσταση</th></tr></thead><tbody><tr><td><code>GCC 15.2</code></td><td><span class="badge good">Πλήρες</span></td></tr><tr><td><code>GCC 14.3</code></td><td><span class="badge good">Πλήρες</span></td></tr><tr><td><code>GCC 13.3</code></td><td><span class="badge good">Πλήρες</span></td></tr><tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Υποστηρίζεται</span></td></tr><tr><td>Linux / MSVC / Clang</td><td><span class="badge">Δεν υποστηρίζεται</span></td></tr></tbody></table></div></div></section>
-<section class="section" id="docs"><div class="wrap"><span class="eyebrow">Τεκμηρίωση</span><h2 class="mt-8">Γρήγορη εκκίνηση</h2><p class="lead mt-16">Βάλτε τον GCC προορισμού στο PATH και αντικαταστήστε το <code>g++ -E</code>.</p><div class="codeblock mt-16">cruciblecpp-preprocessor.exe -P `
-  -std=c++20 src\main.cpp -o build\main.i
+<span class="b">PS&gt;</span> .\build\main.exe
 
-g++ -std=c++20 build\main.i -o build\main.exe</div></div></section>
-<section class="section" id="download" style="padding-top:0"><div class="wrap"><span class="eyebrow">Λήψη</span><h2 class="mt-8">V3.0.1</h2><div class="download-hero mt-24"><div class="card download-box"><h2 style="font-size:30px">CrucibleCpp V3.0.1</h2><p class="muted mt-8">Windows x64 · MinGW-w64 UCRT64</p><a class="btn btn-primary" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor-v3.0.1-win64.zip" rel="noopener">Πλήρες αρχείο ↓</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor.exe" rel="noopener">μόνο exe</a><a class="btn btn-ghost" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/tag/v3.0.1" rel="noopener">GitHub Release</a></div><div class="card download-box"><h3>SHA-256</h3><div class="hash">8a0928adefbfb01c9bd69965d6cd4e96fede61d904e47c98f365d8cdeec96b32</div><div class="note mt-24">V3.0.0 και μετά: CC BY-NC 4.0.</div></div></div></div></section>
-<section class="section" id="changelog" style="padding-top:0"><div class="wrap"><span class="eyebrow">Ιστορικό</span><h2 class="mt-8">Ιστορικό</h2><div class="grid g3 mt-24"><div class="card"><h3>V3.0.1</h3><p class="muted mt-8">Διορθώσεις digraph, realworld και nlohmann/json.</p></div><div class="card"><h3>V3.0.0</h3><p class="muted mt-8">Όριο άδειας και πλήρες PCH για GCC13/14/15.</p></div><div class="card"><h3>V2.9.0</h3><p class="muted mt-8">Προφίλ GCC 13.3 / 14.3 και επιλογή στόχου.</p></div></div></div></section>
-<section class="section" id="license" style="padding-top:0"><div class="wrap"><span class="eyebrow">Άδεια</span><h2 class="mt-8">Άδεια</h2><div class="grid g2 mt-24"><div class="card"><h3>V3.0.0+</h3><p class="muted mt-8">V3.0.0 και μετά: CC BY-NC 4.0.</p><a href="/LICENSE">LICENSE →</a></div><div class="card"><h3>≤ V2.9.0</h3><p class="muted mt-8">V2.9.0 και πριν: MIT.</p><a href="/LICENSE-MIT">MIT →</a></div></div></div></section>
-<section class="section" id="about" style="padding-top:0"><div class="wrap"><div class="card" style="padding:34px"><span class="eyebrow">Σχετικά</span><h2 class="mt-8">Σχετικά</h2><p class="muted mt-8">Ένα επαληθεύσιμο επίπεδο, όχι άλλος επεκτατής μακροεντολών. Το CrucibleCpp κάνει τις φάσεις 1–4 παρατηρήσιμες και ελέγξιμες.</p><div class="mt-24"><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a></div></div></div></section>
-</main><footer class="footer"><div class="wrap"><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp</span><span>V3.0.1 · CC BY-NC 4.0</span></div></div></footer></body></html>
+<span class="o">✓</span> preprocess complete
+<span class="o">✓</span> 65/65 tests · GCC 15.2 / 14.3 / 13.3</pre>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><strong>3</strong><span>Κύριες εκδόσεις GCC</span></div>
+      <div class="stat"><strong>4</strong><span>Profiles προτύπων C++</span></div>
+      <div class="stat"><strong>65/65</strong><span>Τρεις σουίτες CTest</span></div>
+      <div class="stat"><strong>0</strong><span>Εξαρτήσεις χρόνου εκτέλεσης</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Why CrucibleCpp</span>
+      <h2 class="mt-8">Όχι άλλος ένας επεκτατής μακροεντολών,<br>αλλά ένα επαληθεύσιμο επίπεδο προεπεξεργασίας</h2>
+      <p class="lead mt-16" style="max-width:720px">Κάθε θετικό παράδειγμα περνά από την ίδια αλυσίδα: το CrucibleCpp παράγει <code>.i</code>, το οποίο μεταγλωττίζει το αντίστοιχο GCC σε exe και στη συνέχεια εκτελείται πραγματικά. Η συμπεριφορά βασίζεται στα GCC 15.2, 14.3, 13.3.</p>
+      <div class="grid g3 mt-32">
+        <article class="card reveal">
+          <div class="card-icon">01</div>
+          <h3>Σαφής έκδοση-στόχος</h3>
+          <p>Χρησιμοποιήστε <code>--gcc-version</code> ή <code>--gcc</code> για να επιλέξετε τον μεταγλωττιστή-στόχο. Το profile, οι ενσωματωμένες μακροεντολές και οι διαδρομές include προέρχονται από τον ίδιο στόχο και δεν αναμειγνύονται.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">02</div>
+          <h3>Ευθυγράμμιση διαγνωστικών GCC</h3>
+          <p>caret πηγαίου κώδικα, include trace, warning ID, <code>-Werror</code>, στοίβα pragma diagnostic και καταστολή προειδοποιήσεων για headers συστήματος.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">03</div>
+          <h3>Επαλήθευση με πραγματικά έργα</h3>
+          <p>Τα nlohmann/json, fmt και spdlog προεπεξεργάζονται, μεταγλωττίζονται και εκτελούνται και στις τρεις εκδόσεις GCC, καλύπτοντας πραγματικά headers και συνδυασμούς μακροεντολών.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">04</div>
+          <h3>Πλήρες UCN</h3>
+          <p><code>\uXXXX</code> και <code>\UXXXXXXXX</code> συμμετέχουν σε αναγνωριστικά, <code>#</code>, <code>##</code>· οι έλεγχοι εγκυρότητας και η κανονικοποίηση της εξόδου ευθυγραμμίζονται με το GCC.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">05</div>
+          <h3>#embed</h3>
+          <p>Ενσωμάτωση δυαδικών δεδομένων, <code>limit</code>, <code>gnu::offset</code>, <code>prefix</code>, <code>suffix</code>, <code>if_empty</code>, καθώς και <code>__has_embed</code>. </p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">06</div>
+          <h3>Απομόνωση εκδόσεων PCH</h3>
+          <p>Οι πολιτικές PCH και η cache είναι διαθέσιμες για GCC 13 / 14 / 15. Το manifest καταγράφει τη διαδρομή του μεταγλωττιστή, την έκδοση και το hash του εκτελέσιμου, ώστε να αποφεύγονται εσφαλμένες αντιστοιχίσεις μεταξύ εκδόσεων.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal">
+          <span class="eyebrow">Compatibility</span>
+          <h2 class="mt-8">Ξεκινήστε από έναν σαφή πίνακα</h2>
+          <p class="lead mt-16">Ο τρέχων στόχος παραγωγής είναι κλειδωμένος σε Windows x64 + MinGW-w64 UCRT64. Κάθε έκδοση GCC χρησιμοποιεί το δικό της profile και τα δικά της headers και η έξοδος επαληθεύεται με πραγματική μεταγλώττιση από το αντίστοιχο GCC.</p>
+          <div class="table-wrap mt-24">
+            <table>
+              <thead><tr><th>Στόχος</th><th>Κατάσταση</th><th>Σημειώσεις</th></tr></thead>
+              <tbody>
+                <tr><td><code>GCC 15.2</code></td><td><span class="badge good">Πλήρες</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 14.3</code></td><td><span class="badge good">Πλήρες</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 13.3</code></td><td><span class="badge good">Πλήρες</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Υποστηρίζεται</span></td><td>Τρέχων στόχος παραγωγής</td></tr>
+                <tr><td>Linux / MSVC / Clang</td><td><span class="badge">Δεν υποστηρίζεται</span></td><td>Η αρχιτεκτονική διατηρεί σημεία επέκτασης</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="eyebrow">Test chain</span>
+          <h3 class="mt-8">Η επαλήθευση δεν είναι «φαίνεται να τρέχει»</h3>
+          <ul class="feature-list">
+            <li>Τρεις σουίτες CTest για GCC15 / 14 / 13, 65/65 η καθεμία</li>
+            <li>differential corpus 13/13: κωδικοί εξόδου, διαγνωστικά, ροή tokens</li>
+            <li>realworld corpus 3/3: nlohmann/json, fmt, spdlog</li>
+            <li>Κάθε θετικό παράδειγμα εκτελείται πραγματικά μετά τη δημιουργία του exe</li>
+            <li>PCH policy και cache περνούν και στις τρεις εκδόσεις</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite με συνεχή έλεγχο παλινδρόμησης</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; padding:30px 34px">
+        <div>
+          <span class="eyebrow">Get started</span>
+          <h2 style="font-size:30px" class="mt-8">Κατεβάστε, αποσυμπιέστε, αντικαταστήστε <code style="font-size:.72em">g++ -E</code></h2>
+          <p class="muted mt-8">Τρέχουσα σταθερή έκδοση V3.0.1 · Windows x64 · exe μεμονωμένου αρχείου.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="download.html">Λήψη V3.0.1</a>
+          <a class="btn" href="docs.html">Γρήγορη εκκίνηση</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+        <p>Αυτόνομος προεπεξεργαστής C++ για Windows x64. Κάντε τα αποτελέσματα της προεπεξεργασίας εξηγήσιμα, επαληθεύσιμα και αναπαραγώγιμα.</p>
+      </div>
+      <div><h4>Προϊόν</h4><a href="features.html">Δυνατότητες</a><a href="download.html">Λήψη</a><a href="changelog.html">Αρχείο αλλαγών</a></div>
+      <div><h4>Πόροι</h4><a href="docs.html">Τεκμηρίωση</a><a href="license.html">Άδεια</a><a href="about.html">Σχετικά</a></div>
+      <div><h4>Εξωτερικά</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 και μετά: CC BY-NC 4.0 · V2.9.0 και πριν: MIT</span></div>
+  </div>
+</footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

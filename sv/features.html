@@ -1,1 +1,135 @@
-<!doctype html><html lang="sv" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#features"><title>CrucibleCpp — sv</title></head><body><p><a href="index.html#features">Open translated section →</a></p><script>location.replace('index.html#features');</script></body></html>
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funktioner — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="CrucibleCpps funktioner: GCC 13/14/15-profiler, diagnostik, makron, UCN, #embed, PCH och differentialverifiering.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Huvudnavigering"><a href="index.html">Start</a><a href="features.html">Funktioner</a><a href="docs.html">Dokumentation</a><a href="download.html">Ladda ner</a><a href="changelog.html">Ändringslogg</a><a href="license.html">Licens</a><a href="about.html">Om</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Svenska</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006aa7"/><rect x="6" width="2.2" height="14" fill="#fecc00"/><rect y="6" width="20" height="2.2" fill="#fecc00"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Välj språk"><li><a role="option" href="/" data-locale="/">Förenklad kinesiska<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Fler språk <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Ladda ner V3.0.1</a><button class="menu-toggle" aria-label="Öppna menyn" aria-expanded="false">Meny</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Capabilities</span>
+      <h1>Gör varje lager till<br>verifierbara beteenden</h1>
+      <p class="lead">Från val av målversion och fördefinierade makron till diagnostik, PCH och riktiga projekt bygger CrucibleCpp inte på “det borde fungera” utan på en repeterbar kedja av tester.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2">
+        <article class="card reveal">
+          <div class="card-icon">A</div>
+          <h3>Målversion och profil</h3>
+          <p>En förprocessor, tre mål-GCC-versioner. Vilken version du än väljer får du den versionens fördefinierade makron,<code>__has_*</code> data och include-sökvägar.</p>
+          <ul class="feature-list">
+            <li><code>--gcc-version=13|14|15</code></li>
+            <li><code>--gcc D:\path\to\g++.exe</code></li>
+            <li>Automatisk PATH-detektering som standard väljer den högsta version som stöds</li>
+            <li>GCC 13.3 / 14.3 / 15.2 profile</li>
+            <li>C++11 / C++14 / C++17 / C++20</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">B</div>
+          <h3>Diagnostiksystem</h3>
+          <p>Ett diagnostikformat byggt för riktiga byggsystem. Det innehåller källkodsrad, caret, include-spår och warning option – inte bara en felsträng.</p>
+          <ul class="feature-list">
+            <li>GCC-liknande severity / option / caret</li>
+            <li><code>-Werror</code>, <code>-Wno-...</code>, <code>-Werror=...</code></li>
+            <li><code>#pragma GCC diagnostic push/pop</code></li>
+            <li><code>#pragma GCC system_header</code></li>
+            <li><code>-Wsystem-headers</code> och undertryckning av systemheaderfiler</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">C</div>
+          <h3>Makron och förbehandlingssemantik</h3>
+          <p>Objektmakron, funktionsmakron, tomma argument, variadiska makron, stringifiering, token pasting och GCC:s kommaelimineringstillägg.</p>
+          <ul class="feature-list">
+            <li><code>#</code> och <code>##</code></li>
+            <li><code>__VA_OPT__</code>(C++20)</li>
+            <li><code>, ## __VA_ARGS__</code></li>
+            <li><code>defined</code> / <code>__has_include</code></li>
+            <li>JSON för makrospår och include-grafanalys</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">D</div>
+          <h3>UCN och #embed</h3>
+          <p>Universal character names deltar i identifierare och sammanfogning;<code>#embed</code> Bäddar in binära resurser enligt GCC:s semantik.</p>
+          <ul class="feature-list">
+            <li><code>\uXXXX</code> / <code>\UXXXXXXXX</code></li>
+            <li>UCN som bildas av backslash-radbrytning</li>
+            <li><code>#</code> / <code>##</code> bevarar UCN-stavning i</li>
+            <li><code>#embed</code> + <code>limit</code></li>
+            <li><code>prefix</code> / <code>suffix</code> / <code>if_empty</code></li>
+            <li><code>gnu::offset</code> och <code>__has_embed</code></li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">E</div>
+          <h3>PCH och cache</h3>
+          <p>PCH-strategi och cache kan användas med GCC 13/14/15. Cachen parsar inte GCC:s PCH direkt, utan validerar, registrerar, invaliderar och spårar externa <code>.gch</code>. </p>
+          <ul class="feature-list">
+            <li><code>--pch=ignore|warn|error|report</code></li>
+            <li>CMake PCH-layout med tvingade includes</li>
+            <li>isolering av kompilatorsökväg, version och hash</li>
+            <li>Atomiska skrivningar, katalogslås, rensning baserad på kapacitet och ålder</li>
+            <li>JSON-statistik för hit rate / stale / corrupt</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">F</div>
+          <h3>Reproducerbara tester</h3>
+          <p>Tre GCC-verktygskedjor, två differentialkorpusar och riktiga projekt validerar utdata tillsammans – inte bara att “förbehandlingen lyckades”.</p>
+          <ul class="feature-list">
+            <li>GCC 15 / 14 / 13: 65/65 CTest vardera</li>
+            <li>differential corpus 13/13</li>
+            <li>realworld corpus 3/3</li>
+            <li>CrucibleCpp <code>.i</code> → mål-GCC → exe → kör</li>
+            <li>GCC <code>g++.dg/cpp</code> testsviteregression</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section-tight">
+        <div class="card reveal" style="padding:30px 34px">
+          <span class="eyebrow">Positioning</span>
+          <h2 class="mt-8" style="font-size:30px">Den ersätter förbehandlingssteget, inte kompilatorn</h2>
+          <p class="lead mt-16" style="max-width:820px">CrucibleCpp genererar ingen kod, optimerar inget och parsar inte GCC:s binära PCH. Dess enda uppgift är att göra källfiler till deterministiska <code>.i</code>, och lämnar diagnostik, beroenden och analyserbar information till byggsystemet.</p>
+          <div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="docs.html">Visa full dokumentation</a><a class="btn" href="download.html">Ladda ner V3.0.1</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>En fristående C++-förprocessor för Windows x64.</p></div><div><h4>Produkt</h4><a href="features.html">Funktioner</a><a href="download.html">Ladda ner</a><a href="changelog.html">Ändringslogg</a></div><div><h4>Resurser</h4><a href="docs.html">Dokumentation</a><a href="license.html">Licens</a><a href="about.html">Om</a></div><div><h4>Externa</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 och senare: CC BY-NC 4.0 · V2.9.0 och tidigare: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

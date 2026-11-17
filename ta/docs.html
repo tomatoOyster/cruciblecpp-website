@@ -1,1 +1,147 @@
-<!doctype html><html lang="ta" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#docs"><title>CrucibleCpp — தமிழ்</title></head><body><p><a href="index.html#docs">Open translated section →</a></p><script>location.replace('index.html#docs');</script></body></html>
+<!doctype html>
+<html lang="ta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ஆவணங்கள் — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="CrucibleCpp விரைவு தொடக்கம், கட்டளை வரி, GCC பதிப்புத் தேர்வு, PCH, கண்டறிதல்கள் மற்றும் இணக்க ஆவணங்கள்.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="முதன்மை வழிசெலுத்தல்"><a href="index.html">முகப்பு</a><a href="features.html">அம்சங்கள்</a><a href="docs.html">ஆவணங்கள்</a><a href="download.html">பதிவிறக்கம்</a><a href="changelog.html">மாற்றங்கள்</a><a href="license.html">உரிமம்</a><a href="about.html">பற்றி</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">தமிழ்</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#ff9933"/><rect y="4.67" width="20" height="4.66" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#138808"/><circle cx="10" cy="7" r="1.2" fill="none" stroke="#000080" stroke-width=".5"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="மொழியைத் தேர்ந்தெடு"><li><a role="option" href="/" data-locale="/">எளிய சீனம்<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">மேலும் மொழிகள் <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">V3.0.1 பதிவிறக்கு </a><button class="menu-toggle" aria-label="பட்டியைத் திற" aria-expanded="false">பட்டி</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Documentation</span>
+      <h1>முதல் கட்டளையிலிருந்து தொடங்குங்கள்</h1>
+      <p class="lead">இந்தப் பக்கம் நிறுவல், இலக்கு GCC தேர்வு, பொதுவான கட்டளை வரிகள், PCH, கண்டறிதல்கள் மற்றும் சிக்கல் தீர்வை உள்ளடக்குகிறது. முழுச் செயலாக்கமும் சோதனை அணியும் GitHub களஞ்சியத்தில் உள்ளபடியே அடிப்படையாகக் கொள்ளப்படும்.</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns:230px minmax(0,1fr);gap:44px;align-items:start">
+        <aside class="card reveal" style="position:sticky;top:96px;padding:18px">
+          <h4 style="color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase">இந்தப் பக்கத்தின் உள்ளடக்கம்</h4>
+          <div style="display:flex;flex-direction:column;gap:3px;margin-top:10px">
+            <a href="#install" class="small">நிறுவல்</a>
+            <a href="#quickstart" class="small">விரைவு தொடக்கம்</a>
+            <a href="#gcc" class="small">GCC தேர்வு</a>
+            <a href="#cli" class="small">கட்டளை வரி</a>
+            <a href="#pch" class="small">PCH</a>
+            <a href="#diagnostics" class="small">கண்டறிதல்</a>
+            <a href="#troubleshooting" class="small">சிக்கல் தீர்வு</a>
+          </div>
+        </aside>
+
+        <div class="prose">
+          <h2 id="install">நிறுவல்</h2>
+          <p>Windows x64 காப்பகத்தைப் பதிவிறக்கி, எந்த அடைவிலும் பிரித்தெடுத்தால் போதும். CrucibleCpp நிலையாக இணைக்கப்பட்ட ஒற்றைக் கோப்பு நிரல்; runtime நிறுவ வேண்டியதில்லை.</p>
+          <div class="codeblock">cruciblecpp-preprocessor.exe --version
+# cruciblecpp-preprocessor 3.0.1</div>
+          <div class="note">தற்போதைய உற்பத்தி இலக்கு: Windows x64 + MinGW-w64 UCRT64. பிற தளங்கள், ABI மற்றும் GCC பதிப்புகளுக்கு ஆதரவு உறுதியளிக்கப்படவில்லை.</div>
+
+          <h2 id="quickstart">விரைவு தொடக்கம்</h2>
+          <p>முதலில் PATHஇல் இலக்கு <code>g++.exe</code> கிடைப்பதை உறுதிசெய்யுங்கள். பின்னர் ஏற்கனவே உள்ள <code>g++ -E</code>: </p>
+          <div class="codeblock"># முன்செயலாக்கம்
+.\cruciblecpp-preprocessor.exe -P -std=c++20 src\main.cpp -o build\main.i
+
+# அதே GCC மூலம் தொகு
+g++ -std=c++20 build\main.i -o build\main.exe</div>
+          <p>இலக்கு GCCஐ PATHஇல் சேர்க்கவில்லை என்றால், <code>--gcc</code> மூலம் வெளிப்படையாகக் குறிப்பிடுங்கள்:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --gcc "D:\GCC1413\gcc14\bin\g++.exe" `
+  -P -std=c++20 src\main.cpp -o build\main.i</div>
+
+          <h2 id="gcc">GCC தேர்வு</h2>
+          <p>CrucibleCpp இலக்கு GCCவின் முன்வரையறுக்கப்பட்ட மேக்ரோக்கள், <code>__has_*</code> தகவல்கள் மற்றும் include தேடல் பாதைகளைப் பயன்படுத்துகிறது. GCC15 profileஐக் கொண்டு GCC14 தலைப்புக் கோப்புகளை முன்செயலாக்க வேண்டாம்.</p>
+          <div class="table-wrap"><table><thead><tr><th>முறை</th><th>நடத்தை</th></tr></thead><tbody>
+            <tr><td><code>--gcc-version=13|14|15</code></td><td>PATHஇல் பொருந்தும் முக்கிய பதிப்பின் மிக உயர்ந்த ஆதரவுத் தொகுப்பியைத் தேடும்</td></tr>
+            <tr><td><code>--gcc &lt;g++.exe&gt;</code></td><td>குறிப்பிட்ட தொகுப்பியை நேரடியாகப் பயன்படுத்தி, அதன் பதிப்பையும் include பாதையையும் படிக்கும்</td></tr>
+            <tr><td>குறிப்பிடவில்லை</td><td>PATHஐ ஸ்கேன் செய்து, இயல்பாக மிக உயர்ந்த ஆதரவுப் பதிப்பைத் தேர்ந்தெடுக்கும் (15 → 14 → 13)</td></tr>
+          </tbody></table></div>
+          <div class="note">தானியங்கிக் கண்டறிதல் PATHஐ மட்டுமே ஸ்கேன் செய்யும். வேறு அடைவில் நிறுவியிருந்தால், அதை PATHஇல் சேர்க்கவும், அல்லது <code>--gcc</code> பயன்படுத்துங்கள்; நிலையான drive எழுத்தை நம்ப வேண்டாம்.</div>
+          <p>ஆதரவு பெறும் நிலையான profile வகைகள்:</p>
+          <div class="codeblock">-std=c++11   C++11 profile
+-std=c++14   C++14 profile
+-std=c++17   C++17 profile
+-std=c++20   C++20 profile</div>
+
+          <h2 id="cli">பொதுவான கட்டளை வரிகள்</h2>
+          <div class="table-wrap"><table><thead><tr><th>அளவுரு</th><th>செயல்</th></tr></thead><tbody>
+            <tr><td><code>-P</code></td><td>line markers வெளியிடாது</td></tr>
+            <tr><td><code>-o &lt;file&gt;</code></td><td>வெளியீட்டுக் கோப்பு</td></tr>
+            <tr><td><code>-I &lt;dir&gt;</code></td><td>include அடைவைச் சேர்</td></tr>
+            <tr><td><code>-isystem &lt;dir&gt;</code></td><td>கணினித் தலைப்பு அடைவு</td></tr>
+            <tr><td><code>-D / -U</code></td><td>மேக்ரோ வரையறு / நீக்கு</td></tr>
+            <tr><td><code>-include &lt;file&gt;</code></td><td>கட்டாயச் சேர்ப்பு</td></tr>
+            <tr><td><code>-MD -MF -MT</code></td><td>Make/CMake சார்புக் கோப்புகளை உருவாக்கு</td></tr>
+            <tr><td><code>-finput-charset</code> / <code>-fexec-charset</code></td><td>உள்ளீடு / இயக்க எழுத்துத்தொகுப்பு</td></tr>
+            <tr><td><code>--embed-dir &lt;dir&gt;</code></td><td><code>#embed</code> தேடல் அடைவு</td></tr>
+            <tr><td><code>--analysis-json &lt;file&gt;</code></td><td>include வரைபடம், மேக்ரோ trace, PCH பதிவுகளை வெளியிடு</td></tr>
+          </tbody></table></div>
+
+          <h2 id="pch">PCH</h2>
+          <p>GCCவின் <code>g++ -E</code> கட்டளை <code>.gch</code> கோப்புகளைப் பயன்படுத்துவதில்லை; PCH உண்மையான தொகுப்பின்போது மட்டுமே பயன்படும். CrucibleCpp இயல்பாக தலைப்புக் கோப்பு மூலங்களைப் படித்து, விருப்பத்தேர்வாக வெளிப்புறமாக உருவாக்கப்பட்ட PCHஐ சரிபார்த்து, பதிவு செய்து, cache செய்கிறது.</p>
+          <div class="codeblock"># .gch கண்டறியப்பட்டால் எச்சரிக்கை வெளியிடு
+--pch=warn
+
+# .gch கண்டறியப்பட்டால் நேரடியாகப் பிழை தெரிவி
+--pch=error
+
+# புறக்கணிக்கப்பட்ட PCHஐ analysis JSONஇல் பதிவு செய்
+--pch=report</div>
+          <p>PCH cacheஐ இயக்க:</p>
+          <div class="codeblock">.\cruciblecpp-preprocessor.exe `
+  --pch-cache .cache\pch `
+  --pch-cache-stats .cache\pch\stats.json `
+  -P src\main.cpp -o build\main.i</div>
+          <p>cache manifest தொகுப்பியின் பாதை, பதிப்பு, தொகுப்பி hash மற்றும் விருப்பங்களின் hash ஆகியவற்றைப் பதிவு செய்யும். GCC13/14/15 இன் PCH கோப்புகள் ஒன்றையொன்று தவறாக hit செய்யாது.</p>
+
+          <h2 id="diagnostics">கண்டறிதல்</h2>
+          <p>இயல்பாக GCC பாணியில் மூலக் குறியீட்டு வரியும் caret குறியீடும் வெளியிடப்படும். இதை மூடலாம் அல்லது மாற்றியமைக்கலாம்:</p>
+          <div class="codeblock">-fdiagnostics-color=auto|always|never
+-fno-diagnostics-show-caret
+-fno-diagnostics-show-option
+-Werror
+-Wno-error=name
+--max-errors 20</div>
+          <p>ஆதரவு:  <code>#pragma GCC diagnostic push/pop/ignored/warning/error</code> மற்றும் <code>#pragma GCC system_header</code>.  <code>-isystem</code>  மூலம் வரும் தலைப்புகள் இயல்பாக சாதாரண எச்சரிக்கைகளை அடக்குகின்றன, <code>-Wsystem-headers</code> அவற்றை மீண்டும் காட்டும்.</p>
+
+          <h2 id="troubleshooting">சிக்கல் தீர்வு</h2>
+          <h3>நிலையான நூலகத் தலைப்புக் கோப்புகள் கிடைக்கவில்லை</h3>
+          <p>இலக்கு தொகுப்பி PATHஇல் இல்லை. <code>--gcc</code> மூலம் குறிப்பிடுங்கள், அல்லது அதன் <code>bin</code>  அடைவை PATHஇல் சேர்க்கவும். மேலும் <code>-isystem</code> மூலம் வெளிப்படையாக அனுப்பலாம்.</p>
+          <h3>தவறான GCC பதிப்பு தேர்ந்தெடுக்கப்பட்டது</h3>
+          <p>பயன்படுத்தி <code>--gcc-version=13|14|15</code> முக்கிய பதிப்பை நிர்ணயிக்கவும், அல்லது <code>--gcc</code> மூலம் குறிப்பிட்ட <code>g++.exe</code>ஐச் சுட்டுங்கள். target profileஐ வேறு பதிப்பின் தலைப்புக் கோப்புகளுடன் கலக்க வேண்டாம்.</p>
+          <h3>PCH cache corrupt எனப் புகாரளிக்கிறது</h3>
+          <p>PCH தற்போதைய தொகுப்பி/விருப்பங்களுடன் பொருந்தவில்லை, அல்லது கோப்பு சிதைந்துள்ளது. தொடர்புடைய cache உள்ளீட்டை நீக்கி மீண்டும் உருவாக்குங்கள்; அல்லது PCH cacheஐ முழுவதுமாக மூடிவிட்டு, அது தலைப்புக் கோப்பு மூலங்களைப் படிக்க விடுங்கள்.</p>
+          <h3>வெளியீட்டை GCCஆல் தொகுக்க முடியவில்லை</h3>
+          <p>முதலில் உறுதிசெய்யுங்கள்: முன்செயலாக்கமும் தொகுப்பும் ஒரே GCC பதிப்பையும் ஒரே <code>-std</code>. பின்னர் “CrucibleCpp உருவாக்கிய .i”ஐ தனியாகத் தொகுத்து, சிக்கல் முன்செயலாக்க நிலையிலிருந்து வருகிறதா என உறுதிசெய்யுங்கள்.</p>
+
+          <div class="note warn" style="margin-top:34px">CrucibleCpp ஒரு முன்செயலி, தொகுப்பி அல்ல. குறியீட்டு உருவாக்கம், மேம்படுத்தல், இணைப்பு மற்றும் GCC பைனரி PCHஇன் உள் வடிவப் பாகுபடுத்தல் ஆகியவற்றுக்கு இது பொறுப்பல்ல.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Windows x64க்கான தனித்த C++ முன்செயலி.</p></div><div><h4>தயாரிப்பு</h4><a href="features.html">அம்சங்கள்</a><a href="download.html">பதிவிறக்கம்</a><a href="changelog.html">மாற்றங்கள்</a></div><div><h4>வளங்கள்</h4><a href="docs.html">ஆவணங்கள்</a><a href="license.html">உரிமம்</a><a href="about.html">பற்றி</a></div><div><h4>வெளிப்புறம்</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 மற்றும் அதற்குப் பின்: CC BY-NC 4.0 · V2.9.0 மற்றும் அதற்கு முன்: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

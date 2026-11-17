@@ -1,19 +1,189 @@
-<!doctype html><html lang="uk" translate="no"><head><meta charset="utf-8"><meta name="google" content="notranslate"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CrucibleCpp — Українська</title><meta name="description" content="CrucibleCpp — Українська"><meta name="theme-color" content="#dffbf6"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=6"></head><body>
-<header class="site-header"><div class="nav"><a class="brand" href="/uk/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><nav class="nav-links"><a href="#features">Функції</a><a href="#docs">Документація</a><a href="#download">Завантажити</a><a href="#changelog">Зміни</a><a href="#license">Ліцензія</a><a href="#about">Про проєкт</a><a href="/languages.html">Усі мови</a></nav><div class="nav-actions"><a class="btn btn-sm btn-primary" href="#download">Завантажити V3.0.1</a></div></div></header>
-<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">WINDOWS X64 · GCC 13 / 14 / 15</span><h1>Зробіть препроцесинг детермінованим</h1><p class="lead">CrucibleCpp — автономний препроцесор C++. Він виконує фази 1–4 і створює <code>.i</code>, який цільовий GCC компілює напряму.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">Завантажити V3.0.1 ↓</a><a class="btn" href="#features">Функції →</a></div><div class="hero-meta"><span><i class="dot"></i> CC BY-NC 4.0</span><span><i class="dot"></i> залежності</span></div></div><div class="terminal"><div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell — cruciblecpp</span></div><pre><span class="c"># target GCC profile + headers</span>
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrucibleCpp Preprocessor — самостійний препроцесор C++ для Windows</title>
+  <meta name="description" content="CrucibleCpp — самостійний препроцесор C++ для Windows x64, який замінює g++ -E і підтримує GCC 13.3 / 14.3 / 15.2 та C++11/14/17/20.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Головна навігація">
+      <a href="index.html">Головна</a>
+      <a href="features.html">Можливості</a>
+      <a href="docs.html">Документація</a>
+      <a href="download.html">Завантажити</a>
+      <a href="changelog.html">Історія змін</a>
+      <a href="license.html">Ліцензія</a>
+      <a href="about.html">Про проєкт</a>
+    </nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Українська</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="7" fill="#0057b7"/><rect y="7" width="20" height="7" fill="#ffd700"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Вибрати мову"><li><a role="option" href="/" data-locale="/">Китайська (спрощена)<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Більше мов <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Завантажити V3.0.1</a>
+      <button class="menu-toggle" aria-label="Відкрити меню" aria-expanded="false">Меню</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Windows x64 · GCC 13 / 14 / 15</span>
+        <h1>Повернімо препроцесуванню<br>детермінізм</h1>
+        <p class="lead">CrucibleCpp — самостійний препроцесор C++. Він читає вихідні файли, виконує фази трансляції 1–4 і створює <code>.i</code> файл, який можна одразу передати GCC для подальшої компіляції.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="download.html">Завантажити V3.0.1 <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="docs.html">Читати документацію <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="dot"></i> CC BY-NC 4.0</span>
+          <span><i class="dot"></i> Без встановлення</span>
+          <span><i class="dot"></i> Однофайловий виконуваний файл</span>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell - cruciblecpp</span></div>
+        <pre><span class="c"># 用目标 GCC 的 profile 和头文件预处理</span>
 <span class="b">PS&gt;</span> .\cruciblecpp-preprocessor.exe <span class="g">--gcc-version=15</span> `
        -P src\main.cpp -o build\main.i
 
+<span class="c"># 输出可直接交给 GCC 编译</span>
 <span class="b">PS&gt;</span> g++ -std=c++20 build\main.i -o build\main.exe
-<span class="o">✓</span> 65/65 tests</pre></div></div></section>
-<div class="wrap"><div class="stats"><div class="stat"><strong>3</strong><span>версії GCC</span></div><div class="stat"><strong>4</strong><span>профілі C++</span></div><div class="stat"><strong>65/65</strong><span>CTest на GCC</span></div><div class="stat"><strong>0</strong><span>залежності</span></div></div></div>
-<section class="section" id="features"><div class="wrap"><span class="eyebrow">WHY CRUCIBLECPP</span><h2 class="mt-8">Сумісність</h2><div class="grid g3 mt-32"><article class="card"><h3>Явна версія GCC</h3><p>Виберіть через <code>--gcc-version</code> або <code>--gcc</code>.</p></article><article class="card"><h3>Діагностика GCC</h3><p>Caret, include trace, warning ID і <code>-Werror</code>.</p></article><article class="card"><h3>Реальні проєкти</h3><p>nlohmann/json, fmt і spdlog з GCC 13/14/15.</p></article></div><div class="table-wrap mt-24"><table><thead><tr><th>Ціль</th><th>Стан</th></tr></thead><tbody><tr><td><code>GCC 15.2</code></td><td><span class="badge good">Повний</span></td></tr><tr><td><code>GCC 14.3</code></td><td><span class="badge good">Повний</span></td></tr><tr><td><code>GCC 13.3</code></td><td><span class="badge good">Повний</span></td></tr><tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Підтримується</span></td></tr><tr><td>Linux / MSVC / Clang</td><td><span class="badge">Не підтримується</span></td></tr></tbody></table></div></div></section>
-<section class="section" id="docs"><div class="wrap"><span class="eyebrow">Документація</span><h2 class="mt-8">Швидкий старт</h2><p class="lead mt-16">Додайте цільовий GCC у PATH і замініть <code>g++ -E</code>.</p><div class="codeblock mt-16">cruciblecpp-preprocessor.exe -P `
-  -std=c++20 src\main.cpp -o build\main.i
+<span class="b">PS&gt;</span> .\build\main.exe
 
-g++ -std=c++20 build\main.i -o build\main.exe</div></div></section>
-<section class="section" id="download" style="padding-top:0"><div class="wrap"><span class="eyebrow">Завантажити</span><h2 class="mt-8">V3.0.1</h2><div class="download-hero mt-24"><div class="card download-box"><h2 style="font-size:30px">CrucibleCpp V3.0.1</h2><p class="muted mt-8">Windows x64 · MinGW-w64 UCRT64</p><a class="btn btn-primary" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor-v3.0.1-win64.zip" rel="noopener">Повний архів ↓</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor.exe" rel="noopener">лише exe</a><a class="btn btn-ghost" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/tag/v3.0.1" rel="noopener">GitHub Release</a></div><div class="card download-box"><h3>SHA-256</h3><div class="hash">8a0928adefbfb01c9bd69965d6cd4e96fede61d904e47c98f365d8cdeec96b32</div><div class="note mt-24">V3.0.0 і новіше: CC BY-NC 4.0.</div></div></div></div></section>
-<section class="section" id="changelog" style="padding-top:0"><div class="wrap"><span class="eyebrow">Історія</span><h2 class="mt-8">Історія</h2><div class="grid g3 mt-24"><div class="card"><h3>V3.0.1</h3><p class="muted mt-8">Виправлення digraph, realworld і nlohmann/json.</p></div><div class="card"><h3>V3.0.0</h3><p class="muted mt-8">Межа ліцензії та повний PCH для GCC13/14/15.</p></div><div class="card"><h3>V2.9.0</h3><p class="muted mt-8">Профілі GCC 13.3 / 14.3 і вибір цілі.</p></div></div></div></section>
-<section class="section" id="license" style="padding-top:0"><div class="wrap"><span class="eyebrow">Ліцензія</span><h2 class="mt-8">Ліцензія</h2><div class="grid g2 mt-24"><div class="card"><h3>V3.0.0+</h3><p class="muted mt-8">V3.0.0 і новіше: CC BY-NC 4.0.</p><a href="/LICENSE">LICENSE →</a></div><div class="card"><h3>≤ V2.9.0</h3><p class="muted mt-8">V2.9.0 і старіше: MIT.</p><a href="/LICENSE-MIT">MIT →</a></div></div></div></section>
-<section class="section" id="about" style="padding-top:0"><div class="wrap"><div class="card" style="padding:34px"><span class="eyebrow">Про проєкт</span><h2 class="mt-8">Про проєкт</h2><p class="muted mt-8">Перевірюваний шар, а не ще один розширювач макросів. CrucibleCpp робить фази 1–4 спостережуваними й тестованими.</p><div class="mt-24"><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a></div></div></div></section>
-</main><footer class="footer"><div class="wrap"><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp</span><span>V3.0.1 · CC BY-NC 4.0</span></div></div></footer></body></html>
+<span class="o">✓</span> preprocess complete
+<span class="o">✓</span> 65/65 tests · GCC 15.2 / 14.3 / 13.3</pre>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><strong>3</strong><span>Мажорні версії GCC</span></div>
+      <div class="stat"><strong>4</strong><span>Профілі стандартів C++</span></div>
+      <div class="stat"><strong>65/65</strong><span>Три набори CTest</span></div>
+      <div class="stat"><strong>0</strong><span>Залежності часу виконання</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Why CrucibleCpp</span>
+      <h2 class="mt-8">Не черговий розширювач макросів,<br>а перевірюваний рівень препроцесування</h2>
+      <p class="lead mt-16" style="max-width:720px">Кожен позитивний тест-кейс проходить той самий ланцюжок: CrucibleCpp генерує <code>.i</code>, який відповідний GCC компілює в exe, після чого його фактично запускають. Поведінка звіряється з GCC 15.2, 14.3 і 13.3.</p>
+      <div class="grid g3 mt-32">
+        <article class="card reveal">
+          <div class="card-icon">01</div>
+          <h3>Цільова версія задана явно</h3>
+          <p>Використовуйте <code>--gcc-version</code> або <code>--gcc</code> для вибору цільового компілятора. Профіль, вбудовані макроси та шляхи include походять з однієї цілі й не змішуються.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">02</div>
+          <h3>Діагностика як у GCC</h3>
+          <p>Caret у вихідному коді, include trace, ID попереджень, <code>-Werror</code>, стек pragma diagnostic, а також придушення попереджень системних заголовків.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">03</div>
+          <h3>Перевірка на реальних проєктах</h3>
+          <p>nlohmann/json, fmt і spdlog проходять препроцесування, компіляцію та запуск на трьох версіях GCC, охоплюючи реальні заголовки й комбінації макросів.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">04</div>
+          <h3>Повна підтримка UCN</h3>
+          <p><code>\uXXXX</code> і <code>\UXXXXXXXX</code> беруть участь в ідентифікаторах, <code>#</code>, <code>##</code>; перевірка коректності та нормалізація виводу відповідають GCC.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">05</div>
+          <h3>#embed</h3>
+          <p>Вбудовування двійкових даних, <code>limit</code>, <code>gnu::offset</code>, <code>prefix</code>, <code>suffix</code>, <code>if_empty</code>, а також <code>__has_embed</code>. </p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">06</div>
+          <h3>Ізоляція версій PCH</h3>
+          <p>Стратегії PCH і кеш доступні для GCC 13 / 14 / 15. Маніфест фіксує шлях до компілятора, версію та хеш виконуваного файлу, щоб уникнути хибних влучань між версіями.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal">
+          <span class="eyebrow">Compatibility</span>
+          <h2 class="mt-8">Почніть із чіткої матриці</h2>
+          <p class="lead mt-16">Поточна ціль продакшну — Windows x64 + MinGW-w64 UCRT64. Різні версії GCC використовують власні профілі та заголовкові файли, а вивід перевіряється фактичною компіляцією відповідним GCC.</p>
+          <div class="table-wrap mt-24">
+            <table>
+              <thead><tr><th>Ціль</th><th>Статус</th><th>Примітка</th></tr></thead>
+              <tbody>
+                <tr><td><code>GCC 15.2</code></td><td><span class="badge good">Повністю</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 14.3</code></td><td><span class="badge good">Повністю</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 13.3</code></td><td><span class="badge good">Повністю</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Підтримується</span></td><td>Поточна ціль продакшну</td></tr>
+                <tr><td>Linux / MSVC / Clang</td><td><span class="badge">Не підтримується</span></td><td>Архітектура зберігає точки розширення</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="eyebrow">Test chain</span>
+          <h3 class="mt-8">Перевірка — це не «наче працює»</h3>
+          <ul class="feature-list">
+            <li>Три набори CTest для GCC15 / 14 / 13, по 65/65 у кожному</li>
+            <li>differential corpus 13/13: коди виходу, діагностика, потоки токенів</li>
+            <li>realworld corpus 3/3: nlohmann/json, fmt, spdlog</li>
+            <li>Кожен позитивний тест-кейс фактично запускається після збірки exe</li>
+            <li>Політика PCH і кеш проходять перевірку на всіх трьох версіях</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite постійно проходить регресійне тестування</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; padding:30px 34px">
+        <div>
+          <span class="eyebrow">Get started</span>
+          <h2 style="font-size:30px" class="mt-8">Завантажте, розпакуйте, замініть <code style="font-size:.72em">g++ -E</code></h2>
+          <p class="muted mt-8">Поточна стабільна версія V3.0.1 · Windows x64 · один exe-файл.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="download.html">Завантажити V3.0.1</a>
+          <a class="btn" href="docs.html">Швидкий старт</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+        <p>Самостійний препроцесор C++ для Windows x64. Результати препроцесування, які можна пояснити, перевірити й відтворити.</p>
+      </div>
+      <div><h4>Продукт</h4><a href="features.html">Можливості</a><a href="download.html">Завантажити</a><a href="changelog.html">Історія змін</a></div>
+      <div><h4>Ресурси</h4><a href="docs.html">Документація</a><a href="license.html">Ліцензія</a><a href="about.html">Про проєкт</a></div>
+      <div><h4>Зовнішні</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 і новіші: CC BY-NC 4.0 · V2.9.0 і старіші: MIT</span></div>
+  </div>
+</footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

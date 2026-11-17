@@ -1,19 +1,189 @@
-<!doctype html><html lang="it" translate="no"><head><meta charset="utf-8"><meta name="google" content="notranslate"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CrucibleCpp — Italiano</title><meta name="description" content="CrucibleCpp — Italiano"><meta name="theme-color" content="#dffbf6"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=6"></head><body>
-<header class="site-header"><div class="nav"><a class="brand" href="/it/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><nav class="nav-links"><a href="#features">Funzioni</a><a href="#docs">Documentazione</a><a href="#download">Download</a><a href="#changelog">Changelog</a><a href="#license">Licenza</a><a href="#about">Informazioni</a><a href="/languages.html">Tutte le lingue</a></nav><div class="nav-actions"><a class="btn btn-sm btn-primary" href="#download">Scarica V3.0.1</a></div></div></header>
-<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">WINDOWS X64 · GCC 13 / 14 / 15</span><h1>Rendi deterministico il preprocessamento</h1><p class="lead">CrucibleCpp è un preprocessore C++ autonomo. Esegue le fasi 1–4 e produce un <code>.i</code> che il GCC di destinazione compila direttamente.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">Scarica V3.0.1 ↓</a><a class="btn" href="#features">Funzioni →</a></div><div class="hero-meta"><span><i class="dot"></i> CC BY-NC 4.0</span><span><i class="dot"></i> dipendenze</span></div></div><div class="terminal"><div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell — cruciblecpp</span></div><pre><span class="c"># target GCC profile + headers</span>
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrucibleCpp Preprocessor — preprocessore C++ autonomo per Windows</title>
+  <meta name="description" content="CrucibleCpp è un preprocessore C++ autonomo per Windows x64 che sostituisce g++ -E e supporta GCC 13.3 / 14.3 / 15.2 e C++11/14/17/20.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="features.html">Funzionalità</a>
+      <a href="docs.html">Documentazione</a>
+      <a href="download.html">Download</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="license.html">Licenza</a>
+      <a href="about.html">Informazioni</a>
+    </nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Italiano</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="6.67" height="14" fill="#009246"/><rect x="6.67" width="6.66" height="14" fill="#fff"/><rect x="13.33" width="6.67" height="14" fill="#ce2b37"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="Seleziona la lingua"><li><a role="option" href="/" data-locale="/">Cinese semplificato<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Altre lingue <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">Scarica V3.0.1</a>
+      <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Windows x64 · GCC 13 / 14 / 15</span>
+        <h1>Riporta il preprocessing <br>al determinismo</h1>
+        <p class="lead">CrucibleCpp è un preprocessore C++ autonomo. Legge i file sorgente, completa le fasi di traduzione 1–4 e produce un file <code>.i</code> che GCC può compilare direttamente.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="download.html">Scarica V3.0.1 <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="docs.html">Leggi la documentazione <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="dot"></i> CC BY-NC 4.0</span>
+          <span><i class="dot"></i> Nessuna installazione necessaria</span>
+          <span><i class="dot"></i> Eseguibile in un unico file</span>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell - cruciblecpp</span></div>
+        <pre><span class="c"># 用目标 GCC 的 profile 和头文件预处理</span>
 <span class="b">PS&gt;</span> .\cruciblecpp-preprocessor.exe <span class="g">--gcc-version=15</span> `
        -P src\main.cpp -o build\main.i
 
+<span class="c"># 输出可直接交给 GCC 编译</span>
 <span class="b">PS&gt;</span> g++ -std=c++20 build\main.i -o build\main.exe
-<span class="o">✓</span> 65/65 tests</pre></div></div></section>
-<div class="wrap"><div class="stats"><div class="stat"><strong>3</strong><span>versioni GCC</span></div><div class="stat"><strong>4</strong><span>profili C++</span></div><div class="stat"><strong>65/65</strong><span>CTest per GCC</span></div><div class="stat"><strong>0</strong><span>dipendenze</span></div></div></div>
-<section class="section" id="features"><div class="wrap"><span class="eyebrow">WHY CRUCIBLECPP</span><h2 class="mt-8">Compatibilità</h2><div class="grid g3 mt-32"><article class="card"><h3>Versione GCC esplicita</h3><p>Scegli con <code>--gcc-version</code> o <code>--gcc</code>.</p></article><article class="card"><h3>Diagnostica GCC</h3><p>Caret, include trace, warning ID e <code>-Werror</code>.</p></article><article class="card"><h3>Progetti reali</h3><p>nlohmann/json, fmt e spdlog verificati con GCC 13/14/15.</p></article></div><div class="table-wrap mt-24"><table><thead><tr><th>Destinazione</th><th>Stato</th></tr></thead><tbody><tr><td><code>GCC 15.2</code></td><td><span class="badge good">Completo</span></td></tr><tr><td><code>GCC 14.3</code></td><td><span class="badge good">Completo</span></td></tr><tr><td><code>GCC 13.3</code></td><td><span class="badge good">Completo</span></td></tr><tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Supportato</span></td></tr><tr><td>Linux / MSVC / Clang</td><td><span class="badge">Non supportato</span></td></tr></tbody></table></div></div></section>
-<section class="section" id="docs"><div class="wrap"><span class="eyebrow">Documentazione</span><h2 class="mt-8">Avvio rapido</h2><p class="lead mt-16">Metti il GCC di destinazione nel PATH e sostituisci <code>g++ -E</code>.</p><div class="codeblock mt-16">cruciblecpp-preprocessor.exe -P `
-  -std=c++20 src\main.cpp -o build\main.i
+<span class="b">PS&gt;</span> .\build\main.exe
 
-g++ -std=c++20 build\main.i -o build\main.exe</div></div></section>
-<section class="section" id="download" style="padding-top:0"><div class="wrap"><span class="eyebrow">Download</span><h2 class="mt-8">V3.0.1</h2><div class="download-hero mt-24"><div class="card download-box"><h2 style="font-size:30px">CrucibleCpp V3.0.1</h2><p class="muted mt-8">Windows x64 · MinGW-w64 UCRT64</p><a class="btn btn-primary" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor-v3.0.1-win64.zip" rel="noopener">Archivio completo ↓</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor.exe" rel="noopener">solo exe</a><a class="btn btn-ghost" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/tag/v3.0.1" rel="noopener">GitHub Release</a></div><div class="card download-box"><h3>SHA-256</h3><div class="hash">8a0928adefbfb01c9bd69965d6cd4e96fede61d904e47c98f365d8cdeec96b32</div><div class="note mt-24">V3.0.0 e successivi: CC BY-NC 4.0.</div></div></div></div></section>
-<section class="section" id="changelog" style="padding-top:0"><div class="wrap"><span class="eyebrow">Cronologia</span><h2 class="mt-8">Cronologia</h2><div class="grid g3 mt-24"><div class="card"><h3>V3.0.1</h3><p class="muted mt-8">Correzioni digraph, validazione realworld e nlohmann/json.</p></div><div class="card"><h3>V3.0.0</h3><p class="muted mt-8">Confine della licenza e PCH completo per GCC13/14/15.</p></div><div class="card"><h3>V2.9.0</h3><p class="muted mt-8">Profili GCC 13.3 / 14.3 e selezione della destinazione.</p></div></div></div></section>
-<section class="section" id="license" style="padding-top:0"><div class="wrap"><span class="eyebrow">Licenza</span><h2 class="mt-8">Licenza</h2><div class="grid g2 mt-24"><div class="card"><h3>V3.0.0+</h3><p class="muted mt-8">V3.0.0 e successivi: CC BY-NC 4.0.</p><a href="/LICENSE">LICENSE →</a></div><div class="card"><h3>≤ V2.9.0</h3><p class="muted mt-8">V2.9.0 e precedenti: MIT.</p><a href="/LICENSE-MIT">MIT →</a></div></div></div></section>
-<section class="section" id="about" style="padding-top:0"><div class="wrap"><div class="card" style="padding:34px"><span class="eyebrow">Informazioni</span><h2 class="mt-8">Uno strato verificabile, non un altro espansore di macro. CrucibleCpp rende osservabili e testabili le fasi 1–4.</h2><p class="muted mt-8">Uno strato verificabile, non un altro espansore di macro. CrucibleCpp rende osservabili e testabili le fasi 1–4.</p><div class="mt-24"><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a></div></div></div></section>
-</main><footer class="footer"><div class="wrap"><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp</span><span>V3.0.1 · CC BY-NC 4.0</span></div></div></footer></body></html>
+<span class="o">✓</span> preprocess complete
+<span class="o">✓</span> 65/65 tests · GCC 15.2 / 14.3 / 13.3</pre>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><strong>3</strong><span>Versioni principali di GCC</span></div>
+      <div class="stat"><strong>4</strong><span>Profili standard C++</span></div>
+      <div class="stat"><strong>65/65</strong><span>Tre suite CTest</span></div>
+      <div class="stat"><strong>0</strong><span>Dipendenze runtime</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Why CrucibleCpp</span>
+      <h2 class="mt-8">Non un altro espansore di macro, <br>ma uno strato di preprocessing verificabile</h2>
+      <p class="lead mt-16" style="max-width:720px">Ogni caso positivo segue la stessa catena: CrucibleCpp genera <code>.i</code>, che il GCC corrispondente compila in un exe e poi esegue davvero. Il comportamento è tarato su GCC 15.2, 14.3 e 13.3.</p>
+      <div class="grid g3 mt-32">
+        <article class="card reveal">
+          <div class="card-icon">01</div>
+          <h3>Versioni target esplicite</h3>
+          <p>Usa <code>--gcc-version</code> o <code>--gcc</code> per selezionare il compilatore target. Profilo, macro predefinite e percorsi di include provengono tutti dallo stesso target e non vengono mai mescolati.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">02</div>
+          <h3>Diagnostica allineata a GCC</h3>
+          <p>Caret sul codice sorgente, include trace, warning ID, <code>-Werror</code>, stack dei pragma diagnostic e soppressione dei warning degli header di sistema.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">03</div>
+          <h3>Validazione su progetti reali</h3>
+          <p>nlohmann/json, fmt e spdlog vengono preprocessati, compilati ed eseguiti con tutte e tre le versioni di GCC, coprendo header reali e combinazioni di macro.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">04</div>
+          <h3>UCN completo</h3>
+          <p><code>\uXXXX</code> e <code>\UXXXXXXXX</code> partecipano agli identificatori, <code>#</code>, <code>##</code>; i controlli di validità e la normalizzazione dell'output sono allineati a GCC.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">05</div>
+          <h3>#embed</h3>
+          <p>Incorporamento binario, <code>limit</code>, <code>gnu::offset</code>, <code>prefix</code>, <code>suffix</code>, <code>if_empty</code> e <code>__has_embed</code>. </p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">06</div>
+          <h3>Isolamento delle versioni PCH</h3>
+          <p>Le strategie e la cache PCH sono disponibili per GCC 13 / 14 / 15. Il manifest registra il percorso, la versione e l'hash dell'eseguibile del compilatore, evitando falsi riscontri tra versioni diverse.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal">
+          <span class="eyebrow">Compatibility</span>
+          <h2 class="mt-8">Parti da una matrice esplicita</h2>
+          <p class="lead mt-16">Il target di produzione attuale è fissato su Windows x64 + MinGW-w64 UCRT64. Ogni versione di GCC usa il proprio profilo e i propri header; l'output viene verificato compilandolo realmente con il GCC corrispondente.</p>
+          <div class="table-wrap mt-24">
+            <table>
+              <thead><tr><th>Target</th><th>Stato</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td><code>GCC 15.2</code></td><td><span class="badge good">Completo</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 14.3</code></td><td><span class="badge good">Completo</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 13.3</code></td><td><span class="badge good">Completo</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Supportato</span></td><td>Target di produzione attuale</td></tr>
+                <tr><td>Linux / MSVC / Clang</td><td><span class="badge">Non supportato</span></td><td>L'architettura mantiene aperti i punti di estensione</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="eyebrow">Test chain</span>
+          <h3 class="mt-8">La verifica non è “sembra che funzioni”</h3>
+          <ul class="feature-list">
+            <li>Tre suite CTest per GCC15 / 14 / 13, 65/65 ciascuna</li>
+            <li>differential corpus 13/13: codici di uscita, diagnostica, flussi di token</li>
+            <li>realworld corpus 3/3: nlohmann/json, fmt, spdlog</li>
+            <li>Ogni caso positivo viene eseguito davvero dopo aver generato l'exe</li>
+            <li>PCH policy e cache superano i test su tutte e tre le versioni</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite in regressione continua</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; padding:30px 34px">
+        <div>
+          <span class="eyebrow">Get started</span>
+          <h2 style="font-size:30px" class="mt-8">Scarica, decomprimi, sostituisci <code style="font-size:.72em">g++ -E</code></h2>
+          <p class="muted mt-8">Versione stabile attuale: V3.0.1 · Windows x64 · exe in un unico file.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="download.html">Scarica V3.0.1</a>
+          <a class="btn" href="docs.html">Avvio rapido</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+        <p>Un preprocessore C++ autonomo per Windows x64. Rende i risultati del preprocessing spiegabili, verificabili e riproducibili.</p>
+      </div>
+      <div><h4>Prodotto</h4><a href="features.html">Funzionalità</a><a href="download.html">Download</a><a href="changelog.html">Changelog</a></div>
+      <div><h4>Risorse</h4><a href="docs.html">Documentazione</a><a href="license.html">Licenza</a><a href="about.html">Informazioni</a></div>
+      <div><h4>Esterno</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 e successive: CC BY-NC 4.0 · V2.9.0 e precedenti: MIT</span></div>
+  </div>
+</footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

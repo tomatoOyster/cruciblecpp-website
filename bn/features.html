@@ -1,1 +1,135 @@
-<!doctype html><html lang="bn" translate="no"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=index.html#features"><title>CrucibleCpp — বাংলা</title></head><body><p><a href="index.html#features">Open translated section →</a></p><script>location.replace('index.html#features');</script></body></html>
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>বৈশিষ্ট্য — CrucibleCpp Preprocessor</title>
+  <meta name="description" content="CrucibleCpp-এর বৈশিষ্ট্য: GCC 13/14/15 প্রোফাইল, ডায়াগনস্টিক, ম্যাক্রো, UCN, #embed, PCH, differential যাচাই।">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="প্রধান নেভিগেশন"><a href="index.html">হোম</a><a href="features.html">বৈশিষ্ট্য</a><a href="docs.html">ডকুমেন্টেশন</a><a href="download.html">ডাউনলোড</a><a href="changelog.html">চেঞ্জলগ</a><a href="license.html">লাইসেন্স</a><a href="about.html">সম্পর্কে</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">বাংলা</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006a4e"/><circle cx="9" cy="7" r="3.4" fill="#f42a41"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="ভাষা নির্বাচন করুন"><li><a role="option" href="/" data-locale="/">সরলীকৃত চীনা<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">আরও ভাষা <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">V3.0.1 ডাউনলোড করুন</a><button class="menu-toggle" aria-label="মেনু খুলুন" aria-expanded="false">মেনু</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Capabilities</span>
+      <h1>প্রতিটি স্তরকে<br>যাচাইযোগ্য আচরণে পরিণত করুন</h1>
+      <p class="lead">লক্ষ্য সংস্করণ নির্বাচন, প্রি-ডিফাইনড ম্যাক্রো, ডায়াগনস্টিক থেকে PCH ও বাস্তব প্রকল্প পর্যন্ত, CrucibleCpp “এটা চলা উচিত” এই ভরসার ওপর নির্ভর করে না, বরং পুনরাবৃত্তিযোগ্য পরীক্ষা-শৃঙ্খলের ওপর নির্ভর করে।</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2">
+        <article class="card reveal">
+          <div class="card-icon">A</div>
+          <h3>লক্ষ্য সংস্করণ ও প্রোফাইল</h3>
+          <p>একটি প্রিপ্রসেসর, তিনটি লক্ষ্য GCC। যে সংস্করণ বেছে নেবেন, সেই সংস্করণের প্রি-ডিফাইনড ম্যাক্রো, <code>__has_*</code> ডেটা ও include সার্চ পাথ ব্যবহার করে।</p>
+          <ul class="feature-list">
+            <li><code>--gcc-version=13|14|15</code></li>
+            <li><code>--gcc D:\path\to\g++.exe</code></li>
+            <li>PATH স্বয়ংক্রিয় সনাক্তকরণ, ডিফল্টে সর্বোচ্চ সমর্থিত সংস্করণ নির্বাচন</li>
+            <li>GCC 13.3 / 14.3 / 15.2 profile</li>
+            <li>C++11 / C++14 / C++17 / C++20</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">B</div>
+          <h3>ডায়াগনস্টিক সিস্টেম</h3>
+          <p>বাস্তব বিল্ড সিস্টেমের জন্য ডায়াগনস্টিক ফরম্যাট। এতে সোর্স লাইন, caret, include trace ও warning option থাকে, শুধু একটি এরর স্ট্রিং নয়।</p>
+          <ul class="feature-list">
+            <li>GCC-শৈলীর severity / option / caret</li>
+            <li><code>-Werror</code>, <code>-Wno-...</code>, <code>-Werror=...</code></li>
+            <li><code>#pragma GCC diagnostic push/pop</code></li>
+            <li><code>#pragma GCC system_header</code></li>
+            <li><code>-Wsystem-headers</code> ও সিস্টেম হেডার দমন</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">C</div>
+          <h3>ম্যাক্রো ও প্রিপ্রসেসিং সিম্যান্টিক্স</h3>
+          <p>অবজেক্ট ম্যাক্রো, ফাংশন ম্যাক্রো, খালি আর্গুমেন্ট, ভ্যারিয়াডিক ম্যাক্রো, স্ট্রিংফিকেশন, token pasting, এবং GCC-এর কমা বাদ দেওয়ার এক্সটেনশন।</p>
+          <ul class="feature-list">
+            <li><code>#</code> এবং <code>##</code></li>
+            <li><code>__VA_OPT__</code>(C++20)</li>
+            <li><code>, ## __VA_ARGS__</code></li>
+            <li><code>defined</code> / <code>__has_include</code></li>
+            <li>macro trace ও include গ্রাফ বিশ্লেষণ JSON</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">D</div>
+          <h3>UCN ও #embed</h3>
+          <p>Universal character name আইডেন্টিফায়ার ও সংযোজনে অংশ নেয়; <code>#embed</code> GCC সিম্যান্টিক্স অনুযায়ী বাইনারি রিসোর্স এমবেড করে।</p>
+          <ul class="feature-list">
+            <li><code>\uXXXX</code> / <code>\UXXXXXXXX</code></li>
+            <li>ব্যাকস্ল্যাশ-নিউলাইনে গঠিত UCN</li>
+            <li><code>#</code> / <code>##</code> এর মধ্যে UCN বানান সংরক্ষিত থাকে</li>
+            <li><code>#embed</code> + <code>limit</code></li>
+            <li><code>prefix</code> / <code>suffix</code> / <code>if_empty</code></li>
+            <li><code>gnu::offset</code> এবং <code>__has_embed</code></li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">E</div>
+          <h3>PCH ও ক্যাশে</h3>
+          <p>GCC 13/14/15 모두 PCH কৌশল ও ক্যাশে ব্যবহার করতে পারে। ক্যাশে GCC PCH সরাসরি পার্স করে না, বরং বাইরের ফাইল যাচাই, নিবন্ধন, অকার্যকরকরণ ও ট্র্যাকিং করে — <code>.gch</code>. </p>
+          <ul class="feature-list">
+            <li><code>--pch=ignore|warn|error|report</code></li>
+            <li>বাধ্যতামূলক include সহ CMake PCH লেআউট</li>
+            <li>কম্পাইলার পাথ, সংস্করণ ও হ্যাশ বিচ্ছিন্নতা</li>
+            <li>অ্যাটমিক রাইট, ডিরেক্টরি লক, ক্যাপাসিটি ও বয়স অনুযায়ী পরিষ্কার</li>
+            <li>হিট রেট / stale / corrupt পরিসংখ্যান JSON</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon">F</div>
+          <h3>পুনরুৎপাদনযোগ্য পরীক্ষা</h3>
+          <p>তিনটি GCC সেট, দুটি differential করপাস ও বাস্তব প্রকল্প একসঙ্গে আউটপুট যাচাই করে, শুধু “প্রিপ্রসেসিং সফল” পরীক্ষা করে না।</p>
+          <ul class="feature-list">
+            <li>GCC15 / 14 / 13 প্রতিটিতে 65/65 CTest</li>
+            <li>differential corpus 13/13</li>
+            <li>realworld corpus 3/3</li>
+            <li>CrucibleCpp <code>.i</code> → লক্ষ্য GCC → exe → রান</li>
+            <li>GCC <code>g++.dg/cpp</code> testsuite রিগ্রেশন</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section-tight">
+        <div class="card reveal" style="padding:30px 34px">
+          <span class="eyebrow">Positioning</span>
+          <h2 class="mt-8" style="font-size:30px">এটি প্রিপ্রসেসিং ধাপের বিকল্প, কম্পাইলারের নয়</h2>
+          <p class="lead mt-16" style="max-width:820px">CrucibleCpp কোড জেনারেশন করে না, অপ্টিমাইজ করে না, GCC-এর বাইনারি PCH পার্স করে না। এর একমাত্র কাজ সোর্স ফাইল থেকে একটি নির্ধারক <code>.i</code> তৈরি করা এবং ডায়াগনস্টিক, নির্ভরতা ও বিশ্লেষণযোগ্য তথ্য বিল্ড সিস্টেমের হাতে দেওয়া।</p>
+          <div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="docs.html">সম্পূর্ণ ডকুমেন্টেশন দেখুন</a><a class="btn" href="download.html">V3.0.1 ডাউনলোড করুন</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Windows x64-এর জন্য স্বতন্ত্র C++ প্রিপ্রসেসর।</p></div><div><h4>পণ্য</h4><a href="features.html">বৈশিষ্ট্য</a><a href="download.html">ডাউনলোড</a><a href="changelog.html">চেঞ্জলগ</a></div><div><h4>রিসোর্স</h4><a href="docs.html">ডকুমেন্টেশন</a><a href="license.html">লাইসেন্স</a><a href="about.html">সম্পর্কে</a></div><div><h4>বহিঃসংযোগ</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 এবং পরবর্তী: CC BY-NC 4.0 · V2.9.0 এবং পূর্ববর্তী: MIT</span></div></div></footer>
+<script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

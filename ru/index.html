@@ -1,45 +1,189 @@
 <!doctype html>
-<html lang="ru" translate="no">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="google" content="notranslate"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CrucibleCpp — автономный препроцессор C++ для Windows</title>
-  <meta name="description" content="CrucibleCpp — автономный препроцессор C++ для Windows x64 с поддержкой GCC 13.3, 14.3 и 15.2.">
-  <meta name="theme-color" content="#dffbf6"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrucibleCpp Preprocessor — автономный препроцессор C++ для Windows</title>
+  <meta name="description" content="CrucibleCpp — автономный препроцессор C++ для Windows x64, замена g++ -E; поддерживает GCC 13.3 / 14.3 / 15.2 и C++11/14/17/20.">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=6">
 </head>
 <body>
-<header class="site-header"><div class="nav"><a class="brand" href="/ru/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><nav class="nav-links"><a href="#features">Возможности</a><a href="#docs">Документация</a><a href="#download">Скачать</a><a href="#changelog">Изменения</a><a href="#license">Лицензия</a><a href="#about">О проекте</a></nav><div class="nav-actions"><div class="lang-picker">
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="features.html">Возможности</a>
+      <a href="docs.html">Документация</a>
+      <a href="download.html">Скачать</a>
+      <a href="changelog.html">История изменений</a>
+      <a href="license.html">Лицензия</a>
+      <a href="about.html">О проекте</a>
+    </nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
       <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">Русский</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg><span class="lang-chev">⌄</span></button>
-      <ul class="lang-options" role="listbox" aria-label="选择语言"><li><a role="option" href="/" data-locale="/">简体中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/" class="current" aria-selected="true">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Другие языки <span aria-hidden="true">↗</span></a></li></ul>
+      <ul class="lang-options" role="listbox" aria-label="Выбрать язык"><li><a role="option" href="/" data-locale="/">Китайский (упрощённый)<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/" class="current" aria-selected="true">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">Другие языки <span aria-hidden="true">↗</span></a></li></ul>
     </div>
-      <a class="btn btn-sm btn-primary" href="#download">Скачать V3.0.1</a><button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">Меню</button></div></div></header>
+      <a class="btn btn-sm btn-primary" href="download.html">Скачать V3.0.1</a>
+      <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">Меню</button>
+    </div>
+  </div>
+</header>
+
 <main>
-  <section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">WINDOWS X64 · GCC 13 / 14 / 15</span><h1>Верните<br>предсказуемость препроцессингу</h1><p class="lead">CrucibleCpp — автономный препроцессор C++. Он выполняет фазы трансляции 1–4 и создаёт <code>.i</code>, который целевой GCC компилирует напрямую.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">Скачать V3.0.1 ↓</a><a class="btn" href="#docs">Документация →</a></div><div class="hero-meta"><span><i class="dot"></i> CC BY-NC 4.0</span><span><i class="dot"></i> Без установки</span><span><i class="dot"></i> Один exe</span></div></div><div class="terminal"><div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell — cruciblecpp</span></div><pre><span class="c"># профиль и заголовки целевого GCC</span>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Windows x64 · GCC 13 / 14 / 15</span>
+        <h1>Вернуть препроцессированию<br>детерминизм</h1>
+        <p class="lead">CrucibleCpp — автономный препроцессор C++. Он читает исходные файлы, выполняет фазы трансляции 1–4 и создаёт <code>.i</code> файл, который можно сразу передать GCC для дальнейшей компиляции.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="download.html">Скачать V3.0.1 <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="docs.html">Читать документацию <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><i class="dot"></i> CC BY-NC 4.0</span>
+          <span><i class="dot"></i> Без установки</span>
+          <span><i class="dot"></i> Один исполняемый файл</span>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">PowerShell - cruciblecpp</span></div>
+        <pre><span class="c"># 用目标 GCC 的 profile 和头文件预处理</span>
 <span class="b">PS&gt;</span> .\cruciblecpp-preprocessor.exe <span class="g">--gcc-version=15</span> `
        -P src\main.cpp -o build\main.i
 
-<span class="c"># компиляция тем же GCC</span>
+<span class="c"># 输出可直接交给 GCC 编译</span>
 <span class="b">PS&gt;</span> g++ -std=c++20 build\main.i -o build\main.exe
 <span class="b">PS&gt;</span> .\build\main.exe
 
-<span class="o">✓</span> препроцессинг завершён
-<span class="o">✓</span> 65/65 тестов · GCC 15.2 / 14.3 / 13.3</pre></div></div></section>
-  <div class="wrap"><div class="stats"><div class="stat"><strong>3</strong><span>версии GCC</span></div><div class="stat"><strong>4</strong><span>профиля C++</span></div><div class="stat"><strong>65/65</strong><span>CTest на GCC</span></div><div class="stat"><strong>0</strong><span>зависимостей</span></div></div></div>
-  <section class="section" id="features"><div class="wrap"><span class="eyebrow">ЗАЧЕМ</span><h2 class="mt-8">Проверяемый слой препроцессинга</h2><p class="lead mt-16" style="max-width:720px">Каждый положительный тест проходит один путь: CrucibleCpp создаёт <code>.i</code>, соответствующий GCC собирает exe, затем exe запускается.</p><div class="grid g3 mt-32"><article class="card"><div class="card-icon">01</div><h3>Явная версия GCC</h3><p><code>--gcc-version</code> или <code>--gcc</code>. Профиль, встроенные макросы и include-пути берутся у одного компилятора.</p></article><article class="card"><div class="card-icon">02</div><h3>Диагностика в стиле GCC</h3><p>Строки исходника, caret, include trace, warning ID, <code>-Werror</code> и стек pragma diagnostic.</p></article><article class="card"><div class="card-icon">03</div><h3>Реальные проекты</h3><p>nlohmann/json, fmt и spdlog проходят препроцессинг, компиляцию и запуск с GCC 13/14/15.</p></article><article class="card"><div class="card-icon">04</div><h3>Полная поддержка UCN</h3><p><code>\uXXXX</code> и <code>\UXXXXXXXX</code> в идентификаторах, <code>#</code>, <code>##</code>, проверка и нормализация.</p></article><article class="card"><div class="card-icon">05</div><h3>#embed</h3><p>Встраивание байтов, <code>limit</code>, <code>gnu::offset</code>, <code>prefix</code>, <code>suffix</code>, <code>if_empty</code>, <code>__has_embed</code>.</p></article><article class="card"><div class="card-icon">06</div><h3>PCH без смешения версий</h3><p>PCH работает с GCC 13/14/15; manifest хранит путь, версию и хеш компилятора.</p></article></div></div></section>
-  <section class="section" style="padding-top:0"><div class="wrap grid g2" style="align-items:start"><div><span class="eyebrow">СОВМЕСТИМОСТЬ</span><h2 class="mt-8">Начните с явной матрицы</h2><p class="lead mt-16">Цель — Windows x64 + MinGW-w64 UCRT64. Каждая версия GCC использует свой профиль и заголовки.</p><div class="table-wrap mt-24"><table><thead><tr><th>Цель</th><th>Статус</th></tr></thead><tbody><tr><td><code>GCC 15.2</code></td><td><span class="badge good">Полностью</span></td></tr><tr><td><code>GCC 14.3</code></td><td><span class="badge good">Полностью</span></td></tr><tr><td><code>GCC 13.3</code></td><td><span class="badge good">Полностью</span></td></tr><tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Поддержка</span></td></tr><tr><td>Linux / MSVC / Clang</td><td><span class="badge">Нет</span></td></tr></tbody></table></div></div><div class="card"><span class="eyebrow">ТЕСТЫ</span><h3 class="mt-8">Не «кажется, работает»</h3><ul class="feature-list"><li>GCC15 / 14 / 13: по 65/65 CTest</li><li>differential corpus: 13/13</li><li>realworld corpus: 3/3</li><li>Каждый положительный тест создаёт и запускает exe</li><li>PCH на всех трёх версиях</li></ul></div></div></section>
-  <section class="section" id="docs"><div class="wrap"><span class="eyebrow">ДОКУМЕНТАЦИЯ</span><h2 class="mt-8">С первой команды</h2><div class="grid g2 mt-24"><div class="card"><h3>Быстрый старт</h3><div class="codeblock">cruciblecpp-preprocessor.exe -P `
-  -std=c++20 src\main.cpp -o build\main.i
+<span class="o">✓</span> preprocess complete
+<span class="o">✓</span> 65/65 tests · GCC 15.2 / 14.3 / 13.3</pre>
+      </div>
+    </div>
+  </section>
 
-g++ -std=c++20 build\main.i -o build\main.exe</div><p class="muted small mt-8">Или укажите компилятор явно:</p><div class="codeblock">cruciblecpp-preprocessor.exe `
-  --gcc "D:\path\to\g++.exe" `
-  -P src\main.cpp -o build\main.i</div></div><div class="card"><h3>Выбор GCC</h3><ul class="feature-list"><li><code>--gcc-version=13|14|15</code></li><li><code>--gcc &lt;g++.exe&gt;</code></li><li>Автопоиск в PATH, по умолчанию старшая версия</li><li><code>-std=c++11|14|17|20</code></li></ul><div class="note mt-16">Автопоиск смотрит только PATH; для другого каталога используйте <code>--gcc</code>.</div></div></div></div></section>
-  <section class="section" id="download" style="padding-top:0"><div class="wrap"><span class="eyebrow">СКАЧАТЬ</span><h2 class="mt-8">V3.0.1</h2><div class="download-hero mt-24"><div class="card download-box"><span class="release-tag">● latest</span><h2 class="mt-16" style="font-size:34px">CrucibleCpp V3.0.1</h2><p class="muted mt-8">Windows x64 · MinGW-w64 UCRT64 · один exe</p><a class="btn btn-primary" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor-v3.0.1-win64.zip" rel="noopener">Скачать архив ↓</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/download/v3.0.1/cruciblecpp-preprocessor.exe" rel="noopener">Только exe</a><a class="btn btn-ghost" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases/tag/v3.0.1" rel="noopener">GitHub Release</a></div><div class="card download-box"><h3>SHA-256</h3><div class="mt-16 small faint">cruciblecpp-preprocessor.exe</div><div class="hash">8a0928adefbfb01c9bd69965d6cd4e96fede61d904e47c98f365d8cdeec96b32</div><div class="mt-16 small faint">cruciblecpp-preprocessor-v3.0.1-win64.zip</div><div class="hash">369494155360d2d66b227974aa997d6e9df93443ab27b60e62d0a9bacca28454</div><div class="note mt-24">V3.0.0 и новее — CC BY-NC 4.0; V2.9.0 и старше — MIT.</div></div></div></div></section>
-  <section class="section" id="changelog" style="padding-top:0"><div class="wrap"><span class="eyebrow">ИЗМЕНЕНИЯ</span><h2 class="mt-8">История версий</h2><div class="grid g3 mt-24"><div class="card"><h3>V3.0.1</h3><p class="muted mt-8">Исправлены digraph и <code>&lt;::</code>, проверка realworld и раскладка nlohmann/json.</p></div><div class="card"><h3>V3.0.0</h3><p class="muted mt-8">Граница лицензии; полная поддержка PCH GCC13/14/15 и версионно-изолированный кеш.</p></div><div class="card"><h3>V2.9.0</h3><p class="muted mt-8">Профили GCC 13.3 / 14.3, таблицы __has, выбор цели и автопоиск в PATH.</p></div></div></div></section>
-  <section class="section" id="license" style="padding-top:0"><div class="wrap"><span class="eyebrow">ЛИЦЕНЗИЯ</span><h2 class="mt-8">Разные условия для версий</h2><div class="grid g2 mt-24"><div class="card"><h3>V3.0.0 и новее</h3><p class="muted mt-8">CC BY-NC 4.0. Некоммерческое использование и адаптация с указанием авторства; для коммерческого использования нужно отдельное разрешение.</p><a href="/LICENSE">Полный текст →</a></div><div class="card"><h3>V2.9.0 и старше</h3><p class="muted mt-8">MIT License. Старые версии остаются под MIT.</p><a href="/LICENSE-MIT">Текст MIT →</a></div></div></div></section>
-  <section class="section" id="about" style="padding-top:0"><div class="wrap"><div class="card" style="padding:34px"><span class="eyebrow">О ПРОЕКТЕ</span><h2 class="mt-8">Проверяемый слой, а не ещё один раскрыватель макросов</h2><p class="lead mt-16">CrucibleCpp делает фазы 1–4 наблюдаемыми и тестируемыми. Это не компилятор: без кодогенерации, оптимизации, линковки и разбора бинарного PCH GCC.</p><div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/issues" rel="noopener">Issues</a></div></div></div></section>
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><strong>3</strong><span>Мажорные версии GCC</span></div>
+      <div class="stat"><strong>4</strong><span>Стандартные профили C++</span></div>
+      <div class="stat"><strong>65/65</strong><span>Три набора CTest</span></div>
+      <div class="stat"><strong>0</strong><span>Зависимости времени выполнения</span></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Why CrucibleCpp</span>
+      <h2 class="mt-8">Не ещё один раскрыватель макросов,<br>а проверяемый слой препроцессирования</h2>
+      <p class="lead mt-16" style="max-width:720px">Каждый положительный пример проходит одну и ту же цепочку: CrucibleCpp создаёт <code>.i</code>, который соответствующий GCC компилирует в exe, после чего он реально запускается. Поведение сверяется с GCC 15.2, 14.3 и 13.3.</p>
+      <div class="grid g3 mt-32">
+        <article class="card reveal">
+          <div class="card-icon">01</div>
+          <h3>Целевая версия задана явно</h3>
+          <p>Используйте <code>--gcc-version</code> или <code>--gcc</code> для выбора целевого компилятора. Профиль, встроенные макросы и пути include берутся из одной цели и не смешиваются.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">02</div>
+          <h3>Диагностика как в GCC</h3>
+          <p>Исходные строки с caret, include trace, ID предупреждений, <code>-Werror</code>, стек pragma diagnostic и подавление предупреждений системных заголовков.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">03</div>
+          <h3>Проверка на реальных проектах</h3>
+          <p>nlohmann/json, fmt и spdlog проходят препроцессирование, компиляцию и запуск на трёх версиях GCC, покрывая реальные заголовки и комбинации макросов.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">04</div>
+          <h3>Полная поддержка UCN</h3>
+          <p><code>\uXXXX</code> и <code>\UXXXXXXXX</code> участвуют в идентификаторах, <code>#</code>, <code>##</code>; проверка корректности и нормализация вывода соответствуют GCC.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">05</div>
+          <h3>#embed</h3>
+          <p>Встраивание двоичных данных, <code>limit</code>, <code>gnu::offset</code>, <code>prefix</code>, <code>suffix</code>, <code>if_empty</code>, а также  <code>__has_embed</code>. </p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">06</div>
+          <h3>Изоляция версий PCH</h3>
+          <p>Для GCC 13 / 14 / 15 доступны и стратегии PCH, и кэш. Манифест записывает путь к компилятору, его версию и хеш исполняемого файла, исключая ложные попадания между версиями.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal">
+          <span class="eyebrow">Compatibility</span>
+          <h2 class="mt-8">Начните с явной матрицы</h2>
+          <p class="lead mt-16">Текущая производственная цель — Windows x64 + MinGW-w64 UCRT64. Каждая версия GCC использует собственные профили и заголовочные файлы, а вывод проверяется реальной компиляцией соответствующим GCC.</p>
+          <div class="table-wrap mt-24">
+            <table>
+              <thead><tr><th>Цель</th><th>Статус</th><th>Примечание</th></tr></thead>
+              <tbody>
+                <tr><td><code>GCC 15.2</code></td><td><span class="badge good">Полностью</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 14.3</code></td><td><span class="badge good">Полностью</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td><code>GCC 13.3</code></td><td><span class="badge good">Полностью</span></td><td>C++11/14/17/20 profile</td></tr>
+                <tr><td>Windows x64 / UCRT64</td><td><span class="badge good">Поддерживается</span></td><td>Текущая производственная цель</td></tr>
+                <tr><td>Linux / MSVC / Clang</td><td><span class="badge">Не поддерживается</span></td><td>Архитектура сохраняет точки расширения</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="eyebrow">Test chain</span>
+          <h3 class="mt-8">Проверка — это не «кажется, работает»</h3>
+          <ul class="feature-list">
+            <li>Три набора CTest для GCC15 / 14 / 13, по 65/65 в каждом</li>
+            <li>differential corpus 13/13: коды выхода, диагностика, потоки токенов</li>
+            <li>realworld corpus 3/3: nlohmann/json, fmt, spdlog</li>
+            <li>Каждый положительный пример после сборки exe действительно запускается</li>
+            <li>Политика PCH и кэш проходят на всех трёх версиях</li>
+            <li>GCC <code>g++.dg/cpp</code> непрерывная регрессия testsuite</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; padding:30px 34px">
+        <div>
+          <span class="eyebrow">Get started</span>
+          <h2 style="font-size:30px" class="mt-8">Скачать, распаковать, заменить <code style="font-size:.72em">g++ -E</code></h2>
+          <p class="muted mt-8">Текущая стабильная версия V3.0.1 · Windows x64 · один exe-файл.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="download.html">Скачать V3.0.1</a>
+          <a class="btn" href="docs.html">Быстрый старт</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="/ru/"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>Автономный препроцессор C++ для Windows x64.</p></div><div><h4>Продукт</h4><a href="#features">Возможности</a><a href="#download">Скачать</a><a href="#changelog">Изменения</a></div><div><h4>Ресурсы</h4><a href="#docs">Документация</a><a href="#license">Лицензия</a><a href="#about">О проекте</a></div><div><h4>Ссылки</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1+ CC BY-NC 4.0 · V2.9.0 и старше MIT</span></div></div></footer>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+        <p>Автономный препроцессор C++ для Windows x64. Препроцессирование, которое можно объяснить, проверить и воспроизвести.</p>
+      </div>
+      <div><h4>Продукт</h4><a href="features.html">Возможности</a><a href="download.html">Скачать</a><a href="changelog.html">История изменений</a></div>
+      <div><h4>Ресурсы</h4><a href="docs.html">Документация</a><a href="license.html">Лицензия</a><a href="about.html">О проекте</a></div>
+      <div><h4>Внешние</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 и новее: CC BY-NC 4.0 · V2.9.0 и старше: MIT</span></div>
+  </div>
+</footer>
 <script src="/assets/app.js?v=5"></script>
+<script src="/assets/mobile-redirect.js?v=1"></script>
 <script src="/assets/lang.js?v=4"></script>
 </body>
 </html>
