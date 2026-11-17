@@ -2,14 +2,14 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-087f78.svg)](LICENSE)
 [![Website](https://img.shields.io/badge/website-hfsdr.cn-087f78.svg)](https://hfsdr.cn)
-[![Languages](https://img.shields.io/badge/languages-25-087f78.svg)](languages.html)
+[![Languages](https://img.shields.io/badge/languages-33-087f78.svg)](languages.html)
 [![Release](https://img.shields.io/github/v/release/tomatoOyster/cruciblecpp-website?color=087f78)](https://github.com/tomatoOyster/cruciblecpp-website/releases)
 
 Official desktop website for [CrucibleCpp Preprocessor](https://github.com/tomatoOyster/cruciblecpp-preprocessor).
 
 CrucibleCpp is a standalone C++ preprocessor for Windows x64. It reads C++ source, performs translation phases 1–4, and emits `.i` output that a target GCC can compile directly.
 
-This repository contains the complete **desktop** site: hand-written HTML, CSS and JavaScript, inline SVG flags, 25 language pages, and a sanitized Nginx example. There is no build step and no runtime dependency.
+This repository contains the complete **desktop** site: hand-written HTML, CSS and JavaScript, inline SVG flags, 33 language pages, and a sanitized Nginx example. There is no build step and no runtime dependency.
 
 ## Links
 
@@ -35,7 +35,7 @@ This repository contains the complete **desktop** site: hand-written HTML, CSS a
 
 - The public home page and six content pages
 - A dedicated language hub at `languages.html`
-- 25 language entries with flags and localized pages
+- 33 language entries with flags and localized pages
 - RTL layout support for Arabic, Persian and Hebrew
 - A custom language picker with keyboard interaction and outside-click close
 - Section aliases such as `/en/docs.html` that open the translated section
@@ -62,7 +62,7 @@ languages.html         Language hub
 
 ## Languages
 
-The language hub currently lists 25 entries:
+The language hub currently lists 33 entries:
 
 | Code | Language | Path |
 |---|---|---|
@@ -91,6 +91,14 @@ The language hub currently lists 25 entries:
 | `nl` | Nederlands | `/nl/` |
 | `sv` | Svenska | `/sv/` |
 | `ro` | Română | `/ro/` |
+| `ur` | اردو | `/ur/` |
+| `bn` | বাংলা | `/bn/` |
+| `ta` | தமிழ் | `/ta/` |
+| `cs` | Čeština | `/cs/` |
+| `hu` | Magyar | `/hu/` |
+| `fi` | Suomi | `/fi/` |
+| `da` | Dansk | `/da/` |
+| `no` | Norsk | `/no/` |
 
 Each locale directory contains:
 
@@ -160,6 +168,14 @@ content. The language dropdown stays short; new languages are added to
 ├── uk/
 ├── nl/
 ├── sv/
+├── ur/
+├── bn/
+├── ta/
+├── cs/
+├── hu/
+├── fi/
+├── da/
+├── no/
 └── ro/
 ```
 
@@ -273,7 +289,7 @@ language hub so the dropdown does not grow without limit.
 The current site has been checked with:
 
 - every locale route returning HTTP 200
-- 25 language cards on `languages.html`
+- 33 language cards on `languages.html`
 - RTL rendering for Arabic, Persian and Hebrew
 - the language menu opening and navigating correctly
 - desktop screenshots at 1440 px

@@ -2,6 +2,17 @@
 
 All notable changes to the CrucibleCpp website.
 
+## v1.1.0 — 2026-11-18
+
+### Added
+
+- 8 new languages: Urdu, Bengali, Tamil, Czech, Hungarian, Finnish, Danish and Norwegian
+- Full translated sections for each new locale
+- Locale routes for features, docs, download, changelog, license and about
+- RTL support for Urdu
+- Updated language hub with 33 language cards
+- Updated screenshots and language count in the README
+
 ## v1.0.0 — 2026-11-18
 
 First public release of the website source.
