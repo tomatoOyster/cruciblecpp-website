@@ -1,0 +1,13 @@
+# Local previews and editor files
+preview-*.png
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Never commit deployment secrets or certificates
+*.pem
+*.key
+*cert*
+*secret*

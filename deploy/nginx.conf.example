@@ -1,0 +1,31 @@
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name example.com;
+
+    root /var/www/cruciblecpp-website;
+    index index.html;
+
+    # Replace these with certificate paths managed on your server.
+    ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+
+    location ~* \.(css|js|svg|woff2)$ {
+        expires 7d;
+        add_header Cache-Control "public";
+        access_log off;
+    }
+}
