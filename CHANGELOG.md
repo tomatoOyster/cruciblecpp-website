@@ -2,6 +2,14 @@
 
 All notable changes to the CrucibleCpp website.
 
+## v1.3.0 — 2026-11-19
+
+### Added
+
+- "附属项目" navigation entry on the Chinese desktop site
+- Dedicated `vscode.html` page introducing the official VS Code extension
+- Links to the extension repository, VSIX releases and documentation
+
 ## v1.2.1 — 2026-11-18
 
 ### Fixed

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>附属项目 — CrucibleCpp for VS Code</title>
+  <meta name="description" content="CrucibleCpp 的官方 VS Code 插件：预处理当前文件、只读 .i 预览、Problems 诊断、保存 .i、与 g++ -E diff。">
+  <meta name="theme-color" content="#dffbf6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
+    <nav class="nav-links" aria-label="主导航"><a href="index.html">首页</a><a href="features.html">功能</a><a href="docs.html">文档</a><a href="download.html">下载</a><a href="changelog.html">更新日志</a><a href="license.html">许可证</a><a href="about.html">关于</a><a href="vscode.html">附属项目</a></nav>
+    <div class="nav-actions">
+    <div class="lang-picker">
+      <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">简体中文</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg><span class="lang-chev">⌄</span></button>
+      <ul class="lang-options" role="listbox" aria-label="选择语言"><li><a role="option" href="/" data-locale="/" class="current" aria-selected="true">简体中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">更多语言 <span aria-hidden="true">↗</span></a></li></ul>
+    </div>
+      <a class="btn btn-sm btn-primary" href="download.html">下载 V3.0.1</a><button class="menu-toggle" aria-label="打开菜单" aria-expanded="false">菜单</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">AFFILIATED PROJECT</span>
+      <h1>在 VS Code 里<br>直接使用 CrucibleCpp</h1>
+      <p class="lead">官方 VS Code 插件把 CrucibleCpp 接进编辑器：预处理当前文件、查看只读 <code>.i</code>、读取 Problems 诊断、保存结果，并和 <code>g++ -E</code> 做差分。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/tomatoOyster/cruciblecpp-vscode" rel="noopener">打开插件仓库 →</a>
+        <a class="btn" href="https://github.com/tomatoOyster/cruciblecpp-vscode/releases/latest" rel="noopener">下载 VSIX</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div class="prose">
+          <h2 style="margin-top:0">它解决什么问题</h2>
+          <p>命令行预处理适合构建系统，但调试宏、include 和预处理诊断时，来回切终端很费劲。插件把同一套 CrucibleCpp 结果放进 VS Code：当前文件可以直接预处理，结果以只读方式打开，诊断进入 Problems。</p>
+          <p>它不是重新实现一套预处理逻辑，而是调用你配置的 <code>cruciblecpp-preprocessor.exe</code>，因此输出与命令行保持一致。</p>
+
+          <h2>功能</h2>
+          <ul class="feature-list">
+            <li>预处理当前文件，生成只读 <code>.i</code> 预览</li>
+            <li>把预处理诊断送到 VS Code Problems</li>
+            <li>保存预处理结果为 <code>.i</code> 文件</li>
+            <li>与 <code>g++ -E</code> 的输出做 diff</li>
+            <li>读取 <code>compile_commands.json</code> 获取编译参数</li>
+            <li>查看 GCC include 路径</li>
+            <li>宏展开动画和 include 图（需要 CrucibleCpp 2.2.0+）</li>
+            <li>PCH 策略设置（需要 CrucibleCpp 2.3.0+）</li>
+          </ul>
+
+          <h2>安装</h2>
+          <p>从插件 Release 下载 <code>.vsix</code>，然后执行：</p>
+          <div class="codeblock">code --install-extension path\to\cruciblecpp-vscode.vsix</div>
+          <p>插件依赖本仓库构建的 <code>cruciblecpp-preprocessor.exe</code>。如果它不在工作区的 <code>build</code> 或 <code>bin</code> 目录中，请在 VS Code 设置里配置：</p>
+          <div class="codeblock">"cruciblecpp.executable": "D:\\path\\to\\cruciblecpp-preprocessor.exe"</div>
+
+          <h2>适用场景</h2>
+          <p>排查宏展开、确认 include 来源、检查 PCH 是否被忽略、比较 CrucibleCpp 与 <code>g++ -E</code> 的输出差异，或者只是想在编辑器里快速看清一个文件最终变成了什么。</p>
+        </div>
+
+        <div class="card" style="padding:30px">
+          <span class="eyebrow">Status</span>
+          <h3 class="mt-8">官方插件</h3>
+          <ul class="feature-list">
+            <li>名称：CrucibleCpp for VS Code</li>
+            <li>分发：GitHub Releases（VSIX）</li>
+            <li>预处理后端：CrucibleCpp</li>
+            <li>支持：Windows x64</li>
+            <li>宏动画 / include 图：2.2.0+</li>
+            <li>PCH 策略：2.3.0+</li>
+          </ul>
+          <div class="note mt-24">插件和预处理器是两个独立项目；插件负责编辑器集成，预处理行为仍以 CrucibleCpp 为准。</div>
+          <a class="btn btn-sm mt-16" href="https://github.com/tomatoOyster/cruciblecpp-vscode" rel="noopener">GitHub 仓库</a>
+          <a class="btn btn-sm mt-16" href="https://github.com/tomatoOyster/cruciblecpp-vscode/releases/latest" rel="noopener">下载最新 VSIX</a>
+        </div>
+      </div>
+
+      <div class="card reveal mt-32" style="padding:34px">
+        <div class="grid g3">
+          <div><div class="eyebrow">Backend</div><h3 class="mt-8">预处理器</h3><p class="muted small mt-8">CrucibleCpp 负责翻译阶段 1–4 和 <code>.i</code> 输出。</p><a class="small" href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">产品仓库 →</a></div>
+          <div><div class="eyebrow">Editor</div><h3 class="mt-8">VS Code</h3><p class="muted small mt-8">插件负责命令、预览、Problems 和 diff，不重复实现预处理。</p><a class="small" href="https://github.com/tomatoOyster/cruciblecpp-vscode" rel="noopener">插件仓库 →</a></div>
+          <div><div class="eyebrow">Docs</div><h3 class="mt-8">使用文档</h3><p class="muted small mt-8">从预处理器文档开始，再按插件设置配置可执行文件。</p><a class="small" href="docs.html">阅读文档 →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a><p>面向 Windows x64 的独立 C++ 预处理器。</p></div><div><h4>产品</h4><a href="features.html">功能</a><a href="download.html">下载</a><a href="changelog.html">更新日志</a></div><div><h4>资源</h4><a href="docs.html">文档</a><a href="license.html">许可证</a><a href="about.html">关于</a></div><div><h4>外部</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div></div><div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 及以后：CC BY-NC 4.0 · V2.9.0 及以前：MIT</span></div></div></footer>
+<script src="assets/app.js?v=5"></script>
+<script src="assets/mobile-redirect.js?v=1"></script>
+<script src="/assets/lang.js?v=4"></script>
+</body>
+</html>

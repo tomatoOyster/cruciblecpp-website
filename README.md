@@ -21,6 +21,18 @@ This repository contains the complete **desktop** site: hand-written HTML, CSS a
 | Product releases | https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases |
 | VS Code extension | https://github.com/tomatoOyster/cruciblecpp-vscode |
 
+## Affiliated project
+
+The official VS Code extension lives in a separate repository:
+
+- [CrucibleCpp for VS Code](https://github.com/tomatoOyster/cruciblecpp-vscode)
+- [Download VSIX](https://github.com/tomatoOyster/cruciblecpp-vscode/releases/latest)
+- Entry page on this site: [`vscode.html`](vscode.html)
+
+It preprocesses the current file, opens a read-only `.i` preview, publishes
+diagnostics to Problems, saves `.i`, diffs against `g++ -E`, reads
+`compile_commands.json`, and exposes GCC include paths.
+
 ## Screenshots
 
 ### Home
