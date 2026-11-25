@@ -14,7 +14,6 @@ All notable changes to the CrucibleCpp website.
 ### Changed
 
 - Other locale indexes only received the version bump to 3.1.0.
-All notable changes to the CrucibleCpp website.
 
 ## v1.3.0 — 2026-11-19
 
