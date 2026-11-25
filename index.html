@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CrucibleCpp Preprocessor — 独立的 Windows C++ 预处理器</title>
-  <meta name="description" content="CrucibleCpp 是面向 Windows x64 的独立 C++ 预处理器，替代 g++ -E，支持 GCC 13.3 / 14.3 / 15.2 与 C++11/14/17/20。">
+  <title>CrucibleCpp Preprocessor — 独立的 Windows C++ 预处理器 · CLI + GUI</title>
+  <meta name="description" content="CrucibleCpp 是面向 Windows x64 的独立 C++ 预处理器，提供 CLI 和原生 GUI，替代 g++ -E，支持 GCC 13.3 / 14.3 / 15.2 与 C++11/14/17/20。">
   <meta name="theme-color" content="#dffbf6">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css?v=6">
@@ -16,6 +16,7 @@
     <nav class="nav-links" aria-label="主导航">
       <a href="index.html">首页</a>
       <a href="features.html">功能</a>
+      <a href="#gui">GUI</a>
       <a href="docs.html">文档</a>
       <a href="download.html">下载</a>
       <a href="changelog.html">更新日志</a>
@@ -27,7 +28,7 @@
       <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="lang-current">简体中文</span><svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg><span class="lang-chev">⌄</span></button>
       <ul class="lang-options" role="listbox" aria-label="选择语言"><li><a role="option" href="/" data-locale="/" class="current" aria-selected="true">简体中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#de2910"/><path d="M4 1.7l.9 2.7L2 3.1h4L3.1 4.4z" fill="#ffde00"/></svg></a></li><li><a role="option" href="/zh-TW/" data-locale="/zh-TW/">繁體中文<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fe0000"/><rect width="10" height="7" fill="#000095"/><circle cx="5" cy="3.5" r="2.1" fill="#fff"/><circle cx="5" cy="3.5" r="1.35" fill="#000095"/></svg></a></li><li><a role="option" href="/en/" data-locale="/en/">English<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="3"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.5"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2"/></svg></a></li><li><a role="option" href="/es/" data-locale="/es/">Español<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#aa151b"/><rect y="3.5" width="20" height="7" fill="#f1bf00"/></svg></a></li><li><a role="option" href="/de/" data-locale="/de/">Deutsch<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg></a></li><li><a role="option" href="/ar/" data-locale="/ar/">العربية<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#006c35"/><path d="M3 8h14" stroke="#fff" stroke-width="1.2"/><path d="M5 10h10" stroke="#fff" stroke-width=".8"/><path d="M7 6h6" stroke="#fff" stroke-width=".8"/></svg></a></li><li><a role="option" href="/ru/" data-locale="/ru/">Русский<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.66" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg></a></li><li><a role="option" href="/ja/" data-locale="/ja/">日本語<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.1" fill="#bc002d"/></svg></a></li><li><a role="option" href="/ko/" data-locale="/ko/">한국어<svg class="flag-icon" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M6.8 7a3.2 3.2 0 0 1 6.4 0 1.6 1.6 0 0 0-3.2 0 1.6 1.6 0 0 1-3.2 0z" fill="#0047a0"/></svg></a></li><li class="lang-more"><a href="/languages.html" data-more="true">更多语言 <span aria-hidden="true">↗</span></a></li></ul>
     </div>
-      <a class="btn btn-sm btn-primary" href="download.html">下载 V3.0.1</a>
+      <a class="btn btn-sm btn-primary" href="download.html">下载 V3.1.0</a>
       <button class="menu-toggle" aria-label="打开菜单" aria-expanded="false">菜单</button>
     </div>
   </div>
@@ -41,13 +42,14 @@
         <h1>把预处理<br>交还给确定性</h1>
         <p class="lead">CrucibleCpp 是一个独立的 C++ 预处理器。它读取源文件，完成翻译阶段 1–4，输出可以直接交给 GCC 继续编译的 <code>.i</code> 文件。</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="download.html">下载 V3.0.1 <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-primary" href="download.html">下载 V3.1.0 <span aria-hidden="true">↓</span></a>
           <a class="btn" href="docs.html">阅读文档 <span aria-hidden="true">→</span></a>
+          <a class="btn" href="#gui">看看 GUI</a>
         </div>
         <div class="hero-meta">
           <span><i class="dot"></i> CC BY-NC 4.0</span>
           <span><i class="dot"></i> 无需安装</span>
-          <span><i class="dot"></i> 单文件可执行程序</span>
+          <span><i class="dot"></i> CLI + 原生 GUI</span>
         </div>
       </div>
       <div class="terminal reveal">
@@ -74,6 +76,28 @@
       <div class="stat"><strong>0</strong><span>运行时依赖</span></div>
     </div>
   </div>
+
+  <section class="section" id="gui">
+    <div class="wrap">
+      <span class="eyebrow">Windows GUI · 正式版</span>
+      <h2 class="mt-8">不离开窗口，完成预处理、对比和编译</h2>
+      <p class="lead mt-16" style="max-width:780px">从 V3.1.0 起，GUI 作为正式组件发布。它和 CLI 共用同一套 <code>cpp_preproc</code> 核心，不是另一套实现，也不依赖 Qt、WebView2 或 Electron。</p>
+      <div class="grid g2 mt-32" style="align-items:start">
+        <div class="card reveal" style="padding:14px">
+          <img src="assets/gui-main.png" alt="CrucibleCpp Windows GUI 主界面" style="width:100%;height:auto;border-radius:10px;display:block">
+        </div>
+        <div>
+          <div class="grid g2">
+            <article class="card"><h3>选择 → 预处理</h3><p>选择源文件、输出 <code>.i</code>、目标 GCC 和 C++ 标准。预处理在后台线程执行，可随时取消。</p></article>
+            <article class="card"><h3>对比 g++ -E</h3><p>用当前 GCC 生成参考输出，与 CrucibleCpp 的 <code>.i</code> 做行级对比，差异直接显示在诊断区。</p></article>
+            <article class="card"><h3>编译 .i</h3><p>把生成的 <code>.i</code> 直接交给 GCC 编译为 <code>.exe</code>，编译错误和退出码留在窗口内。</p></article>
+            <article class="card"><h3>选项与诊断</h3><p>Include 目录、宏定义、PCH 策略、行标记、保留注释；结构化诊断与输出并排查看。</p></article>
+          </div>
+          <div class="mt-24" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="download.html#gui">下载 GUI</a><a class="btn" href="docs.html#gui">GUI 文档</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="wrap">
@@ -157,10 +181,11 @@
         <div>
           <span class="eyebrow">Get started</span>
           <h2 style="font-size:30px" class="mt-8">下载，解压，替换 <code style="font-size:.72em">g++ -E</code></h2>
-          <p class="muted mt-8">当前稳定版 V3.0.1 · Windows x64 · 单文件 exe。</p>
+          <p class="muted mt-8">当前稳定版 V3.1.0 · Windows x64 · CLI + GUI。</p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap">
-          <a class="btn btn-primary" href="download.html">下载 V3.0.1</a>
+          <a class="btn btn-primary" href="download.html#gui">下载 GUI</a>
+          <a class="btn" href="download.html">下载 CLI</a>
           <a class="btn" href="docs.html">快速开始</a>
         </div>
       </div>
@@ -175,11 +200,12 @@
         <a class="brand" href="index.html"><span class="brand-mark">C</span><span>CrucibleCpp</span></a>
         <p>面向 Windows x64 的独立 C++ 预处理器。让预处理结果可解释、可验证、可复现。</p>
       </div>
-      <div><h4>产品</h4><a href="features.html">功能</a><a href="download.html">下载</a><a href="changelog.html">更新日志</a></div>
+      <div><h4>产品</h4><a href="features.html">功能</a>
+      <a href="#gui">GUI</a><a href="download.html">下载</a><a href="changelog.html">更新日志</a></div>
       <div><h4>资源</h4><a href="docs.html">文档</a><a href="license.html">许可证</a><a href="about.html">关于</a></div>
       <div><h4>外部</h4><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor" rel="noopener">GitHub</a><a href="https://github.com/tomatoOyster/cruciblecpp-preprocessor/releases" rel="noopener">Releases</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.0.1 及以后：CC BY-NC 4.0 · V2.9.0 及以前：MIT</span></div>
+    <div class="footer-bottom"><span>© 2026 TomatoOyster · CrucibleCpp Preprocessor</span><span>V3.1.0 及以后：CC BY-NC 4.0 · V2.9.0 及以前：MIT</span></div>
   </div>
 </footer>
 <script src="assets/app.js?v=5"></script>

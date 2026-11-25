@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.4.0 — 2026-11-26
+
+### Added
+
+- V3.1.0 download links and checksums.
+- Full Simplified Chinese and English GUI presentation: homepage section, features, documentation, download and changelog.
+- GUI screenshot asset.
+- Chinese and English version and release links updated to v3.1.0.
+
+### Changed
+
+- Other locale indexes only received the version bump to 3.1.0.
 All notable changes to the CrucibleCpp website.
 
 ## v1.3.0 — 2026-11-19
