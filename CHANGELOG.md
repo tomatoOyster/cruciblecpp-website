@@ -1,5 +1,7 @@
 # Changelog
 
+All notable changes to the CrucibleCpp website.
+
 ## v1.4.0 — 2026-11-26
 
 ### Added
